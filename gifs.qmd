@@ -2,18 +2,123 @@
 
 In R4Epi, we use quite a few gifs. That makes rendering the book to pdf format challenging. What happens when we add a gif to a qmd document and render it to pdf?
 
-Need to figure out how to add gifs and I also need to figure out how to tell the qmd to render in pdf format.
+The following code works great for HTML format, but it messes up pdf format. 
 
-## Add a gif
+````markdown
+![A gif about file paths](img/file_path_gif.gif){#fig-file-paths}
 
-Currently, I'm adding it in the same way I would add a video. I'm following [these instructions](https://quarto.org/docs/authoring/videos.html). That document says, "In HTML formats the video will be embedded within the document. For other formats, a simple link to the video will be rendered."
+And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the gif by typing `@fig-file-paths`. See @fig-file-paths
 
-<!--
+::: {.callout-important}
+For cross-references to work, the image must have a caption _and_ a label.
+:::
 
-Not currently working. I need to try to figure out why.
+````
 
-{{< video intro_slide_gif.gif
-    title = "An example GIF"
->}}
+What if I use `knitr::include_graphics("path")`?
 
--->
+````markdown
+
+```{{r}}
+#| label: fig-file-paths
+#| echo: false
+#| fig-cap: |
+#|   A gif about file paths.
+#| fig-alt: |
+#|   A gif about file paths.
+
+knitr::include_graphics("img/file_path_gif.gif")
+```
+
+And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-file-paths`. See @fig-file-paths
+
+::: {.callout-important}
+For cross-references to work, the image must have a caption _and_ a label.
+:::
+
+````
+
+No, this doesn't work either. [Here is a pretty good discussion on the topic](https://github.com/quarto-dev/quarto-cli/discussions/3551). It looks like the easiest route may be to use [conditional content](https://quarto.org/docs/authoring/conditional.html). Given the limited number of gifs in R4Epi, this shouldn't be too big of a problem.
+
+So, start by conditionally displaying the gif if the output format is html. 
+
+````markdown
+
+::: {.content-visible when-format="html"}
+
+```{{r}}
+#| label: fig-file-paths
+#| echo: false
+#| fig-cap: |
+#|   A gif about file paths.
+#| fig-alt: |
+#|   A gif about file paths.
+
+knitr::include_graphics("img/file_path_gif.gif")
+```
+
+:::
+
+````
+
+Which renders as...
+
+::: {.content-visible when-format="html"}
+
+```{r}
+#| label: fig-file-paths
+#| echo: false
+#| fig-cap: |
+#|   A gif about file paths.
+#| fig-alt: |
+#|   A gif about file paths.
+
+knitr::include_graphics("img/file_path_gif.gif")
+```
+
+:::
+
+Then, conditionally add a thumbnail image of the gif when the output format is pdf. 
+
+- Create a duplicate of the gif in Finder. 
+- Add "_thumb" to the end of the file name (before the file extension).
+- Open the duplicate file in preview.
+- Use Preview's sidebar to keep only one of the thumbnail images from the gif (select and delete the rest).
+- Click File > Export and export to png. 
+- Delete the duplicate gif.
+
+````markdown
+
+::: {.content-visible when-format="pdf"}
+
+```{{r}}
+#| label: fig-file-paths
+#| echo: false
+#| fig-cap: |
+#|   A thumbnail of gif about file paths.
+#| fig-alt: |
+#|   A thumbnail gif about file paths.
+
+knitr::include_graphics("img/file_path_gif.gif")
+```
+
+:::
+
+````
+
+Which renders as...
+
+::: {.content-visible when-format="pdf"}
+
+```{r}
+#| label: fig-file-paths_thumb
+#| echo: false
+#| fig-cap: |
+#|   A thumbnail of gif about file paths.
+#| fig-alt: |
+#|   A thumbnail gif about file paths.
+
+knitr::include_graphics("img/file_path_gif_thumb.png")
+```
+
+:::

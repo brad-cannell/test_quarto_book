@@ -23,3 +23,7 @@ You can render the files by clicking the Render button in RStudio. To render the
 quarto::quarto_render(output_format = "all")
 ```
 ````
+
+## Publishing to GitHub pages
+
+[This article is great](https://quarto.org/docs/publishing/github-pages.html). After committing, and making sure you are on the main branch, type `quarto publish gh-pages` in the terminal.

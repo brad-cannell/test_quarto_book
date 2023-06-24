@@ -36,6 +36,7 @@ book:
     # My chapters
     # Parts can be qmd files (if you want explanitory text) or characater strings
     # If you only want a part title.
+    # This method does not look good in pdf format.
     - part: part_my_chapters.qmd
       # Make sure to type "chapters" again under each part.
       chapters: 
@@ -44,6 +45,8 @@ book:
       
     - part: "Authoring"
       chapters: 
+        - images.qmd
+        - gifs.qmd
         - cross_references.qmd
         - call_out_boxes.qmd
       
@@ -52,13 +55,9 @@ book:
         - code_chunks.qmd
         - source_qmd_files.qmd
         
-    - part: "Output"
-      chapters: 
-        - gifs.qmd
-        - pdf.qmd
-        
     - part: "Publishing"
       chapters: 
+        - pdf.qmd
         - publishing.qmd
     
     # Built-in chapters

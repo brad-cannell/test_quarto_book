@@ -8,3 +8,65 @@ Does Quarto have some built-in boxes? It looks like it might?
 
 -   How do you add the call out boxes (i.e., important, etc.)?
     - See [Quarto documentation on callout blocks](https://quarto.org/docs/authoring/callouts.html)
+    
+````markdown
+::: callout-note
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+````
+    
+::: callout-note
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+````markdown
+::: callout-warning
+Callouts provide a simple way to attract attention, for example, to this warning.
+:::
+````
+
+::: callout-warning
+Callouts provide a simple way to attract attention, for example, to this warning.
+:::
+
+````markdown
+::: callout-important
+## This is Important
+
+Danger, callouts will really improve your writing.
+:::
+````
+
+::: callout-important
+## This is Important
+
+Danger, callouts will really improve your writing.
+:::
+
+````markdown
+::: callout-tip
+## Tip With Title
+
+This is an example of a callout with a title.
+:::
+````
+
+::: callout-tip
+## Tip With Title
+
+This is an example of a callout with a title.
+:::
+
+````markdown
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'collapsed' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+````
+
+::: {.callout-caution collapse="true"}
+## Expand To Learn About Collapse
+
+This is an example of a 'collapsed' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::

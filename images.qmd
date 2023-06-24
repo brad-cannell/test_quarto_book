@@ -1,0 +1,60 @@
+# Images {#sec-images}
+
+Links
+
+- [The Quarto documentation about images](https://quarto.org/docs/authoring/figures.html)
+- [Example image in R4DS](https://github.com/hadley/r4ds/blob/main/intro.qmd)
+
+## Native Quarto figures
+
+Here are some examples of adding figures.
+
+![Relative Path Directions](img/directions_relative.png){#fig-directions}
+
+And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-directions`. See @fig-directions
+
+::: {.callout-important}
+For cross-references to work, the image must have a caption _and_ a label.
+:::
+
+## Adding figures with Knitr
+
+In R4DS (link above), Hadley et al. are still using `knitr::include_graphics("path")` to insert images even though the book has been converted to Quarto documents. When using Bookdown, [Yihui gives four arguments](https://bookdown.org/yihui/bookdown/figures.html) for using `knitr::include_graphics("path")` instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from [R4DS](https://github.com/hadley/r4ds/blob/main/intro.qmd):
+
+````
+```{{r}}
+#| label: fig-ds-diagram
+#| echo: false
+#| fig-cap: |
+#|   In our model of the data science process, you start with data import
+#|   and tidying. Next, you understand your data with an iterative cycle of
+#|   transforming, visualizing, and modeling. You finish the process 
+#|   by communicating your results to other humans.
+#| fig-alt: |
+#|   A diagram displaying the data science cycle: Import -> Tidy -> Understand 
+#|   (which has the phases Transform -> Visualize -> Model in a cycle) -> 
+#|   Communicate. Surrounding all of these is Communicate.
+#| out.width: NULL
+
+knitr::include_graphics("diagrams/data-science/base.png", dpi = 270)
+```
+````
+
+Here, I'm adding my own image with `knitr::include_graphics("path")`.
+
+```{r}
+#| label: fig-directions
+#| echo: false
+#| fig-cap: |
+#|   Relative Path Directions.
+#| fig-alt: |
+#|   An image of a store with directions
+
+knitr::include_graphics("img/directions_relative.png")
+```
+
+And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-directions`. See @fig-directions
+
+::: {.callout-important}
+For cross-references to work, the image must have a caption _and_ a label.
+:::
