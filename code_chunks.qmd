@@ -15,3 +15,19 @@ The bottom line is that caching actually causes the render to take longer to pro
 ## Naming code chunks
 
 Use the `label` code chunk option. For example, `#| label: slow-code-cached`
+
+## Showing entire code chunks
+
+When you want to display and entire code chunk in the rendered output, as opposed to executing the code chunk, surround it with four backticks.
+
+Also, make sure to use double curly braces `{{}}` around the language name identifier. If you don't, funky looking code will be output.
+
+`````
+````
+```{{r}}
+#| A code chunk for display
+#| eval:false
+1 + 1
+```
+````
+`````

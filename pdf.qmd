@@ -10,8 +10,23 @@ According to [this](https://quarto.org/docs/books/book-output.html#sidebar-tools
 
 We may want to think about creating an internal file with notes and a chunk that renders html and pdf when executed. 
 
-```{bash}
+````
+```{{bash}}
 #| eval: false
 quarto render
 ```
+````
 
+Even easier, you can do this with a native R code chunk.
+
+- The input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).
+
+- The output_format argument: Target output format (defaults to "html"). The option "all" will render all formats defined within the file or project.
+
+````
+```{{r}}
+#| Render with R
+#| eval: false
+quarto::quarto_render(output_format = "all")
+```
+````
