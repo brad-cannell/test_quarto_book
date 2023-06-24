@@ -21,6 +21,16 @@ Useful websites:
 
 - https://quarto.org/docs/publishing/github-pages.html
 
+That website discusses three methods for publishing the book with GitHub Pages.
+
+1. [Render to Docs](https://quarto.org/docs/publishing/github-pages.html#render-to-docs). The easiest and most straightforward. However, checking in the `_book` directory makes for messy diffs. 
+
+2. [The publish command](https://quarto.org/docs/publishing/github-pages.html#publish-command). Requires a little set up on the front end, but gives more control. 
+
+3. [GitHub Action](https://quarto.org/docs/publishing/github-pages.html#github-action). You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.
+
+I'm going with option 2 for now.
+
 ## Netlify
 
 Useful websites:
