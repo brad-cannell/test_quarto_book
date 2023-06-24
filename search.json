@@ -21,6 +21,13 @@
     "text": "Rendering\nYou can render the files by clicking the Render button in RStudio. To render the HTML and PDF files at the same time, type quarto render into the terminal. You can also render Quarto files with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```"
   },
   {
+    "objectID": "index.html#publishing-to-github-pages",
+    "href": "index.html#publishing-to-github-pages",
+    "title": "Test Quarto Book",
+    "section": "Publishing to GitHub pages",
+    "text": "Publishing to GitHub pages\nThis article is great. After committing, and making sure you are on the main branch, type quarto publish gh-pages in the terminal."
+  },
+  {
     "objectID": "book_options.html",
     "href": "book_options.html",
     "title": "1  Book Options",
@@ -35,88 +42,102 @@
     "text": "2.1 Pros and cons\nSome of the things I like about working with Quarto (as opposed to bookdown) so far\n\nA preview of the book renders automatically.\nI can easily render only one chapter by opening that chapter’s qmd file and clicking the Render button."
   },
   {
+    "objectID": "images.html#native-quarto-figures",
+    "href": "images.html#native-quarto-figures",
+    "title": "3  Images",
+    "section": "3.1 Native Quarto figures",
+    "text": "3.1 Native Quarto figures\nHere are some examples of adding figures.\n\n\n\nFigure 3.1: Relative Path Directions\n\n\nAnd I can cross reference the figure by typing @fig-directions. See Figure 3.2\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label."
+  },
+  {
+    "objectID": "images.html#adding-figures-with-knitr",
+    "href": "images.html#adding-figures-with-knitr",
+    "title": "3  Images",
+    "section": "3.2 Adding figures with Knitr",
+    "text": "3.2 Adding figures with Knitr\nIn R4DS (link above), Hadley et al. are still using knitr::include_graphics(\"path\") to insert images even though the book has been converted to Quarto documents. When using Bookdown, Yihui gives four arguments for using knitr::include_graphics(\"path\") instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from R4DS:\n```{r}\n#| label: fig-ds-diagram\n#| echo: false\n#| fig-cap: |\n#|   In our model of the data science process, you start with data import\n#|   and tidying. Next, you understand your data with an iterative cycle of\n#|   transforming, visualizing, and modeling. You finish the process \n#|   by communicating your results to other humans.\n#| fig-alt: |\n#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand \n#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; \n#|   Communicate. Surrounding all of these is Communicate.\n#| out.width: NULL\n\nknitr::include_graphics(\"diagrams/data-science/base.png\", dpi = 270)\n```\nHere, I’m adding my own image with knitr::include_graphics(\"path\").\n\n\n\n\n\nFigure 3.2: Relative Path Directions.\n\n\n\n\nAnd I can cross reference the figure by typing @fig-directions. See Figure 3.2\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label."
+  },
+  {
+    "objectID": "gifs.html",
+    "href": "gifs.html",
+    "title": "4  Gifs",
+    "section": "",
+    "text": "In R4Epi, we use quite a few gifs. That makes rendering the book to pdf format challenging. What happens when we add a gif to a qmd document and render it to pdf?\nThe following code works great for HTML format, but it messes up pdf format.\n![A gif about file paths](img/file_path_gif.gif){#fig-file-paths}\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the gif by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\nWhat if I use knitr::include_graphics(\"path\")?\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"img/file_path_gif.gif\")\n```\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\nNo, this doesn’t work either. Here is a pretty good discussion on the topic. It looks like the easiest route may be to use conditional content. Given the limited number of gifs in R4Epi, this shouldn’t be too big of a problem.\nSo, start by conditionally displaying the gif if the output format is html.\n\n::: {.content-visible when-format=\"html\"}\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"img/file_path_gif.gif\")\n```\n\n:::\nWhich renders as…\n\n\n\n\n\nFigure 4.1: A gif about file paths.\n\n\n\n\nThen, conditionally add a thumbnail image of the gif when the output format is pdf.\n\nCreate a duplicate of the gif in Finder.\nAdd “_thumb” to the end of the file name (before the file extension).\nOpen the duplicate file in preview.\nUse Preview’s sidebar to keep only one of the thumbnail images from the gif (select and delete the rest).\nClick File &gt; Export and export to png.\nDelete the duplicate gif.\n\n\n::: {.content-visible when-format=\"pdf\"}\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A thumbnail of gif about file paths.\n#| fig-alt: |\n#|   A thumbnail gif about file paths.\n\nknitr::include_graphics(\"img/file_path_gif.gif\")\n```\n\n:::\nWhich renders as…"
+  },
+  {
     "objectID": "cross_references.html#book-parts",
     "href": "cross_references.html#book-parts",
-    "title": "3  Cross References",
-    "section": "3.1 Book parts",
-    "text": "3.1 Book parts\nLink to the official documentation\nGotcha’s: - Sometimes I get errors like WARNING: index.html: Unable to resolve crossref @sec-crossrefs"
+    "title": "5  Cross References",
+    "section": "5.1 Book parts",
+    "text": "5.1 Book parts\nLink to the official documentation\nGotcha’s: - Sometimes I get errors like WARNING: index.html: Unable to resolve crossref @sec-crossrefs"
   },
   {
     "objectID": "cross_references.html#citations",
     "href": "cross_references.html#citations",
-    "title": "3  Cross References",
-    "section": "3.2 Citations",
-    "text": "3.2 Citations\nBuilt-in example: See Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "title": "5  Cross References",
+    "section": "5.2 Citations",
+    "text": "5.2 Citations\nBuilt-in example: See Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
   },
   {
     "objectID": "call_out_boxes.html",
     "href": "call_out_boxes.html",
-    "title": "4  Adding call out boxes",
+    "title": "6  Adding call out boxes",
     "section": "",
-    "text": "In R4Epi, we sometimes add special boxes for side notes and warnings. How do we add those into qmd books?\nWhat do those boxes look like when we render the book to pdf format?\nDoes Quarto have some built-in boxes? It looks like it might?\n\nHow do you add the call out boxes (i.e., important, etc.)?\n\nSee Quarto documentation on callout blocks"
+    "text": "In R4Epi, we sometimes add special boxes for side notes and warnings. How do we add those into qmd books?\nWhat do those boxes look like when we render the book to pdf format?\nDoes Quarto have some built-in boxes? It looks like it might?\n\nHow do you add the call out boxes (i.e., important, etc.)?\n\nSee Quarto documentation on callout blocks\n\n\n::: callout-note\nNote that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.\n:::\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n::: callout-warning\nCallouts provide a simple way to attract attention, for example, to this warning.\n:::\n\n\n\n\n\n\nWarning\n\n\n\nCallouts provide a simple way to attract attention, for example, to this warning.\n\n\n::: callout-important\n## This is Important\n\nDanger, callouts will really improve your writing.\n:::\n\n\n\n\n\n\nThis is Important\n\n\n\nDanger, callouts will really improve your writing.\n\n\n::: callout-tip\n## Tip With Title\n\nThis is an example of a callout with a title.\n:::\n\n\n\n\n\n\nTip With Title\n\n\n\nThis is an example of a callout with a title.\n\n\n::: {.callout-caution collapse=\"true\"}\n## Expand To Learn About Collapse\n\nThis is an example of a 'collapsed' caution callout that can be expanded by the user. You can use `collapse=\"true\"` to collapse it by default or `collapse=\"false\"` to make a collapsible callout that is expanded by default.\n:::\n\n\n\n\n\n\nExpand To Learn About Collapse\n\n\n\n\n\nThis is an example of a ‘collapsed’ caution callout that can be expanded by the user. You can use collapse=\"true\" to collapse it by default or collapse=\"false\" to make a collapsible callout that is expanded by default."
   },
   {
     "objectID": "code_chunks.html#code-run-time",
     "href": "code_chunks.html#code-run-time",
-    "title": "5  Code chunks",
-    "section": "5.1 Code Run Time",
-    "text": "5.1 Code Run Time\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense."
+    "title": "7  Code chunks",
+    "section": "7.1 Code Run Time",
+    "text": "7.1 Code Run Time\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense."
   },
   {
     "objectID": "code_chunks.html#naming-code-chunks",
     "href": "code_chunks.html#naming-code-chunks",
-    "title": "5  Code chunks",
-    "section": "5.2 Naming code chunks",
-    "text": "5.2 Naming code chunks\nUse the label code chunk option. For example, #| label: slow-code-cached"
+    "title": "7  Code chunks",
+    "section": "7.2 Naming code chunks",
+    "text": "7.2 Naming code chunks\nUse the label code chunk option. For example, #| label: slow-code-cached"
   },
   {
     "objectID": "code_chunks.html#showing-entire-code-chunks",
     "href": "code_chunks.html#showing-entire-code-chunks",
-    "title": "5  Code chunks",
-    "section": "5.3 Showing entire code chunks",
-    "text": "5.3 Showing entire code chunks\nWhen you want to display and entire code chunk in the rendered output, as opposed to executing the code chunk, surround it with four backticks.\nAlso, make sure to use double curly braces {{}} around the language name identifier. If you don’t, funky looking code will be output.\n````\n```{r}\n#| A code chunk for display\n#| eval:false\n1 + 1\n```\n````"
+    "title": "7  Code chunks",
+    "section": "7.3 Showing entire code chunks",
+    "text": "7.3 Showing entire code chunks\nWhen you want to display and entire code chunk in the rendered output, as opposed to executing the code chunk, surround it with four backticks.\nAlso, make sure to use double curly braces {{}} around the language name identifier. If you don’t, funky looking code will be output.\n````\n```{r}\n#| A code chunk for display\n#| eval:false\n1 + 1\n```\n````"
   },
   {
     "objectID": "source_qmd_files.html",
     "href": "source_qmd_files.html",
-    "title": "6  Sourcing qmd files",
+    "title": "8  Sourcing qmd files",
     "section": "",
     "text": "We can “source” or programmatically render (as opposed to interactively rendering with the Render button) qmd files – including inside of code chunks in other qmd files. Here is an example code chunk.\n\nquarto::quarto_render(\"slow_code_cached.qmd\", quiet = TRUE)"
   },
   {
-    "objectID": "gifs.html#add-a-gif",
-    "href": "gifs.html#add-a-gif",
-    "title": "7  Gifs",
-    "section": "7.1 Add a gif",
-    "text": "7.1 Add a gif\nCurrently, I’m adding it in the same way I would add a video. I’m following these instructions. That document says, “In HTML formats the video will be embedded within the document. For other formats, a simple link to the video will be rendered.”"
-  },
-  {
     "objectID": "pdf.html",
     "href": "pdf.html",
-    "title": "8  PDF",
+    "title": "9  PDF",
     "section": "",
     "text": "Notes on exporting the book to pdf.\nNot only how to render it to pdf, but is there an option\nAccording to this, it looks like we can make a pdf downloadable by adding downloads: [pdf, epub] to _quarto.yml. In the config file for this test book, we added downloads: pdf to the book options section.\nImportant: It looks like the option above only creates the link on the HTML page to download the pdf version of the book. However, a new pdf version of the book isn’t automatically rendered when we click the render button. You have to specifically render a pdf version separately from an html version.\nWe may want to think about creating an internal file with notes and a chunk that renders html and pdf when executed.\n```{bash}\n#| eval: false\nquarto render\n```\nEven easier, you can do this with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```"
   },
   {
     "objectID": "publishing.html#github-repository",
     "href": "publishing.html#github-repository",
-    "title": "9  Publishing",
-    "section": "9.1 GitHub repository",
-    "text": "9.1 GitHub repository\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process. - I created the repo on GitHub (with nothing but a README file) first. - I cloned the repo to my computer. - I clicked new project &gt; existing directory. - The downside is that RStudio didn’t give me the option to make it a Quarto book project. - In the terminal, following this guidance, I typed quarto create-project test_quarto_book --type book. - Make sure the terminal is set to the project’s directory. - That added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them."
+    "title": "10  Publishing",
+    "section": "10.1 GitHub repository",
+    "text": "10.1 GitHub repository\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process. - I created the repo on GitHub (with nothing but a README file) first. - I cloned the repo to my computer. - I clicked new project &gt; existing directory. - The downside is that RStudio didn’t give me the option to make it a Quarto book project. - In the terminal, following this guidance, I typed quarto create-project test_quarto_book --type book. - Make sure the terminal is set to the project’s directory. - That added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them."
   },
   {
     "objectID": "publishing.html#github-pages",
     "href": "publishing.html#github-pages",
-    "title": "9  Publishing",
-    "section": "9.2 GitHub Pages",
-    "text": "9.2 GitHub Pages\nUseful websites:\n\nhttps://quarto.org/docs/publishing/github-pages.html\n\nThat website discusses three methods for publishing the book with GitHub Pages.\n\nRender to Docs. The easiest and most straightforward. However, checking in the _book directory makes for messy diffs.\nThe publish command. Requires a little set up on the front end, but gives more control.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.\n\nI’m going with option 2 for now."
+    "title": "10  Publishing",
+    "section": "10.2 GitHub Pages",
+    "text": "10.2 GitHub Pages\nUseful websites:\n\nhttps://quarto.org/docs/publishing/github-pages.html\n\nThat website discusses three methods for publishing the book with GitHub Pages.\n\nRender to Docs. The easiest and most straightforward. However, checking in the _book directory makes for messy diffs.\nThe publish command. Requires a little set up on the front end, but gives more control.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.\n\nI’m going with option 2 for now."
   },
   {
     "objectID": "publishing.html#netlify",
     "href": "publishing.html#netlify",
-    "title": "9  Publishing",
-    "section": "9.3 Netlify",
-    "text": "9.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html"
+    "title": "10  Publishing",
+    "section": "10.3 Netlify",
+    "text": "10.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html"
   },
   {
     "objectID": "references.html",
