@@ -1,0 +1,10 @@
+# Sourcing qmd files {#sec-sourcing-qmd-files}
+
+We can "source" or programmatically render (as opposed to interactively rendering with the `Render` button) qmd files -- including inside of code chunks in other qmd files. Here is an example code chunk.
+
+```{r}
+#| label: example-source-qmd-file
+#| eval: false
+quarto::quarto_render("slow_code_cached.qmd", quiet = TRUE)
+```
+

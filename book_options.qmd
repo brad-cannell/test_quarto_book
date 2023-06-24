@@ -1,0 +1,29 @@
+# Book Options {#sec-book-options}
+
+A collection of notes on Quarto book options.
+
+-   [Link to list of book options](https://quarto.org/docs/reference/projects/books.html)
+
+-   How do you add a cover image? Look at [r4ds](https://github.com/hadley/r4ds/).
+    - `cover-image: cover.jpg`
+
+-   How do you add last date rendered to the `_quarto.yml` file? "r Sys.Date()" doesn't seem to work.
+    - [Use the keyword today](https://biostats-r.github.io/biostats/quarto/03-elements-quarto-document.html) 
+
+-   Can I add links to GitHub and/or social media?
+    - Still need an answer here.
+
+-   Can I add links to the GitHub repo containing the books files?
+    - Yes. See https://quarto.org/docs/books/book-output.html#sidebar-tools
+
+-   How do I add a favicon?
+    - `favicon: cover.jpg`
+
+-   How do I add Google analytics?
+    - Still need an answer here.
+
+-   Can I add a Google analytics badge to my GitHub README?
+    - Still need an answer here.
+    
+-   How do I preview the book in my web browser instead of RStudio's Viewer pane?
+    - Just click the little gear icon next to the `Render` button in RStudio. Select `Preview in Window`.

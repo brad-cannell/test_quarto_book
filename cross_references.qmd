@@ -1,0 +1,14 @@
+# Cross References {#sec-crossrefs}
+
+When authoring the book, it is common to need to cross reference book parts (i.e., chapters, sections), figures, tables, and I'm going to go ahead and include citations here too.
+
+## Book parts
+
+[Link to the official documentation](https://quarto.org/docs/books/book-crossrefs.html)
+
+Gotcha's:
+- Sometimes I get errors like `WARNING: index.html: Unable to resolve crossref @sec-crossrefs`
+
+## Citations
+
+Built-in example: See @knuth84 for additional discussion of literate programming.

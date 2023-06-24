@@ -1,0 +1,17 @@
+# PDF {#sec-pdf}
+
+Notes on exporting the book to pdf.
+
+Not only how to render it to pdf, but is there an option
+
+According to [this](https://quarto.org/docs/books/book-output.html#sidebar-tools), it looks like we can make a pdf downloadable by adding `downloads: [pdf, epub]` to `_quarto.yml`. In the config file for this test book, we added `downloads: pdf` to the book options section.
+
+**Important**: It looks like the option above only creates the link on the HTML page to download the pdf version of the book. However, a new pdf version of the book isn't automatically rendered when we click the render button. You have to specifically render a pdf version separately from an html version. 
+
+We may want to think about creating an internal file with notes and a chunk that renders html and pdf when executed. 
+
+```{bash}
+#| eval: false
+quarto render
+```
+

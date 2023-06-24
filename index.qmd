@@ -1,0 +1,9 @@
+# Preface {.unnumbered}
+
+This is my first Quarto book. For now, I'm just using it for some experimentation. Eventually, I will probably want to add all of this to a GitHub repository. Right now, Olivia is in class and I'm content with just experimenting a little bit.
+
+This is **not** my new R Notes book; although, I may move R Notes over to Quarto at some point. This is purely just a sandbox for playing with Quarto books.
+
+## Useful websites:
+
+-   [Quarto book documentation](https://quarto.org/docs/books/)

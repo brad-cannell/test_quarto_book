@@ -1,0 +1,3 @@
+# Book Options
+
+This part of the book contains qmd files pertaining to book options. I'm mostly creating this file to demonstrate how the (optional) book part qmd files work.

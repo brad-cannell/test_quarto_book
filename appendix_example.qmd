@@ -1,0 +1,3 @@
+# Example appendix
+
+This is just an example appendix.

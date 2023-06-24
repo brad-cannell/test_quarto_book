@@ -1,0 +1,74 @@
+project:
+  type: book
+  output-dir: _book
+
+# Book formatting types and options
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+# Set editor to default to source view instead of visual view
+editor: source
+
+# Book structure and options
+book:
+  # Basic metadata
+  title: "Test Quarto Book"
+  author: "Brad Cannell"
+  date: today # Figure out how to automatically update the date on render.
+  repo-url: https://github.com/brad-cannell/
+  repo-actions: [edit]
+  
+  # Book options
+  search: true
+  downloads: [pdf, epub] # https://quarto.org/docs/books/book-output.html#sidebar-tools
+  sharing: [twitter, facebook]
+  page-navigation: true # Haven't played with this much yet. https://quarto.org/docs/books/book-structure.html#page-navigation
+
+  # Chapter sturcture
+  # https://quarto.org/docs/books/book-structure.html
+  chapters:
+    # Index is the landing page for the HTML version of the book.
+    - index.qmd
+    
+    # My chapters
+    # Parts can be qmd files (if you want explanitory text) or characater strings
+    # If you only want a part title.
+    - part: part_my_chapters.qmd
+      # Make sure to type "chapters" again under each part.
+      chapters: 
+      - book_options.qmd
+      - other.qmd
+      
+    - part: "Authoring"
+      chapters: 
+        - cross_references.qmd
+        - call_out_boxes.qmd
+      
+    - part: "Working with Code"
+      chapters: 
+        - code_chunks.qmd
+        - source_qmd_files.qmd
+        
+    - part: "Output"
+      chapters: 
+        - gifs.qmd
+        - pdf.qmd
+        
+    - part: "Publishing"
+      chapters: 
+        - publishing.qmd
+    
+    # Built-in chapters
+    - part: "Built-in Chapters"
+      chapters:
+        - references.qmd
+  
+  # We can also add appendicies and track them separately from other book parts.  
+  appendices: 
+    - appendix_example.qmd
+
+bibliography: references.bib
+

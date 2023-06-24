@@ -1,0 +1,19 @@
+# Gifs {#sec-gifs}
+
+In R4Epi, we use quite a few gifs. That makes rendering the book to pdf format challenging. What happens when we add a gif to a qmd document and render it to pdf?
+
+Need to figure out how to add gifs and I also need to figure out how to tell the qmd to render in pdf format.
+
+## Add a gif
+
+Currently, I'm adding it in the same way I would add a video. I'm following [these instructions](https://quarto.org/docs/authoring/videos.html). That document says, "In HTML formats the video will be embedded within the document. For other formats, a simple link to the video will be rendered."
+
+<!--
+
+Not currently working. I need to try to figure out why.
+
+{{< video intro_slide_gif.gif
+    title = "An example GIF"
+>}}
+
+-->

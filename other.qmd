@@ -1,0 +1,9 @@
+# Other little things {#other}
+
+## Pros and cons
+
+Some of the things I like about working with Quarto (as opposed to bookdown) so far 
+
+- A preview of the book renders automatically.
+
+- I can easily render only one chapter by opening that chapter's qmd file and clicking the Render button.

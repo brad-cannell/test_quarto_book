@@ -1,0 +1,10 @@
+# Adding call out boxes
+
+In R4Epi, we sometimes add special boxes for side notes and warnings. How do we add those into qmd books?
+
+What do those boxes look like when we render the book to pdf format?
+
+Does Quarto have some built-in boxes? It looks like it might?
+
+-   How do you add the call out boxes (i.e., important, etc.)?
+    - See [Quarto documentation on callout blocks](https://quarto.org/docs/authoring/callouts.html)

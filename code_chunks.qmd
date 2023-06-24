@@ -1,0 +1,17 @@
+# Code chunks {#sec-code-chunks}
+
+These are my notes on working with code chunks.
+
+Here are some other helpful resources:
+
+-   [Need to add a link to a comprehensive guide](www.example.com)
+
+## Code Run Time
+
+We were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the `test_quarto_book` project. However, it seemed like the `quarto_render()` function works differently in the context of a book project and was making testing difficult. Specifically, `quarto::quarto_render("slow_code_default.qmd")` seemed to render the entire book instead of just the `slow_code_default.qmd` document. Therefore, we created a separate Quarto project to run these tests -- `test_quarto_cached_chunks`.
+
+The bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense.
+
+## Naming code chunks
+
+Use the `label` code chunk option. For example, `#| label: slow-code-cached`
