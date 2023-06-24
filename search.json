@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Test Quarto Book",
+    "section": "",
+    "text": "Preface\nThis is my first Quarto book. For now, I’m just using it for some experimentation. Eventually, I will probably want to add all of this to a GitHub repository. Right now, Olivia is in class and I’m content with just experimenting a little bit.\nThis is not my new R Notes book; although, I may move R Notes over to Quarto at some point. This is purely just a sandbox for playing with Quarto books."
+  },
+  {
+    "objectID": "index.html#useful-websites",
+    "href": "index.html#useful-websites",
+    "title": "Test Quarto Book",
+    "section": "Useful websites:",
+    "text": "Useful websites:\n\nQuarto book documentation"
+  },
+  {
+    "objectID": "index.html#rendering",
+    "href": "index.html#rendering",
+    "title": "Test Quarto Book",
+    "section": "Rendering",
+    "text": "Rendering\nYou can render the files by clicking the Render button in RStudio. To render the HTML and PDF files at the same time, type quarto render into the terminal. You can also render Quarto files with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```"
+  },
+  {
+    "objectID": "book_options.html",
+    "href": "book_options.html",
+    "title": "1  Book Options",
+    "section": "",
+    "text": "A collection of notes on Quarto book options.\n\nLink to list of book options\nHow do you add a cover image? Look at r4ds.\n\ncover-image: cover.jpg\n\nHow do you add last date rendered to the _quarto.yml file? “r Sys.Date()” doesn’t seem to work.\n\nUse the keyword today\n\nCan I add links to GitHub and/or social media?\n\nStill need an answer here.\n\nCan I add links to the GitHub repo containing the books files?\n\nYes. See https://quarto.org/docs/books/book-output.html#sidebar-tools\n\nHow do I add a favicon?\n\nfavicon: cover.jpg\n\nHow do I add Google analytics?\n\nStill need an answer here.\n\nCan I add a Google analytics badge to my GitHub README?\n\nStill need an answer here.\n\nHow do I preview the book in my web browser instead of RStudio’s Viewer pane?\n\nJust click the little gear icon next to the Render button in RStudio. Select Preview in Window."
+  },
+  {
+    "objectID": "other.html#pros-and-cons",
+    "href": "other.html#pros-and-cons",
+    "title": "2  Other little things",
+    "section": "2.1 Pros and cons",
+    "text": "2.1 Pros and cons\nSome of the things I like about working with Quarto (as opposed to bookdown) so far\n\nA preview of the book renders automatically.\nI can easily render only one chapter by opening that chapter’s qmd file and clicking the Render button."
+  },
+  {
+    "objectID": "cross_references.html#book-parts",
+    "href": "cross_references.html#book-parts",
+    "title": "3  Cross References",
+    "section": "3.1 Book parts",
+    "text": "3.1 Book parts\nLink to the official documentation\nGotcha’s: - Sometimes I get errors like WARNING: index.html: Unable to resolve crossref @sec-crossrefs"
+  },
+  {
+    "objectID": "cross_references.html#citations",
+    "href": "cross_references.html#citations",
+    "title": "3  Cross References",
+    "section": "3.2 Citations",
+    "text": "3.2 Citations\nBuilt-in example: See Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "call_out_boxes.html",
+    "href": "call_out_boxes.html",
+    "title": "4  Adding call out boxes",
+    "section": "",
+    "text": "In R4Epi, we sometimes add special boxes for side notes and warnings. How do we add those into qmd books?\nWhat do those boxes look like when we render the book to pdf format?\nDoes Quarto have some built-in boxes? It looks like it might?\n\nHow do you add the call out boxes (i.e., important, etc.)?\n\nSee Quarto documentation on callout blocks"
+  },
+  {
+    "objectID": "code_chunks.html#code-run-time",
+    "href": "code_chunks.html#code-run-time",
+    "title": "5  Code chunks",
+    "section": "5.1 Code Run Time",
+    "text": "5.1 Code Run Time\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense."
+  },
+  {
+    "objectID": "code_chunks.html#naming-code-chunks",
+    "href": "code_chunks.html#naming-code-chunks",
+    "title": "5  Code chunks",
+    "section": "5.2 Naming code chunks",
+    "text": "5.2 Naming code chunks\nUse the label code chunk option. For example, #| label: slow-code-cached"
+  },
+  {
+    "objectID": "code_chunks.html#showing-entire-code-chunks",
+    "href": "code_chunks.html#showing-entire-code-chunks",
+    "title": "5  Code chunks",
+    "section": "5.3 Showing entire code chunks",
+    "text": "5.3 Showing entire code chunks\nWhen you want to display and entire code chunk in the rendered output, as opposed to executing the code chunk, surround it with four backticks.\nAlso, make sure to use double curly braces {{}} around the language name identifier. If you don’t, funky looking code will be output.\n````\n```{r}\n#| A code chunk for display\n#| eval:false\n1 + 1\n```\n````"
+  },
+  {
+    "objectID": "source_qmd_files.html",
+    "href": "source_qmd_files.html",
+    "title": "6  Sourcing qmd files",
+    "section": "",
+    "text": "We can “source” or programmatically render (as opposed to interactively rendering with the Render button) qmd files – including inside of code chunks in other qmd files. Here is an example code chunk.\n\nquarto::quarto_render(\"slow_code_cached.qmd\", quiet = TRUE)"
+  },
+  {
+    "objectID": "gifs.html#add-a-gif",
+    "href": "gifs.html#add-a-gif",
+    "title": "7  Gifs",
+    "section": "7.1 Add a gif",
+    "text": "7.1 Add a gif\nCurrently, I’m adding it in the same way I would add a video. I’m following these instructions. That document says, “In HTML formats the video will be embedded within the document. For other formats, a simple link to the video will be rendered.”"
+  },
+  {
+    "objectID": "pdf.html",
+    "href": "pdf.html",
+    "title": "8  PDF",
+    "section": "",
+    "text": "Notes on exporting the book to pdf.\nNot only how to render it to pdf, but is there an option\nAccording to this, it looks like we can make a pdf downloadable by adding downloads: [pdf, epub] to _quarto.yml. In the config file for this test book, we added downloads: pdf to the book options section.\nImportant: It looks like the option above only creates the link on the HTML page to download the pdf version of the book. However, a new pdf version of the book isn’t automatically rendered when we click the render button. You have to specifically render a pdf version separately from an html version.\nWe may want to think about creating an internal file with notes and a chunk that renders html and pdf when executed.\n```{bash}\n#| eval: false\nquarto render\n```\nEven easier, you can do this with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```"
+  },
+  {
+    "objectID": "publishing.html#github-repository",
+    "href": "publishing.html#github-repository",
+    "title": "9  Publishing",
+    "section": "9.1 GitHub repository",
+    "text": "9.1 GitHub repository\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process. - I created the repo on GitHub (with nothing but a README file) first. - I cloned the repo to my computer. - I clicked new project &gt; existing directory. - The downside is that RStudio didn’t give me the option to make it a Quarto book project. - In the terminal, following this guidance, I typed quarto create-project test_quarto_book --type book. - Make sure the terminal is set to the project’s directory. - That added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them."
+  },
+  {
+    "objectID": "publishing.html#github-pages",
+    "href": "publishing.html#github-pages",
+    "title": "9  Publishing",
+    "section": "9.2 GitHub Pages",
+    "text": "9.2 GitHub Pages\nUseful websites:\n\nhttps://quarto.org/docs/publishing/github-pages.html\n\nThat website discusses three methods for publishing the book with GitHub Pages.\n\nRender to Docs. The easiest and most straightforward. However, checking in the _book directory makes for messy diffs.\nThe publish command. Requires a little set up on the front end, but gives more control.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.\n\nI’m going with option 2 for now."
+  },
+  {
+    "objectID": "publishing.html#netlify",
+    "href": "publishing.html#netlify",
+    "title": "9  Publishing",
+    "section": "9.3 Netlify",
+    "text": "9.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "appendix_example.html",
+    "href": "appendix_example.html",
+    "title": "Appendix A — Example appendix",
+    "section": "",
+    "text": "This is just an example appendix."
+  }
+]
