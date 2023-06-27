@@ -200,7 +200,7 @@
     "href": "publishing.html#netlify",
     "title": "11  Publishing",
     "section": "11.3 Netlify",
-    "text": "11.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html"
+    "text": "11.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html\n\nThat website discusses three methods for publishing the book with Netlify.\n\nPublish without GitHub. This might be the easiest? I guess I should try it out and see how it goes.\n\nHere is the Netlify site that was created. This seems to work. Maybe just use it until I have a reason not to?\nThe potential downside here seems to be that you have to remember to go into the terminal and type quarto publish netlify. The published version isn’t automatically updated when you push the repo to GitHub.\n\nPublish from GitHub. At first glance, this seems to be the closest to the process I was using with Bookdown.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option."
   },
   {
     "objectID": "references.html",
