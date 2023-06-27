@@ -27,6 +27,7 @@ book:
   title: "Test Quarto Book"
   author: "Brad Cannell"
   date: today # Figure out how to automatically update the date on render.
+  favicon: img/r4epi_favicon.png
   repo-url: https://github.com/brad-cannell/
   repo-actions: [edit]
   
