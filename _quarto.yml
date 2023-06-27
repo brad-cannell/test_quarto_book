@@ -30,6 +30,11 @@ book:
   favicon: img/r4epi_favicon.png
   repo-url: https://github.com/brad-cannell/
   repo-actions: [edit]
+  page-footer: 
+    left: |
+      R for Epidemiology
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
   
   # Book options
   search: true
