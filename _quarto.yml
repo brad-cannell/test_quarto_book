@@ -45,6 +45,7 @@ book:
       
     - part: "Authoring"
       chapters: 
+        - rmd_documents.rmd
         - images.qmd
         - gifs.qmd
         - cross_references.qmd
