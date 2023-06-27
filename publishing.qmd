@@ -7,6 +7,7 @@ This chapter is about getting the book files on GitHub and creating an HTML vers
 The first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub's on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn't ever able to make it work. I feel like this shouldn't be the case and was probably just some weird one-off. So, don't give up on that process just yet.
 
 What I eventually got to work was this process.
+
 - I created the repo on GitHub (with nothing but a README file) first.
 - I cloned the repo to my computer. 
 - I clicked new project > existing directory.
