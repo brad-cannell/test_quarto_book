@@ -1,0 +1,14 @@
+{
+  "hash": "b9ab28dd586485e668f3d09663a7e55e",
+  "result": {
+    "markdown": "# Images {#sec-images}\n\nLinks\n\n- [The Quarto documentation about images](https://quarto.org/docs/authoring/figures.html)\n- [Example image in R4DS](https://github.com/hadley/r4ds/blob/main/intro.qmd)\n\n## Native Quarto figures\n\nHere are some examples of adding figures.\n\n![Relative Path Directions](img/directions_relative.png){#fig-directions}\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-directions`. See @fig-directions\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\n\n## Adding figures with Knitr\n\nIn R4DS (link above), Hadley et al. are still using `knitr::include_graphics(\"path\")` to insert images even though the book has been converted to Quarto documents. When using Bookdown, [Yihui gives four arguments](https://bookdown.org/yihui/bookdown/figures.html) for using `knitr::include_graphics(\"path\")` instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from [R4DS](https://github.com/hadley/r4ds/blob/main/intro.qmd):\n\n````\n```{{r}}\n#| label: fig-ds-diagram\n#| echo: false\n#| fig-cap: |\n#|   In our model of the data science process, you start with data import\n#|   and tidying. Next, you understand your data with an iterative cycle of\n#|   transforming, visualizing, and modeling. You finish the process \n#|   by communicating your results to other humans.\n#| fig-alt: |\n#|   A diagram displaying the data science cycle: Import -> Tidy -> Understand \n#|   (which has the phases Transform -> Visualize -> Model in a cycle) -> \n#|   Communicate. Surrounding all of these is Communicate.\n#| out.width: NULL\n\nknitr::include_graphics(\"diagrams/data-science/base.png\", dpi = 270)\n```\n````\n\nHere, I'm adding my own image with `knitr::include_graphics(\"path\")`.\n\n\n::: {.cell}\n::: {.cell-output-display}\n![Relative Path Directions.\n](img/directions_relative.png){#fig-directions fig-alt='An image of a store with directions' width=900}\n:::\n:::\n\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-directions`. See @fig-directions\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -12,6 +12,12 @@ format:
 # Set editor to default to source view instead of visual view
 editor: source
 
+# To make sure that R, Python, and Julia code is only executed locally, 
+# configure your project to use Quarto’s freeze feature by adding this to your 
+# _quarto.yml. (https://quarto.org/docs/publishing/netlify.html)
+execute:
+  freeze: auto
+
 # Book structure and options
 book:
   # Basic metadata

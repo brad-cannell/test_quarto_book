@@ -1,0 +1,20 @@
+{
+  "hash": "ea377d510849016ea95d6804c63032a8",
+  "result": {
+    "markdown": "# Gifs {#sec-gifs}\n\nIn R4Epi, we use quite a few gifs. That makes rendering the book to pdf format challenging. What happens when we add a gif to a qmd document and render it to pdf?\n\nThe following code works great for HTML format, but it messes up pdf format. \n\n````markdown\n![A gif about file paths](img/file_path_gif.gif){#fig-file-paths}\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the gif by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\n\n````\n\nWhat if I use `knitr::include_graphics(\"path\")`?\n\n````markdown\n\n```{{r}}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"img/file_path_gif.gif\")\n```\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\n\n````\n\nNo, this doesn't work either. [Here is a pretty good discussion on the topic](https://github.com/quarto-dev/quarto-cli/discussions/3551). It looks like the easiest route may be to use [conditional content](https://quarto.org/docs/authoring/conditional.html). Given the limited number of gifs in R4Epi, this shouldn't be too big of a problem.\n\nSo, start by conditionally displaying the gif if the output format is html. \n\n````markdown\n\n::: {.content-visible when-format=\"html\"}\n\n```{{r}}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"img/file_path_gif.gif\")\n```\n\n:::\n\n````\n\nWhich renders as...\n\n::: {.content-visible when-format=\"html\"}\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![A gif about file paths.\n](img/file_path_gif.gif){#fig-file-paths fig-alt='A gif about file paths.'}\n:::\n:::\n\n\n\n:::\n\nThen, conditionally add a thumbnail image of the gif when the output format is pdf. \n\n- Create a duplicate of the gif in Finder. \n- Add \"_thumb\" to the end of the file name (before the file extension).\n- Open the duplicate file in preview.\n- Use Preview's sidebar to keep only one of the thumbnail images from the gif (select and delete the rest).\n- Click File > Export and export to png. \n- Delete the duplicate gif.\n\n````markdown\n\n::: {.content-visible when-format=\"pdf\"}\n\n```{{r}}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A thumbnail of gif about file paths.\n#| fig-alt: |\n#|   A thumbnail gif about file paths.\n\nknitr::include_graphics(\"img/file_path_gif.gif\")\n```\n\n:::\n\n````\n\nWhich renders as...\n\n::: {.content-visible when-format=\"pdf\"}\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![A thumbnail of gif about file paths.\n](img/file_path_gif_thumb.png){#fig-file-paths_thumb fig-alt='A thumbnail gif about file paths.' width=6.13in}\n:::\n:::\n\n\n\n:::\n",
+    "supporting": [
+      "gifs_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}
