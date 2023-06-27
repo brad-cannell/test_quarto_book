@@ -40,3 +40,14 @@ quarto::quarto_render(output_format = "all")
 quarto publish gh-pages
 ```
 ````
+
+
+## Publishing to Netlify
+
+[This article is great](https://quarto.org/docs/publishing/netlify.html). After committing, and making sure you are on the main branch, type `quarto publish netlify` in the terminal.
+
+````
+```{bash}
+quarto publish netlify
+```
+````

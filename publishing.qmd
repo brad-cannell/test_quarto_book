@@ -37,3 +37,15 @@ I'm going with option 2 for now.
 Useful websites:
 
 -   https://quarto.org/docs/publishing/netlify.html
+
+That website discusses three methods for publishing the book with Netlify.
+
+1.  [Publish without GitHub](https://quarto.org/docs/publishing/netlify.html#publish-command). This might be the easiest? I guess I should try it out and see how it goes.
+
+    a. [Here is the Netlify site that was created](https://brad-cannell-test-quarto-book.netlify.app/). This seems to work. Maybe just use it until I have a reason not to?
+    
+    b. The potential downside here seems to be that you have to remember to go into the terminal and type `quarto publish netlify`. The published version isn't automatically updated when you push the repo to GitHub. 
+
+2.  [Publish from GitHub](https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider). At first glance, this seems to be the closest to the process I was using with Bookdown.
+
+3.  [GitHub Action](https://quarto.org/docs/publishing/netlify.html#github-action). You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.

@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 25e05cb9-cb5a-443b-9f0e-d58a2c07e853
+      url: 'https://brad-cannell-test-quarto-book.netlify.app'
