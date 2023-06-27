@@ -51,3 +51,7 @@ quarto publish gh-pages
 quarto publish netlify
 ```
 ````
+
+## Where to publish
+
+I've used Netlify in the past and have been happy with it. However, I'm not sure that it is necessary or efficient to add the extra layer of using Netlify in GitHub Pages will work just as well. Why introduce a third site into the mix if we don't have to? For now, I may just stick with GitHub Pages.
