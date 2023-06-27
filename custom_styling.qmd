@@ -1,0 +1,251 @@
+# Custom Styling {#sec-custom-styling}
+
+Useful websites:
+
+-   [Quarto documentation on HTML theming](https://quarto.org/docs/output-formats/html-themes.html)
+-   [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide)
+
+In the Bookdown version of R4Epi, I had a custom CSS stylesheet (i.e., `style.css`) that I used create some custom call-out boxes and a few other things. Here is the contents of that stylesheet.
+
+````
+```{{css}}
+
+/******************************************************************************
+CSS for the R4Epi textbook
+******************************************************************************/
+
+/*
+CSS that came with bookdown
+*/
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+
+/* 
+Font Styles
+*/
+.large-bold {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.red-text {
+  color: red;
+}
+
+.code {
+  color: #0365C0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+/*
+Note styles
+*/
+.note {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #f0f7fb;
+  border: solid 1px #3498db;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 15px;
+}
+
+.warning {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: #FEFBEA;
+  border: solid 1px #F2E394;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 15px;
+}
+
+
+/* 
+Text box with construction stripes for chapters under construction.
+Helpful websites: 
+https://css-tricks.com/stripes-css/
+https://stackoverflow.com/questions/10422949/css-background-opacity
+*/
+.under-construction {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  /*background-color: rgba(248, 116, 49, 0.4);*/ /* Fourth number is opacity */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(248, 116, 49, 0.1) /* Fourth number is opacity */,
+    rgba(248, 116, 49, 0.1) 10px,
+    rgba(169, 169, 169, 0.15) 10px,
+    rgba(169, 169, 169, 0.15) 20px
+  );
+  border: solid 1px #F87431;
+  border-radius: 6px;
+  line-height: 26px;
+  overflow: hidden;
+  padding: 15px 15px;
+  font-size: 24px;
+}
+
+
+/*
+Disable the title header from the index page.
+https://stackoverflow.com/questions/53399095/disable-title-author-in-the-html-output-of-bookdown
+*/
+#header {
+    display: none;
+}
+
+```
+````
+
+Following the guidance on [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide), I'm going use that stylesheet for this book too.
+
+````
+```{{scss}}
+
+/******************************************************************************
+Custom CSS styling for the Test Quarto Book
+******************************************************************************/
+
+/*-- scss:defaults --*/
+
+// Fonts
+// Importing a font from Google Fonts (https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts)
+// @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap'); // For testing
+$codeFont:  "Courier New", Courier, monospace;
+
+// Colors
+// $purple: #AE8BD1; // For testing
+$codeBackground: #0365C0;
+$noteBackground: #f0f7fb;
+$noteBorder: #3498db;
+$warningBackground: #FEFBEA;
+$warningBorder: #F2E394;
+
+// Adjustments to default Quarto styles
+// $body-bg: $purple; // page background -- for testing
+
+
+/*-- My Font Styles --*/
+.large-bold {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.red-text {
+  color: red;
+}
+
+.code {
+  color: $codeBackground;
+  font-family: $codeFont;
+}
+
+
+/*-- Note Styles --*/
+.note {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: $noteBackground;
+  border: solid 1px $noteBorder;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 15px;
+}
+
+.warning {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  background-color: $warningBackground;
+  border: solid 1px $warningBorder;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 15px 15px;
+}
+
+
+/* 
+Text box with construction stripes for chapters under construction.
+Helpful websites: 
+https://css-tricks.com/stripes-css/
+https://stackoverflow.com/questions/10422949/css-background-opacity
+
+I could create SASS variables for these elements, but I don't want to take the time to do that now.
+*/
+.under-construction {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  /*background-color: rgba(248, 116, 49, 0.4);*/ /* Fourth number is opacity */
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(248, 116, 49, 0.1) /* Fourth number is opacity */,
+    rgba(248, 116, 49, 0.1) 10px,
+    rgba(169, 169, 169, 0.15) 10px,
+    rgba(169, 169, 169, 0.15) 20px
+  );
+  border: solid 1px #F87431;
+  border-radius: 6px;
+  line-height: 26px;
+  overflow: hidden;
+  padding: 15px 15px;
+  font-size: 24px;
+}
+
+
+/*
+Disable the title header from the index page.
+https://stackoverflow.com/questions/53399095/disable-title-author-in-the-html-output-of-bookdown
+*/
+#header {
+    display: none;
+}
+
+```
+````
+
+For testing, I'm going to add a note, a warning, and a construction box.
+
+<p class="note"> 🗒**Side Note:** Here is a note. </p>
+
+````html
+<p class="note"> 🗒**Side Note:** Here is a note. </p>
+````
+
+<p class="warning"> ⚠️**Warning:** Here is a warning. </p>
+
+````html
+<p class="warning"> ⚠️**Warning:** Here is a warning. </p>
+````
+
+<p class="under-construction"> `r fontawesome::fa("hammer", fill = "#000000", height="1em")` Here is the under construction box.</p>
+
+````html
+<p class="under-construction"> `r fontawesome::fa("hammer", fill = "#000000", height="1em")` Here is the under construction box.</p>
+````
+
+Note that Font Awesome is not currently working and none of these call out boxes work in PDF format. Quarto's built-in call out boxes do work in PDF format, though.

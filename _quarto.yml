@@ -5,7 +5,10 @@ project:
 # Book formatting types and options
 format:
   html:
-    theme: cosmo
+    theme: 
+      - cosmo
+      - test_quarto_book_styles.scss
+    # mainfont: Roboto # For testing (https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts)
   pdf:
     documentclass: scrreprt
 
@@ -51,12 +54,13 @@ book:
       
     - part: "Authoring"
       chapters: 
-        - rmd_documents.rmd
-        - images.qmd
-        - gifs.qmd
-        - cross_references.qmd
         - call_out_boxes.qmd
-      
+        - cross_references.qmd
+        - custom_styling.qmd
+        - gifs.qmd
+        - images.qmd
+        - rmd_documents.rmd
+        
     - part: "Working with Code"
       chapters: 
         - code_chunks.qmd
