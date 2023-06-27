@@ -326,7 +326,18 @@ ul.task-list li input[type="checkbox"] {
 <section id="github-repository" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="github-repository"><span class="header-section-number">11.1</span> GitHub repository</h2>
 <p>The first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.</p>
-<p>What I eventually got to work was this process. - I created the repo on GitHub (with nothing but a README file) first. - I cloned the repo to my computer. - I clicked new project &gt; existing directory. - The downside is that RStudio didn’t give me the option to make it a Quarto book project. - In the terminal, <a href="https://quarto.org/docs/books/">following this guidance</a>, I typed <code>quarto create-project test_quarto_book --type book</code>. - Make sure the terminal is set to the project’s directory. - That added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them.</p>
+<p>What I eventually got to work was this process.</p>
+<ul>
+<li>I created the repo on GitHub (with nothing but a README file) first.</li>
+<li>I cloned the repo to my computer.</li>
+<li>I clicked new project &gt; existing directory.</li>
+<li>The downside is that RStudio didn’t give me the option to make it a Quarto book project.</li>
+<li>In the terminal, <a href="https://quarto.org/docs/books/">following this guidance</a>, I typed <code>quarto create-project test_quarto_book --type book</code>.
+<ul>
+<li>Make sure the terminal is set to the project’s directory.</li>
+</ul></li>
+<li>That added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them.</li>
+</ul>
 </section>
 <section id="github-pages" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="github-pages"><span class="header-section-number">11.2</span> GitHub Pages</h2>
