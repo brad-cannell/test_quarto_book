@@ -1,4 +1,5 @@
-# test_quarto_book
+# Test Quarto Book
+
 This repository is just for testing out [Quarto book](https://quarto.org/docs/books/) development. For now, I'm just using it for some experimentation.
 
 This is **not** my new R Notes book; although, I may move R Notes over to Quarto at some point. This is purely just a sandbox for playing with Quarto books.

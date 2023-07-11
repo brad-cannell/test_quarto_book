@@ -12,6 +12,10 @@ format:
   pdf:
     documentclass: scrreprt
 
+# Bibliography and citation options
+bibliography: references.bib
+csl: ama.csl
+
 # Set editor to default to source view instead of visual view
 editor: source
 
@@ -85,6 +89,4 @@ book:
   # We can also add appendicies and track them separately from other book parts.  
   appendices: 
     - appendix_example.qmd
-
-bibliography: references.bib
 

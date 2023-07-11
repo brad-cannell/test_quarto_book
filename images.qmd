@@ -58,3 +58,22 @@ And I can [cross reference](https://quarto.org/docs/authoring/cross-references.h
 ::: {.callout-important}
 For cross-references to work, the image must have a caption _and_ a label.
 :::
+
+::: {.callout-warning}
+## Creating figures without captions
+
+Figure captions will look like `Figure X: ?(caption)` if the chunk label is prefixed with `fig` (e.g., `#| label: fig-directions`), but there isn't a valid `#| fig-cap:`. There are more details given [here](https://github.com/quarto-dev/quarto-cli/issues/3878). There are two ways to resolve this issue:
+
+1. Remove the `fig-` part of the label.
+2. Add a valid figure caption.
+:::
+
+## Images
+
+Sometimes I want to add image borders to make the image stand out a little bit from the background around them. For example, it's kind of hard to distinguish @fig-default-citation from the text/background around it.
+
+After a quick Google search, there appears to be a [LaTeX package](https://quarto.org/docs/authoring/figures.html#environments) that will add a boarder, but I'm assuming that will only work for PDF renderings.
+
+Additionally, I imagine that I can probably make some adjustments to the .scss file that will add boarders to images. However, that should only work for HTML renderings. 
+
+Therefore, the most straightforward and robust option might just be to add the boarder directly to the image using PowerPoint, Preview, Photoshop, etc. That's what I did for @fig-ama-citation.

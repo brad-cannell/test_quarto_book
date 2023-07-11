@@ -12,3 +12,53 @@ Gotcha's:
 ## Citations
 
 Built-in example: See @knuth84 for additional discussion of literate programming.
+
+To [change the citation style](https://quarto.org/docs/authoring/footnotes-and-citations.html)
+
+1. Add a CSL file to the repo. For example, this repo has a file named `ama.csl`. The [Quarto Citations and Footnotes documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html) also includes links to download CSL files for a variety of citation formats.
+
+2. Update the `csl:` option in `_quarto.yml`. For example, `csl: ama.csl`.
+
+Here is what the default `@knuth84` citation above looks like after rendering this document.
+
+```{r}
+#| label: fig-default-citation
+#| echo: false
+#| fig-cap: An example of Quarto's default citation style.
+
+knitr::include_graphics("img/default_citation.png")
+```
+
+Here is what the default `@knuth84` reference looks like after rendering this document.
+
+```{r}
+#| label: default-reference
+#| echo: false
+#| fig-cap: An example of Quarto's default reference style.
+
+knitr::include_graphics("img/default_reference.png")
+```
+
+Here is what the `@knuth84` citation above looks like after changing the citation style to AMA and rendering this document.
+
+```{r}
+#| label: fig-ama-citation
+#| echo: false
+#| fig-cap: An example of an AMA citation.
+
+knitr::include_graphics("img/ama_citation.png")
+```
+
+Here is what the `@knuth84` reference looks like after changing the citation style to AMA and rendering this document.
+
+```{r}
+#| label: fig-ama-reference
+#| echo: false
+#| fig-cap: An example of an AMA reference.
+
+knitr::include_graphics("img/ama_reference.png")
+```
+
+## Footnotes
+
+I haven't done a lot of footnotes in the past, but [here is some documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes) in case I want to do them in the future.^[And here is an example footnote.]
