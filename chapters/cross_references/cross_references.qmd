@@ -26,7 +26,7 @@ Here is what the default `@knuth84` citation above looks like after rendering th
 #| echo: false
 #| fig-cap: An example of Quarto's default citation style.
 
-knitr::include_graphics("img/default_citation.png")
+knitr::include_graphics("default_citation.png")
 ```
 
 Here is what the default `@knuth84` reference looks like after rendering this document.
@@ -36,7 +36,7 @@ Here is what the default `@knuth84` reference looks like after rendering this do
 #| echo: false
 #| fig-cap: An example of Quarto's default reference style.
 
-knitr::include_graphics("img/default_reference.png")
+knitr::include_graphics("default_reference.png")
 ```
 
 Here is what the `@knuth84` citation above looks like after changing the citation style to AMA and rendering this document.
@@ -46,7 +46,7 @@ Here is what the `@knuth84` citation above looks like after changing the citatio
 #| echo: false
 #| fig-cap: An example of an AMA citation.
 
-knitr::include_graphics("img/ama_citation.png")
+knitr::include_graphics("ama_citation.png")
 ```
 
 Here is what the `@knuth84` reference looks like after changing the citation style to AMA and rendering this document.
@@ -56,7 +56,7 @@ Here is what the `@knuth84` reference looks like after changing the citation sty
 #| echo: false
 #| fig-cap: An example of an AMA reference.
 
-knitr::include_graphics("img/ama_reference.png")
+knitr::include_graphics("ama_reference.png")
 ```
 
 ## Footnotes

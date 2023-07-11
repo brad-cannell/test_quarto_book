@@ -9,7 +9,7 @@ Links
 
 Here are some examples of adding figures.
 
-![Relative Path Directions](img/directions_relative.png){#fig-directions}
+![Relative Path Directions](directions_relative.png){#fig-directions}
 
 And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-directions`. See @fig-directions
 
@@ -50,7 +50,7 @@ Here, I'm adding my own image with `knitr::include_graphics("path")`.
 #| fig-alt: |
 #|   An image of a store with directions
 
-knitr::include_graphics("img/directions_relative.png")
+knitr::include_graphics("directions_relative.png")
 ```
 
 And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-directions`. See @fig-directions

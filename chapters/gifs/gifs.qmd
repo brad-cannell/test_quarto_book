@@ -27,7 +27,7 @@ What if I use `knitr::include_graphics("path")`?
 #| fig-alt: |
 #|   A gif about file paths.
 
-knitr::include_graphics("img/file_path_gif.gif")
+knitr::include_graphics("file_path_gif.gif")
 ```
 
 And I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-file-paths`. See @fig-file-paths
@@ -54,7 +54,7 @@ So, start by conditionally displaying the gif if the output format is html.
 #| fig-alt: |
 #|   A gif about file paths.
 
-knitr::include_graphics("img/file_path_gif.gif")
+knitr::include_graphics("file_path_gif.gif")
 ```
 
 :::
@@ -73,7 +73,7 @@ Which renders as...
 #| fig-alt: |
 #|   A gif about file paths.
 
-knitr::include_graphics("img/file_path_gif.gif")
+knitr::include_graphics("file_path_gif.gif")
 ```
 
 :::
@@ -99,7 +99,7 @@ Then, conditionally add a thumbnail image of the gif when the output format is p
 #| fig-alt: |
 #|   A thumbnail gif about file paths.
 
-knitr::include_graphics("img/file_path_gif.gif")
+knitr::include_graphics("file_path_gif.gif")
 ```
 
 :::
@@ -118,7 +118,7 @@ Which renders as...
 #| fig-alt: |
 #|   A thumbnail gif about file paths.
 
-knitr::include_graphics("img/file_path_gif_thumb.png")
+knitr::include_graphics("file_path_gif_thumb.png")
 ```
 
 :::

@@ -1,0 +1,20 @@
+{
+  "hash": "c981c47d8cda428d4c4c5110106183a1",
+  "result": {
+    "markdown": "# Cross References {#sec-crossrefs}\n\nWhen authoring the book, it is common to need to cross reference book parts (i.e., chapters, sections), figures, tables, and I'm going to go ahead and include citations here too.\n\n## Book parts\n\n[Link to the official documentation](https://quarto.org/docs/books/book-crossrefs.html)\n\nGotcha's:\n- Sometimes I get errors like `WARNING: index.html: Unable to resolve crossref @sec-crossrefs`\n\n## Citations\n\nBuilt-in example: See @knuth84 for additional discussion of literate programming.\n\nTo [change the citation style](https://quarto.org/docs/authoring/footnotes-and-citations.html)\n\n1. Add a CSL file to the repo. For example, this repo has a file named `ama.csl`. The [Quarto Citations and Footnotes documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html) also includes links to download CSL files for a variety of citation formats.\n\n2. Update the `csl:` option in `_quarto.yml`. For example, `csl: ama.csl`.\n\nHere is what the default `@knuth84` citation above looks like after rendering this document.\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![An example of Quarto's default citation style.](default_citation.png){#fig-default-citation width=4.16in}\n:::\n:::\n\n\n\nHere is what the default `@knuth84` reference looks like after rendering this document.\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![An example of Quarto's default reference style.](default_reference.png){width=3.84in}\n:::\n:::\n\n\n\nHere is what the `@knuth84` citation above looks like after changing the citation style to AMA and rendering this document.\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![An example of an AMA citation.](ama_citation.png){#fig-ama-citation width=5.21in}\n:::\n:::\n\n\n\nHere is what the `@knuth84` reference looks like after changing the citation style to AMA and rendering this document.\n\n\n\n::: {.cell}\n::: {.cell-output-display}\n![An example of an AMA reference.](ama_reference.png){#fig-ama-reference width=4.84in}\n:::\n:::\n\n\n\n## Footnotes\n\nI haven't done a lot of footnotes in the past, but [here is some documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes) in case I want to do them in the future.^[And here is an example footnote.]",
+    "supporting": [
+      "cross_references_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

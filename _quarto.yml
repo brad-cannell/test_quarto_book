@@ -31,7 +31,7 @@ book:
   title: "Test Quarto Book"
   author: "Brad Cannell"
   date: today # Figure out how to automatically update the date on render.
-  favicon: img/r4epi_favicon.png
+  favicon: r4epi_favicon.png
   repo-url: https://github.com/brad-cannell/
   repo-actions: [edit]
   page-footer: 
@@ -56,37 +56,37 @@ book:
     # Parts can be qmd files (if you want explanitory text) or characater strings
     # If you only want a part title.
     # This method does not look good in pdf format.
-    - part: part_my_chapters.qmd
+    - part: chapters/part_my_chapters.qmd
       # Make sure to type "chapters" again under each part.
       chapters: 
-      - book_options.qmd
-      - other.qmd
+      - chapters/book_options.qmd
+      - chapters/other.qmd
       
     - part: "Authoring"
       chapters: 
-        - call_out_boxes.qmd
-        - cross_references.qmd
-        - custom_styling.qmd
-        - gifs.qmd
-        - images.qmd
-        - rmd_documents.rmd
+        - chapters/call_out_boxes.qmd
+        - chapters/cross_references/cross_references.qmd
+        - chapters/custom_styling.qmd
+        - chapters/gifs/gifs.qmd
+        - chapters/images/images.qmd
+        - chapters/rmd_documents.rmd
         
     - part: "Working with Code"
       chapters: 
-        - code_chunks.qmd
-        - source_qmd_files.qmd
+        - chapters/code_chunks.qmd
+        - chapters/source_qmd_files.qmd
         
     - part: "Publishing"
       chapters: 
-        - pdf.qmd
-        - publishing.qmd
+        - chapters/pdf.qmd
+        - chapters/publishing.qmd
     
     # Built-in chapters
     - part: "Built-in Chapters"
       chapters:
-        - references.qmd
+        - chapters/references.qmd
   
-  # We can also add appendicies and track them separately from other book parts.  
+  # We can also add appendices and track them separately from other book parts.  
   appendices: 
-    - appendix_example.qmd
+    - appendices/appendix_example.qmd
 
