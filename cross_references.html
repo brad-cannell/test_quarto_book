@@ -324,6 +324,7 @@ div.csl-indent {
   <ul>
   <li><a href="#book-parts" id="toc-book-parts" class="nav-link active" data-scroll-target="#book-parts"><span class="header-section-number">4.1</span> Book parts</a></li>
   <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">4.2</span> Citations</a></li>
+  <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes"><span class="header-section-number">4.3</span> Footnotes</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brad-cannell/edit/main/cross_references.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -355,14 +356,73 @@ div.csl-indent {
 </section>
 <section id="citations" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="citations"><span class="header-section-number">4.2</span> Citations</h2>
-<p>Built-in example: See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
+<p>Built-in example: See<span class="citation" data-cites="knuth84"><sup><a href="references.html#ref-knuth84" role="doc-biblioref">1</a></sup></span> for additional discussion of literate programming.</p>
+<p>To <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">change the citation style</a></p>
+<ol type="1">
+<li><p>Add a CSL file to the repo. For example, this repo has a file named <code>ama.csl</code>. The <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Quarto Citations and Footnotes documentation</a> also includes links to download CSL files for a variety of citation formats.</p></li>
+<li><p>Update the <code>csl:</code> option in <code>_quarto.yml</code>. For example, <code>csl: ama.csl</code>.</p></li>
+</ol>
+<p>Here is what the default <code>@knuth84</code> citation above looks like after rendering this document.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-default-citation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/default_citation.png" class="img-fluid figure-img" width="624"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.1: An example of Quarto’s default citation style.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here is what the default <code>@knuth84</code> reference looks like after rendering this document.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/default_reference.png" class="img-fluid figure-img" width="576"></p>
+<figcaption class="figure-caption">An example of Quarto’s default reference style.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here is what the <code>@knuth84</code> citation above looks like after changing the citation style to AMA and rendering this document.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ama-citation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/ama_citation.png" class="img-fluid figure-img" width="781"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.2: An example of an AMA citation.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Here is what the <code>@knuth84</code> reference looks like after changing the citation style to AMA and rendering this document.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-ama-reference" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="img/ama_reference.png" class="img-fluid figure-img" width="726"></p>
+<figcaption class="figure-caption">Figure&nbsp;4.3: An example of an AMA reference.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="footnotes" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">4.3</span> Footnotes</h2>
+<p>I haven’t done a lot of footnotes in the past, but <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes">here is some documentation</a> in case I want to do them in the future.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
 <div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Knuth DE. Literate programming. <em>Comput J</em>. 1984;27(2):97-111. doi:<a href="https://doi.org/10.1093/comjnl/27.2.97">10.1093/comjnl/27.2.97</a></div>
 </div>
 </div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>And here is an example footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->

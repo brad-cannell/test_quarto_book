@@ -339,6 +339,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#native-quarto-figures" id="toc-native-quarto-figures" class="nav-link active" data-scroll-target="#native-quarto-figures"><span class="header-section-number">7.1</span> Native Quarto figures</a></li>
   <li><a href="#adding-figures-with-knitr" id="toc-adding-figures-with-knitr" class="nav-link" data-scroll-target="#adding-figures-with-knitr"><span class="header-section-number">7.2</span> Adding figures with Knitr</a></li>
+  <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images"><span class="header-section-number">7.3</span> Images</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brad-cannell/edit/main/images.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -435,6 +436,30 @@ Important
 <p>For cross-references to work, the image must have a caption <em>and</em> a label.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creating figures without captions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Figure captions will look like <code>Figure X: ?(caption)</code> if the chunk label is prefixed with <code>fig</code> (e.g., <code>#| label: fig-directions</code>), but there isn’t a valid <code>#| fig-cap:</code>. There are more details given <a href="https://github.com/quarto-dev/quarto-cli/issues/3878">here</a>. There are two ways to resolve this issue:</p>
+<ol type="1">
+<li>Remove the <code>fig-</code> part of the label.</li>
+<li>Add a valid figure caption.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="images" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="images"><span class="header-section-number">7.3</span> Images</h2>
+<p>Sometimes I want to add image borders to make the image stand out a little bit from the background around them. For example, it’s kind of hard to distinguish <a href="cross_references.html#fig-default-citation">Figure&nbsp;<span>4.1</span></a> from the text/background around it.</p>
+<p>After a quick Google search, there appears to be a <a href="https://quarto.org/docs/authoring/figures.html#environments">LaTeX package</a> that will add a boarder, but I’m assuming that will only work for PDF renderings.</p>
+<p>Additionally, I imagine that I can probably make some adjustments to the .scss file that will add boarders to images. However, that should only work for HTML renderings.</p>
+<p>Therefore, the most straightforward and robust option might just be to add the boarder directly to the image using PowerPoint, Preview, Photoshop, etc. That’s what I did for <a href="cross_references.html#fig-ama-citation">Figure&nbsp;<span>4.2</span></a>.</p>
 
 
 </section>

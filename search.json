@@ -60,7 +60,14 @@
     "href": "cross_references.html#citations",
     "title": "4  Cross References",
     "section": "4.2 Citations",
-    "text": "4.2 Citations\nBuilt-in example: See Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "4.2 Citations\nBuilt-in example: See1 for additional discussion of literate programming.\nTo change the citation style\n\nAdd a CSL file to the repo. For example, this repo has a file named ama.csl. The Quarto Citations and Footnotes documentation also includes links to download CSL files for a variety of citation formats.\nUpdate the csl: option in _quarto.yml. For example, csl: ama.csl.\n\nHere is what the default @knuth84 citation above looks like after rendering this document.\n\n\n\n\n\nFigure 4.1: An example of Quarto’s default citation style.\n\n\n\n\nHere is what the default @knuth84 reference looks like after rendering this document.\n\n\n\n\n\nAn example of Quarto’s default reference style.\n\n\n\n\nHere is what the @knuth84 citation above looks like after changing the citation style to AMA and rendering this document.\n\n\n\n\n\nFigure 4.2: An example of an AMA citation.\n\n\n\n\nHere is what the @knuth84 reference looks like after changing the citation style to AMA and rendering this document.\n\n\n\n\n\nFigure 4.3: An example of an AMA reference."
+  },
+  {
+    "objectID": "cross_references.html#footnotes",
+    "href": "cross_references.html#footnotes",
+    "title": "4  Cross References",
+    "section": "",
+    "text": "And here is an example footnote.↩︎"
   },
   {
     "objectID": "custom_styling.html",
@@ -88,7 +95,14 @@
     "href": "images.html#adding-figures-with-knitr",
     "title": "7  Images",
     "section": "7.2 Adding figures with Knitr",
-    "text": "7.2 Adding figures with Knitr\nIn R4DS (link above), Hadley et al. are still using knitr::include_graphics(\"path\") to insert images even though the book has been converted to Quarto documents. When using Bookdown, Yihui gives four arguments for using knitr::include_graphics(\"path\") instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from R4DS:\n```{r}\n#| label: fig-ds-diagram\n#| echo: false\n#| fig-cap: |\n#|   In our model of the data science process, you start with data import\n#|   and tidying. Next, you understand your data with an iterative cycle of\n#|   transforming, visualizing, and modeling. You finish the process \n#|   by communicating your results to other humans.\n#| fig-alt: |\n#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand \n#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; \n#|   Communicate. Surrounding all of these is Communicate.\n#| out.width: NULL\n\nknitr::include_graphics(\"diagrams/data-science/base.png\", dpi = 270)\n```\nHere, I’m adding my own image with knitr::include_graphics(\"path\").\n\n\n\n\n\nFigure 7.2: Relative Path Directions.\n\n\n\n\nAnd I can cross reference the figure by typing @fig-directions. See Figure 7.2\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label."
+    "text": "7.2 Adding figures with Knitr\nIn R4DS (link above), Hadley et al. are still using knitr::include_graphics(\"path\") to insert images even though the book has been converted to Quarto documents. When using Bookdown, Yihui gives four arguments for using knitr::include_graphics(\"path\") instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from R4DS:\n```{r}\n#| label: fig-ds-diagram\n#| echo: false\n#| fig-cap: |\n#|   In our model of the data science process, you start with data import\n#|   and tidying. Next, you understand your data with an iterative cycle of\n#|   transforming, visualizing, and modeling. You finish the process \n#|   by communicating your results to other humans.\n#| fig-alt: |\n#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand \n#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; \n#|   Communicate. Surrounding all of these is Communicate.\n#| out.width: NULL\n\nknitr::include_graphics(\"diagrams/data-science/base.png\", dpi = 270)\n```\nHere, I’m adding my own image with knitr::include_graphics(\"path\").\n\n\n\n\n\nFigure 7.2: Relative Path Directions.\n\n\n\n\nAnd I can cross reference the figure by typing @fig-directions. See Figure 7.2\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label.\n\n\n\n\n\n\n\n\nCreating figures without captions\n\n\n\nFigure captions will look like Figure X: ?(caption) if the chunk label is prefixed with fig (e.g., #| label: fig-directions), but there isn’t a valid #| fig-cap:. There are more details given here. There are two ways to resolve this issue:\n\nRemove the fig- part of the label.\nAdd a valid figure caption."
+  },
+  {
+    "objectID": "images.html#images",
+    "href": "images.html#images",
+    "title": "7  Images",
+    "section": "7.3 Images",
+    "text": "7.3 Images\nSometimes I want to add image borders to make the image stand out a little bit from the background around them. For example, it’s kind of hard to distinguish Figure 4.1 from the text/background around it.\nAfter a quick Google search, there appears to be a LaTeX package that will add a boarder, but I’m assuming that will only work for PDF renderings.\nAdditionally, I imagine that I can probably make some adjustments to the .scss file that will add boarders to images. However, that should only work for HTML renderings.\nTherefore, the most straightforward and robust option might just be to add the boarder directly to the image using PowerPoint, Preview, Photoshop, etc. That’s what I did for Figure 4.2."
   },
   {
     "objectID": "rmd_documents.html#lets-get-programming",
@@ -214,7 +228,7 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+    "text": "1. Knuth DE. Literate programming. Comput\nJ. 1984;27(2):97-111. doi:10.1093/comjnl/27.2.97"
   },
   {
     "objectID": "appendix_example.html",
