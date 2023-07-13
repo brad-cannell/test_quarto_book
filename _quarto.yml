@@ -32,7 +32,7 @@ book:
   author: "Brad Cannell"
   date: today # Figure out how to automatically update the date on render.
   favicon: r4epi_favicon.png
-  repo-url: https://github.com/brad-cannell/
+  repo-url: https://github.com/brad-cannell/test_quarto_book
   repo-actions: [edit]
   page-footer: 
     left: |
