@@ -88,5 +88,6 @@ book:
   
   # We can also add appendices and track them separately from other book parts.  
   appendices: 
-    - appendices/appendix_example.qmd
+    - chapters/appendices/appendix_example.qmd
+    - chapters/appendices/glossary.qmd
 
