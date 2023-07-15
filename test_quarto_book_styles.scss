@@ -40,6 +40,16 @@ $warningBorder: #F2E394;
   font-family: $codeFont;
 }
 
+/* I was using this to experiment with glossary terms.
+h2.glossary-term {
+  font-size: 12pt;
+}
+*/
+
+.glossary-term {
+  font-size: 14pt;
+  font-weight: bold;
+}
 
 /*-- Note Styles --*/
 .note {

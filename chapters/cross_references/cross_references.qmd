@@ -22,20 +22,27 @@ See @sec-images to learn about images.
 
 Which looks like this: See @sec-images to learn about images.
 
-If I don't want `@sec-images` to automatically be replaced with `Chapter 7`, I think I will need to use hyperlinks (see [the section on hyperlinks](cross_references.qmd#hyperlinks) below).
-
-::: callout-important
-## Controlling 
-
-See @sec-images to learn about images. If I don't want `@sec-images` to automatically be replaced with `Chapter 7`, I think I will need to use hyperlinks (see @sec-hyperlinks below). 
-
 ::: callout-important
 ## Label Prefix
 
 In order for a chapter to be cross-referenceable, its label must start with the `sec-` prefix.
 :::
 
-### Hyperlinks {#sec-hyperlinks}
+If I don't want `@sec-images` to automatically be replaced with `Chapter 7` -- for example, I want it to say `the images chapter` instead -- then I think I will need to use hyperlinks ( below). For example,
+
+````markdown
+See [the images chapter](../images/images.qmd)
+````
+
+Which looks like this: See [the images chapter](../images/images.qmd)
+
+::: callout-important
+## Hyperlink file paths
+
+When using hyperlinks to connect chatpers/sections, make sure to use the full file path (originating from the current qmd file). For example, use `../images/images.qmd` instead of just `images.qmd`. If you change the file structure, you may break the links. This is one reason why you may want to use that `@sec-` syntax whenever possible.
+:::
+
+Chapter sections work the same way. You are able to cross-reference any heading at any level. For example, 
 
 ## Citations
 
@@ -93,6 +100,46 @@ I haven't done a lot of footnotes in the past, but [here is some documentation](
 
 ## Glossary
 
-Following the emphasizing text guidance in the [R4Epi Wiki](https://github.com/brad-cannell/r4epi_quarto/wiki/Emphasizing-Text#keywords), we sometimes want to hyperlink words that we will define in the @sec-glossary or [Appendix -@sec-glossary] [Glossary](../appendices/glossary.qmd).
+Following the emphasizing text guidance in the [R4Epi Wiki](https://github.com/brad-cannell/r4epi/wiki/Emphasizing-Text), we sometimes want to hyperlink words that we will define in the [Glossary](../appendices/glossary.qmd). We can definitely link selected words in the narrative of the chapers to _headers_, but I haven't been able to figure out a way to link them to words in the glossary that aren't headers. Therefore, the best strategy so far seems to be to make the glossary words headers, style them with CSS, then link words in the narrative of the chapters to those headers in the glossary. 
 
-[Here is the documentation for book crossrefs](https://quarto.org/docs/books/book-crossrefs.html)
+For example, let's say that we want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary. The first thing we do is turn the word "data frame" into a header and assign it an ID. For now, I'm planning to prefix all glossary IDs with the word "glossary" in case I need to search for them later. 
+
+````markdown
+## Data frame {#glossary-data-frame}
+````
+
+Next, use a hyperlink to reference that header in the narrative of the chapter. For example, 
+
+````markdown
+We want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.
+````
+
+Which looks like this: We want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.
+
+This works, but the word "data frame" is numbered and styled like a section header in the glossary. That isn't the look we are going for. We can remove the numbering by adding the `.unnumbered` class to the header like this.
+
+````markdown
+## Data frame {#glossary-data-frame .unnumbered}
+````
+
+I tried to further adjust the CSS. I got it to work, but it didn't affect the PDF. So, I think it may be best just to stop here for now.
+
+There is one additional problem. Linking to headers like that causes each term to appear in the PDF table of contents. That could get really long.
+
+Thanks to [this SO post](https://stackoverflow.com/questions/35285467/how-to-make-a-line-below-text-without-text-decoration-underline), I think I figured out a solution. In `glossary.qmd`, write the glossary term like this.
+
+````markdown
+<a name="glossary-test-word">Test word</a>
+````
+
+Next, use a hyperlink to reference that header in the narrative of the chapter. For example, 
+
+````markdown
+Does [this word](../appendices/glossary.qmd#glossary-test-word) work?
+````
+
+Which looks like this: Does [this word](../appendices/glossary.qmd#glossary-test-word) work?
+
+Then, let's style it in the CSS file. 
+
+This works for the HTML version of the book, but not the PDF version. Specifically, the links aren't active and the css styling isn't applied.

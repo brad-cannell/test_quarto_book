@@ -42,7 +42,7 @@ book:
   
   # Book options
   search: true
-  downloads: [pdf, epub] # https://quarto.org/docs/books/book-output.html#sidebar-tools
+  # downloads: [pdf, epub] # https://quarto.org/docs/books/book-output.html#sidebar-tools
   sharing: [twitter, facebook]
   page-navigation: true # Haven't played with this much yet. https://quarto.org/docs/books/book-structure.html#page-navigation
 
@@ -56,7 +56,7 @@ book:
     # Parts can be qmd files (if you want explanitory text) or characater strings
     # If you only want a part title.
     # This method does not look good in pdf format.
-    - part: chapters/part_my_chapters.qmd
+    - part: "chapters/part_book_options.qmd"
       # Make sure to type "chapters" again under each part.
       chapters: 
       - chapters/book_options.qmd
