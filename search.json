@@ -28,6 +28,13 @@
     "text": "Publishing to GitHub pages\nThis article is great. After committing, and making sure you are on the main branch, type quarto publish gh-pages in the terminal."
   },
   {
+    "objectID": "chapters/part_book_options.html",
+    "href": "chapters/part_book_options.html",
+    "title": "Book Options",
+    "section": "",
+    "text": "This part of the book contains qmd files pertaining to book options. I’m mostly creating this file to demonstrate how the (optional) book part qmd files work."
+  },
+  {
     "objectID": "chapters/book_options.html",
     "href": "chapters/book_options.html",
     "title": "1  Book Options",
@@ -53,7 +60,7 @@
     "href": "chapters/cross_references/cross_references.html#book-parts",
     "title": "4  Cross References",
     "section": "4.1 Book parts",
-    "text": "4.1 Book parts\nLink to the official documentation\nGotcha’s: - Sometimes I get errors like WARNING: index.html: Unable to resolve crossref @sec-crossrefs"
+    "text": "4.1 Book parts\nLink to the official documentation. Briefly, there are two methods that I’m likely to use.\n\n4.1.1 Reference a chapter\nFirst, you need to make a chapter/section heading available to be referenced by adding {#sec-} behind the header. For example:\n# Images {#sec-images}\nThen to reference it you type @sec-. For example:\nSee @sec-images to learn about images.\nWhich looks like this: See Chapter 7 to learn about images.\n\n\n\n\n\n\nLabel Prefix\n\n\n\nIn order for a chapter to be cross-referenceable, its label must start with the sec- prefix.\n\n\nIf I don’t want @sec-images to automatically be replaced with Chapter 7 – for example, I want it to say the images chapter instead – then I think I will need to use hyperlinks ( below). For example,\nSee [the images chapter](../images/images.qmd)\nWhich looks like this: See the images chapter\n\n\n\n\n\n\nHyperlink file paths\n\n\n\nWhen using hyperlinks to connect chatpers/sections, make sure to use the full file path (originating from the current qmd file). For example, use ../images/images.qmd instead of just images.qmd. If you change the file structure, you may break the links. This is one reason why you may want to use that @sec- syntax whenever possible.\n\n\nChapter sections work the same way. You are able to cross-reference any heading at any level. For example,"
   },
   {
     "objectID": "chapters/cross_references/cross_references.html#citations",
@@ -68,6 +75,13 @@
     "title": "4  Cross References",
     "section": "",
     "text": "And here is an example footnote.↩︎"
+  },
+  {
+    "objectID": "chapters/cross_references/cross_references.html#glossary",
+    "href": "chapters/cross_references/cross_references.html#glossary",
+    "title": "4  Cross References",
+    "section": "4.4 Glossary",
+    "text": "4.4 Glossary\nFollowing the emphasizing text guidance in the R4Epi Wiki, we sometimes want to hyperlink words that we will define in the Glossary. We can definitely link selected words in the narrative of the chapers to headers, but I haven’t been able to figure out a way to link them to words in the glossary that aren’t headers. Therefore, the best strategy so far seems to be to make the glossary words headers, style them with CSS, then link words in the narrative of the chapters to those headers in the glossary.\nFor example, let’s say that we want to define the term data frame in the glossary. The first thing we do is turn the word “data frame” into a header and assign it an ID. For now, I’m planning to prefix all glossary IDs with the word “glossary” in case I need to search for them later.\n## Data frame {#glossary-data-frame}\nNext, use a hyperlink to reference that header in the narrative of the chapter. For example,\nWe want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.\nWhich looks like this: We want to define the term data frame in the glossary.\nThis works, but the word “data frame” is numbered and styled like a section header in the glossary. That isn’t the look we are going for. We can remove the numbering by adding the .unnumbered class to the header like this.\n## Data frame {#glossary-data-frame .unnumbered}\nI tried to further adjust the CSS. I got it to work, but it didn’t affect the PDF. So, I think it may be best just to stop here for now.\nThere is one additional problem. Linking to headers like that causes each term to appear in the PDF table of contents. That could get really long.\nThanks to this SO post, I think I figured out a solution. In glossary.qmd, write the glossary term like this.\n&lt;a name=\"glossary-test-word\"&gt;Test word&lt;/a&gt;\nNext, use a hyperlink to reference that header in the narrative of the chapter. For example,\nDoes [this word](../appendices/glossary.qmd#glossary-test-word) work?\nWhich looks like this: Does this word work?\nThen, let’s style it in the CSS file.\nThis works for the HTML version of the book, but not the PDF version. Specifically, the links aren’t active and the css styling isn’t applied.\n\n\n\n\n1. Knuth DE. Literate programming. Comput J. 1984;27(2):97-111. doi:10.1093/comjnl/27.2.97"
   },
   {
     "objectID": "chapters/custom_styling.html",
@@ -228,13 +242,69 @@
     "href": "chapters/references.html",
     "title": "References",
     "section": "",
-    "text": "1. Knuth DE. Literate programming. Comput\nJ. 1984;27(2):97-111. doi:10.1093/comjnl/27.2.97"
+    "text": "1. Knuth DE. Literate programming. Comput\nJ. 1984;27(2):97-111. doi:10.1093/comjnl/27.2.97\n\n\n2. R\nDevelopment Core Team. An Introduction to R.;\n2020.\n\n\n3. RStudio. RStudio. Published online\n2020.\n\n\n4. RStudio. R markdown. Published\nonline 2020."
   },
   {
-    "objectID": "appendices/appendix_example.html",
-    "href": "appendices/appendix_example.html",
+    "objectID": "chapters/appendices/appendix_example.html",
+    "href": "chapters/appendices/appendix_example.html",
     "title": "Appendix A — Example appendix",
     "section": "",
     "text": "This is just an example appendix."
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-console",
+    "href": "chapters/appendices/glossary.html#glossary-console",
+    "title": "Appendix B — Glossary",
+    "section": "Console",
+    "text": "Console\nComing soon."
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-data-frame",
+    "href": "chapters/appendices/glossary.html#glossary-data-frame",
+    "title": "Appendix B — Glossary",
+    "section": "Data frame",
+    "text": "Data frame\nFor our purposes, data frames are just R’s term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length."
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-functions",
+    "href": "chapters/appendices/glossary.html#glossary-functions",
+    "title": "Appendix B — Glossary",
+    "section": "Functions",
+    "text": "Functions\nComing soon.\n\nArguments: Arguments always go inside the parentheses of a function and give the function the information it needs to give us the result we want.\nPass: In programming lingo, you pass a value to a function argument. For example, in the funtion call seq(from = 2, to = 100, by = 2) we could say that we passed a value of 2 to the from argument, we passed a value of 100 to the to argument, and we passed a value of 2 to the by argument.\nReturns: Instead of saying, “the seq() function gives us a sequence of numbers…” we could say, “the seq() function returns us a sequence of numbers…” In programming lingo, functions return one or more results."
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-global-environment",
+    "href": "chapters/appendices/glossary.html#glossary-global-environment",
+    "title": "Appendix B — Glossary",
+    "section": "Global environment",
+    "text": "Global environment\nComing soon."
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-objects",
+    "href": "chapters/appendices/glossary.html#glossary-objects",
+    "title": "Appendix B — Glossary",
+    "section": "Objects",
+    "text": "Objects\nComing soon."
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-r",
+    "href": "chapters/appendices/glossary.html#glossary-r",
+    "title": "Appendix B — Glossary",
+    "section": "R",
+    "text": "R\nR is an integrated suite of software facilities for data manipulation, calculation and graphical display. R is very much a vehicle for newly developing methods of interactive data analysis. It has developed rapidly and has been extended by a large collection of packages. However, most programs written in R are essentially ephemeral, written for a single piece of data analysis.1"
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-r-markdown-documents",
+    "href": "chapters/appendices/glossary.html#glossary-r-markdown-documents",
+    "title": "Appendix B — Glossary",
+    "section": "R markdown documents",
+    "text": "R markdown documents\nR markdown documents are text files that can be used to clean and analyze your data interactively as well as share your final results in many different formats (e.g., Microsoft Word, PDF, and even websites). R markdown documents weave together R code, narrative text, and multimedia content together into a polished final product.2"
+  },
+  {
+    "objectID": "chapters/appendices/glossary.html#glossary-rstudio",
+    "href": "chapters/appendices/glossary.html#glossary-rstudio",
+    "title": "Appendix B — Glossary",
+    "section": "RStudio",
+    "text": "RStudio\nRStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux) or in a browser connected to RStudio Server or RStudio Server Pro (Debian/Ubuntu, Red Hat/CentOS, and SUSE Linux).3\n  Test word  \nThis is a test glossary term that I’m try to reference in Chapter 4 without making it a header. I don’t want to make it a header because that makes the table of contents really long when rendering to PDF (see this gh issue).\n\n\n\n\n1. R Development Core Team. An Introduction to R.; 2020.\n\n\n2. RStudio. R markdown. Published online 2020.\n\n\n3. RStudio. RStudio. Published online 2020."
   }
 ]
