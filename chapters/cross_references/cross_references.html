@@ -477,38 +477,34 @@ Hyperlink file paths
 </section>
 <section id="glossary" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="glossary"><span class="header-section-number">4.4</span> Glossary</h2>
-<p>Following the emphasizing text guidance in the <a href="https://github.com/brad-cannell/r4epi/wiki/Emphasizing-Text">R4Epi Wiki</a>, we sometimes want to hyperlink words that we will define in the <a href="../../chapters/appendices/glossary.html">Glossary</a>. We can definitely link selected words in the narrative of the chapers to <em>headers</em>, but I haven’t been able to figure out a way to link them to words in the glossary that aren’t headers. Therefore, the best strategy so far seems to be to make the glossary words headers, style them with CSS, then link words in the narrative of the chapters to those headers in the glossary.</p>
-<p>For example, let’s say that we want to define the term <a href="../../chapters/appendices/glossary.html#glossary-data-frame">data frame</a> in the glossary. The first thing we do is turn the word “data frame” into a header and assign it an ID. For now, I’m planning to prefix all glossary IDs with the word “glossary” in case I need to search for them later.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data frame {#glossary-data-frame}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Next, use a hyperlink to reference that header in the narrative of the chapter. For example,</p>
+<p>Following the emphasizing text guidance in the <a href="https://github.com/brad-cannell/r4epi/wiki/Emphasizing-Text">R4Epi Wiki</a>, we sometimes want to hyperlink words that we will define in the <a href="../../chapters/appendices/glossary.html">Glossary</a>. We can definitely link selected words in the narrative of the chapters to <em>headings</em>, but that approach creates a line in the table of contents for each word in the glossary, which isn’t ideal. I posted this issue on <a href="https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362">Stack Overflow</a>. Therefore, the best strategy so far seems to be using <a href="https://pandoc.org/MANUAL.html#definition-lists">definition lists</a>.</p>
+<p>For example, let’s say that we want to define the term <a href="../../chapters/appendices/glossary.html">data frame</a> in the glossary. The first thing we do is assign and CSS ID to the word “data frame” in the glossary qmd file. For now, I’m planning to prefix all glossary IDs with the word “glossary” in case I need to search for them later.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Data frame</span><span class="co">]</span>{#glossary-data-frame} </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition lists
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The colon followed by two spaces before the term’s definition is not optional.</p>
+</div>
+</div>
+<p>Next, use a hyperlink to reference the glossary term in the narrative of the chapter. For example,</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>We want to define the term <span class="co">[</span><span class="ot">data frame</span><span class="co">](../appendices/glossary.qmd#glossary-data-frame)</span> in the glossary.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which looks like this: We want to define the term <a href="../../chapters/appendices/glossary.html#glossary-data-frame">data frame</a> in the glossary.</p>
-<p>This works, but the word “data frame” is numbered and styled like a section header in the glossary. That isn’t the look we are going for. We can remove the numbering by adding the <code>.unnumbered</code> class to the header like this.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data frame {#glossary-data-frame .unnumbered}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>I tried to further adjust the CSS. I got it to work, but it didn’t affect the PDF. So, I think it may be best just to stop here for now.</p>
-<p>There is one additional problem. Linking to headers like that causes each term to appear in the PDF table of contents. That could get really long.</p>
-<p>Thanks to <a href="https://stackoverflow.com/questions/35285467/how-to-make-a-line-below-text-without-text-decoration-underline">this SO post</a>, I think I figured out a solution. In <code>glossary.qmd</code>, write the glossary term like this.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;a</span> <span class="er">name</span><span class="ot">=</span><span class="st">"glossary-test-word"</span><span class="kw">&gt;</span>Test word<span class="kw">&lt;/a&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Next, use a hyperlink to reference that header in the narrative of the chapter. For example,</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Does <span class="co">[</span><span class="ot">this word</span><span class="co">](../appendices/glossary.qmd#glossary-test-word)</span> work?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Which looks like this: Does <a href="../../chapters/appendices/glossary.html#glossary-test-word">this word</a> work?</p>
-<p>Then, let’s style it in the CSS file.</p>
-<p>This works for the HTML version of the book, but not the PDF version. Specifically, the links aren’t active and the css styling isn’t applied.</p>
-<p><a href="https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362">Here is the solutions I got from Julian on SO</a>.</p>
-<blockquote class="blockquote">
-Pandoc already supports <a href="https://pandoc.org/MANUAL.html#definition-lists">defintion lists</a>, which for HTML output render to desciption list (
-<dl>
-<p>) elemements. – all credits to <a href="https://github.com/quarto-dev/quarto-cli/issues/1697#issuecomment-1462441697">salim</a>!</p>
-</dl></blockquote>
-<p>So, use the following syntax in the <a href="../appendices/glossary.html">glossary</a></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Glossary {.unnumbered}</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Test definition</span><span class="co">]</span>{#glossary-test-definition}</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>:   This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see <span class="co">[</span><span class="ot">this gh issue</span><span class="co">](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&amp;itemId=33310870)</span>).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then, use a hyperlink to reference that header in the narrative of the chapter. For example,</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Does this <span class="co">[</span><span class="ot">test definition</span><span class="co">](../appendices/glossary.qmd#glossary-test-word)</span> work?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Does this <a href="../../chapters/appendices/glossary.html#glossary-test-definition">test definition</a> work?</p>
+<p>Additionally, terms linked in this way should also work in PDF downloads.</p>
+<p>If we want to adjust the style of the of the glossary term (e.g., increase the font size or make it bold), we can do so in the <code>.scss</code> file. For example,</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dl {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">pt</span><span class="op">;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We use <code>dl</code> because Pandoc renders the HTML output to description list (<code>&lt;dl&gt;</code>) elements. This styling should also work in PDF downloads.</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
