@@ -494,6 +494,21 @@ Hyperlink file paths
 <p>Which looks like this: Does <a href="../../chapters/appendices/glossary.html#glossary-test-word">this word</a> work?</p>
 <p>Then, let’s style it in the CSS file.</p>
 <p>This works for the HTML version of the book, but not the PDF version. Specifically, the links aren’t active and the css styling isn’t applied.</p>
+<p><a href="https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362">Here is the solutions I got from Julian on SO</a>.</p>
+<blockquote class="blockquote">
+Pandoc already supports <a href="https://pandoc.org/MANUAL.html#definition-lists">defintion lists</a>, which for HTML output render to desciption list (
+<dl>
+<p>) elemements. – all credits to <a href="https://github.com/quarto-dev/quarto-cli/issues/1697#issuecomment-1462441697">salim</a>!</p>
+</dl></blockquote>
+<p>So, use the following syntax in the <a href="../appendices/glossary.html">glossary</a></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Glossary {.unnumbered}</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Test definition</span><span class="co">]</span>{#glossary-test-definition}</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>:   This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see <span class="co">[</span><span class="ot">this gh issue</span><span class="co">](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&amp;itemId=33310870)</span>).</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, use a hyperlink to reference that header in the narrative of the chapter. For example,</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Does this <span class="co">[</span><span class="ot">test definition</span><span class="co">](../appendices/glossary.qmd#glossary-test-word)</span> work?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Does this <a href="../../chapters/appendices/glossary.html#glossary-test-definition">test definition</a> work?</p>
 
 
 <div id="refs" class="references csl-bib-body" role="list" style="display: none">
