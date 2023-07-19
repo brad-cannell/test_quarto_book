@@ -40,73 +40,10 @@ $warningBorder: #F2E394;
   font-family: $codeFont;
 }
 
-/* I was using this to experiment with glossary terms.
-h2.glossary-term {
-  font-size: 12pt;
-}
-*/
 
-.glossary-term {
+
+/*-- Glossary Styles --*/
+dt {
   font-size: 14pt;
   font-weight: bold;
-}
-
-/*-- Note Styles --*/
-.note {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  background-color: $noteBackground;
-  border: solid 1px $noteBorder;
-  border-radius: 6px;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 15px 15px;
-}
-
-.warning {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  background-color: $warningBackground;
-  border: solid 1px $warningBorder;
-  border-radius: 6px;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 15px 15px;
-}
-
-
-/* 
-Text box with construction stripes for chapters under construction.
-Helpful websites: 
-https://css-tricks.com/stripes-css/
-https://stackoverflow.com/questions/10422949/css-background-opacity
-
-I could create SASS variables for these elements, but I don't want to take the time to do that now.
-*/
-.under-construction {
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  /*background-color: rgba(248, 116, 49, 0.4);*/ /* Fourth number is opacity */
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(248, 116, 49, 0.1) /* Fourth number is opacity */,
-    rgba(248, 116, 49, 0.1) 10px,
-    rgba(169, 169, 169, 0.15) 10px,
-    rgba(169, 169, 169, 0.15) 20px
-  );
-  border: solid 1px #F87431;
-  border-radius: 6px;
-  line-height: 26px;
-  overflow: hidden;
-  padding: 15px 15px;
-  font-size: 24px;
-}
-
-
-/*
-Disable the title header from the index page.
-https://stackoverflow.com/questions/53399095/disable-title-author-in-the-html-output-of-bookdown
-*/
-#header {
-    display: none;
 }

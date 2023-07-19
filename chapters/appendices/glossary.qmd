@@ -1,16 +1,16 @@
 # Glossary {#sec-glossary}
 
-## Console {#glossary-console .unnumbered}
+[Console]{#glossary-console}
 
-Coming soon.
+:  Coming soon.
 
-## Data frame {#glossary-data-frame .unnumbered} 
+[Data frame]{#glossary-data-frame} 
 
-For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.
+:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.
 
-## Functions {#glossary-functions .unnumbered} 
+[Functions]{#glossary-functions} 
 
-Coming soon.
+:  Coming soon.
 
   * **Arguments:** Arguments always go _inside_ the parentheses of a function and give the function the information it needs to give us the result we want.   
 
@@ -18,34 +18,22 @@ Coming soon.
 
   * **Returns:** Instead of saying, “the `seq()` function _gives us_ a sequence of numbers…” we could say, “the `seq()` function _returns_ us a sequence of numbers…” In programming lingo, functions _return_ one or more results.  
   
-## Global environment {#glossary-global-environment .unnumbered}
+[Global environment]{#glossary-global-environment}
 
-Coming soon.
+:  Coming soon.
 
-## Objects {#glossary-objects .unnumbered}
+[Objects]{#glossary-objects}
 
-Coming soon.
+:  Coming soon.
 
-## R {#glossary-r .unnumbered}
+[R]{#glossary-r}
 
-R is an integrated suite of software facilities for data manipulation, calculation and graphical display. R is very much a vehicle for newly developing methods of interactive data analysis. It has developed rapidly and has been extended by a large collection of packages. However, most programs written in R are essentially ephemeral, written for a single piece of data analysis. @R_Development_Core_Team2020-sj
+:  R is an integrated suite of software facilities for data manipulation, calculation and graphical display. R is very much a vehicle for newly developing methods of interactive data analysis. It has developed rapidly and has been extended by a large collection of packages. However, most programs written in R are essentially ephemeral, written for a single piece of data analysis. @R_Development_Core_Team2020-sj
 
-## R markdown documents {#glossary-r-markdown-documents .unnumbered}
+[R markdown documents]{#glossary-r-markdown-documents}
 
-R markdown documents are text files that can be used to clean and analyze your data interactively as well as share your final results in many different formats (e.g., Microsoft Word, PDF, and even websites). R markdown documents weave together R code, narrative text, and multimedia content together into a polished final product. @RStudio2020-yx
+:  R markdown documents are text files that can be used to clean and analyze your data interactively as well as share your final results in many different formats (e.g., Microsoft Word, PDF, and even websites). R markdown documents weave together R code, narrative text, and multimedia content together into a polished final product. @RStudio2020-yx
 
-## RStudio {#glossary-rstudio .unnumbered}
+[RStudio]{#glossary-rstudio}
 
-RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux) or in a browser connected to RStudio Server or RStudio Server Pro (Debian/Ubuntu, Red Hat/CentOS, and SUSE Linux). @RStudio2020-fe
-
-<a name="glossary-test-word">
-  <span class="glossary-term">
-    Test word
-  </span>
-</a>
-
-This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see [this gh issue](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&itemId=33310870)).
-
-[Test definition]{#glossary-test-definition .glossary-term}
-
-:   This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see [this so post](https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362).
+:  RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. RStudio is available in open source and commercial editions and runs on the desktop (Windows, Mac, and Linux) or in a browser connected to RStudio Server or RStudio Server Pro (Debian/Ubuntu, Red Hat/CentOS, and SUSE Linux). @RStudio2020-fe

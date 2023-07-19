@@ -100,15 +100,23 @@ I haven't done a lot of footnotes in the past, but [here is some documentation](
 
 ## Glossary
 
-Following the emphasizing text guidance in the [R4Epi Wiki](https://github.com/brad-cannell/r4epi/wiki/Emphasizing-Text), we sometimes want to hyperlink words that we will define in the [Glossary](../appendices/glossary.qmd). We can definitely link selected words in the narrative of the chapers to _headers_, but I haven't been able to figure out a way to link them to words in the glossary that aren't headers. Therefore, the best strategy so far seems to be to make the glossary words headers, style them with CSS, then link words in the narrative of the chapters to those headers in the glossary. 
+Following the emphasizing text guidance in the [R4Epi Wiki](https://github.com/brad-cannell/r4epi/wiki/Emphasizing-Text), we sometimes want to hyperlink words that we will define in the [Glossary](../appendices/glossary.qmd). We can definitely link selected words in the narrative of the chapters to _headings_, but that approach creates a line in the table of contents for each word in the glossary, which isn't ideal. I posted this issue on [Stack Overflow](https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362). Therefore, the best strategy so far seems to be using [definition lists](https://pandoc.org/MANUAL.html#definition-lists). 
 
-For example, let's say that we want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary. The first thing we do is turn the word "data frame" into a header and assign it an ID. For now, I'm planning to prefix all glossary IDs with the word "glossary" in case I need to search for them later. 
+For example, let's say that we want to define the term [data frame](../appendices/glossary.qmd) in the glossary. The first thing we do is assign and CSS ID to the word "data frame" in the glossary qmd file. For now, I'm planning to prefix all glossary IDs with the word "glossary" in case I need to search for them later. 
 
 ````markdown
-## Data frame {#glossary-data-frame}
+[Data frame]{#glossary-data-frame} 
+
+:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.
 ````
 
-Next, use a hyperlink to reference that header in the narrative of the chapter. For example, 
+::: callout-important
+## Definition lists
+
+The colon followed by two spaces before the term's definition is not optional. 
+:::
+
+Next, use a hyperlink to reference the glossary term in the narrative of the chapter. For example, 
 
 ````markdown
 We want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.
@@ -116,52 +124,15 @@ We want to define the term [data frame](../appendices/glossary.qmd#glossary-data
 
 Which looks like this: We want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.
 
-This works, but the word "data frame" is numbered and styled like a section header in the glossary. That isn't the look we are going for. We can remove the numbering by adding the `.unnumbered` class to the header like this.
+Additionally, terms linked in this way should also work in PDF downloads.
 
-````markdown
-## Data frame {#glossary-data-frame .unnumbered}
+If we want to adjust the style of the of the glossary term (e.g., increase the font size or make it bold), we can do so in the `.scss` file. For example,
+
+````css
+dl {
+  font-size: 14pt;
+  font-weight: bold;
+}
 ````
 
-I tried to further adjust the CSS. I got it to work, but it didn't affect the PDF. So, I think it may be best just to stop here for now.
-
-There is one additional problem. Linking to headers like that causes each term to appear in the PDF table of contents. That could get really long.
-
-Thanks to [this SO post](https://stackoverflow.com/questions/35285467/how-to-make-a-line-below-text-without-text-decoration-underline), I think I figured out a solution. In `glossary.qmd`, write the glossary term like this.
-
-````markdown
-<a name="glossary-test-word">Test word</a>
-````
-
-Next, use a hyperlink to reference that header in the narrative of the chapter. For example, 
-
-````markdown
-Does [this word](../appendices/glossary.qmd#glossary-test-word) work?
-````
-
-Which looks like this: Does [this word](../appendices/glossary.qmd#glossary-test-word) work?
-
-Then, let's style it in the CSS file. 
-
-This works for the HTML version of the book, but not the PDF version. Specifically, the links aren't active and the css styling isn't applied.
-
-[Here is the solutions I got from Julian on SO](https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362).
-
-> Pandoc already supports [defintion lists](https://pandoc.org/MANUAL.html#definition-lists), which for HTML output render to desciption list (<dl>) elemements. -- all credits to [salim](https://github.com/quarto-dev/quarto-cli/issues/1697#issuecomment-1462441697)!
-
-So, use the following syntax in the [glossary](#sec-glossary)
-
-````markdown
-# Glossary {.unnumbered}
-
-[Test definition]{#glossary-test-definition}
-
-:   This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see [this gh issue](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&itemId=33310870)).
-````
-
-Then, use a hyperlink to reference that header in the narrative of the chapter. For example,
-
-````markdown
-Does this [test definition](../appendices/glossary.qmd#glossary-test-word) work?
-````
-
-Does this [test definition](../appendices/glossary.qmd#glossary-test-definition) work?
+We use `dl` because  Pandoc renders the HTML output to description list (`<dl>`) elements. This styling should also work in PDF downloads.
