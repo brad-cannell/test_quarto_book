@@ -45,3 +45,7 @@ RStudio is an integrated development environment (IDE) for R. It includes a cons
 </a>
 
 This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see [this gh issue](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&itemId=33310870)).
+
+[Test definition]{#glossary-test-definition .glossary-term}
+
+:   This is a test glossary term that I'm try to reference in @sec-crossrefs without making it a header. I don't want to make it a header because that makes the table of contents really long when rendering to PDF (see [this so post](https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362).
