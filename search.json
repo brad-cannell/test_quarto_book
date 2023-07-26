@@ -238,6 +238,13 @@
     "text": "12.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html\n\nThat website discusses three methods for publishing the book with Netlify.\n\nPublish without GitHub. This might be the easiest? I guess I should try it out and see how it goes.\n\nHere is the Netlify site that was created. This seems to work. Maybe just use it until I have a reason not to?\nThe potential downside here seems to be that you have to remember to go into the terminal and type quarto publish netlify. The published version isn’t automatically updated when you push the repo to GitHub.\n\nPublish from GitHub. At first glance, this seems to be the closest to the process I was using with Bookdown.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option."
   },
   {
+    "objectID": "chapters/publishing.html#publishing-revealjs-presentations",
+    "href": "chapters/publishing.html#publishing-revealjs-presentations",
+    "title": "12  Publishing",
+    "section": "12.4 Publishing Revealjs presentations",
+    "text": "12.4 Publishing Revealjs presentations\n2023-07-26: I created these notes while trying to publish the presenation I did for Texas DSHS.\n\n12.4.1 Useful links\n\nOfficial publishing Revealjs documentation\nOfficial publishing HTML basics documentation\n\n\n\n12.4.2 What I did to publish\n\nWhen I began this process, I had already created the presentation in an R project.\nCreate a new GitHub repo (with nothing but a README file): https://github.com/brad-cannell/dshs-2023-07-26.\nCreate a gh-pages branch in GitHub.\nSet the repositories source branch to gh-pages. https://quarto.org/docs/publishing/github-pages.html#source-branch\nSettings &gt; Pages &gt; Deploy from branch & select gh-pages as the branch.\nClone the repo to your computer.\nCopy and paste all of files I had already created into the newly cloned directory.\nRename the qmd file that creates the presentation to index.qmd. The gh-pages branch will look for an html file named index.\nRender index.qmd. quarto render in terminal.\nCommit and push all of the file changes.\nIn the terminal, type quarto publish gh-pages.\nThe presentation should appear at https://brad-cannell.github.io/dshs-2023-07-26."
+  },
+  {
     "objectID": "chapters/references.html",
     "href": "chapters/references.html",
     "title": "References",

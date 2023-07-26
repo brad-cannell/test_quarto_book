@@ -312,6 +312,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#github-repository" id="toc-github-repository" class="nav-link active" data-scroll-target="#github-repository"><span class="header-section-number">12.1</span> GitHub repository</a></li>
   <li><a href="#github-pages" id="toc-github-pages" class="nav-link" data-scroll-target="#github-pages"><span class="header-section-number">12.2</span> GitHub Pages</a></li>
   <li><a href="#netlify" id="toc-netlify" class="nav-link" data-scroll-target="#netlify"><span class="header-section-number">12.3</span> Netlify</a></li>
+  <li><a href="#publishing-revealjs-presentations" id="toc-publishing-revealjs-presentations" class="nav-link" data-scroll-target="#publishing-revealjs-presentations"><span class="header-section-number">12.4</span> Publishing Revealjs presentations</a>
+  <ul class="collapse">
+  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links"><span class="header-section-number">12.4.1</span> Useful links</a></li>
+  <li><a href="#what-i-did-to-publish" id="toc-what-i-did-to-publish" class="nav-link" data-scroll-target="#what-i-did-to-publish"><span class="header-section-number">12.4.2</span> What I did to publish</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brad-cannell/test_quarto_book/edit/main/chapters/publishing.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
@@ -382,8 +387,36 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://quarto.org/docs/publishing/netlify.html#publish-from-git-provider">Publish from GitHub</a>. At first glance, this seems to be the closest to the process I was using with Bookdown.</p></li>
 <li><p><a href="https://quarto.org/docs/publishing/netlify.html#github-action">GitHub Action</a>. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.</p></li>
 </ol>
+</section>
+<section id="publishing-revealjs-presentations" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="publishing-revealjs-presentations"><span class="header-section-number">12.4</span> Publishing Revealjs presentations</h2>
+<p>2023-07-26: I created these notes while trying to publish the presenation I did for Texas DSHS.</p>
+<section id="useful-links" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="useful-links"><span class="header-section-number">12.4.1</span> Useful links</h3>
+<ul>
+<li><a href="https://quarto.org/docs/presentations/revealjs/presenting.html#publishing">Official publishing Revealjs documentation</a></li>
+<li><a href="https://quarto.org/docs/publishing/">Official publishing HTML basics documentation</a></li>
+</ul>
+</section>
+<section id="what-i-did-to-publish" class="level3" data-number="12.4.2">
+<h3 data-number="12.4.2" class="anchored" data-anchor-id="what-i-did-to-publish"><span class="header-section-number">12.4.2</span> What I did to publish</h3>
+<ul>
+<li>When I began this process, I had already created the presentation in an R project.</li>
+<li>Create a new GitHub repo (with nothing but a README file): https://github.com/brad-cannell/dshs-2023-07-26.</li>
+<li>Create a <code>gh-pages</code> branch in GitHub.</li>
+<li>Set the repositories source branch to <code>gh-pages</code>. https://quarto.org/docs/publishing/github-pages.html#source-branch</li>
+<li>Settings &gt; Pages &gt; Deploy from branch &amp; select gh-pages as the branch.</li>
+<li>Clone the repo to your computer.</li>
+<li>Copy and paste all of files I had already created into the newly cloned directory.</li>
+<li>Rename the qmd file that creates the presentation to <code>index.qmd</code>. The <code>gh-pages</code> branch will look for an html file named <code>index</code>.</li>
+<li>Render <code>index.qmd</code>. <code>quarto render</code> in terminal.</li>
+<li>Commit and push all of the file changes.</li>
+<li>In the terminal, type <code>quarto publish gh-pages</code>.</li>
+<li>The presentation should appear at <code>https://brad-cannell.github.io/dshs-2023-07-26</code>.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
