@@ -1,0 +1,31 @@
+---
+params:
+  test_param: "Hello World!"
+---
+
+# Parameterizing {#sec-parameterizing}
+
+Notes on parameterizing Quarto documents.
+
+Useful websites:
+
+- [Render parameterized reports with Quarto](https://www.jhelvy.com/posts/2023-02-28-parameterized-pdfs-with-quarto/)
+
+We add parameters to the yaml header of the Quarto file. For example, this file has the following yaml header:
+
+````yaml
+---
+params:
+  test_param: "Hello World!"
+---
+````
+
+We can then use that parameter in our markdown like this.
+
+````markdown
+My test parameter says, "`r params$test_param`"
+````
+
+And here is what is rendered: My test parameter says, "`r params$test_param`". 
+
+Currently, this doesn' appear to work. However, it did work for the [L2C mater table](https://brad-cannell.github.io/l2c_master_table/). I'm not sure why. Right now, all I can come up with is that it is some difference between a Quarto book and a Quarto website. Try to figure this out later.
