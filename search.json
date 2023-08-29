@@ -182,67 +182,88 @@
     "text": "8.9 Summary\nWow! We covered a lot in this first part of the book on getting started with R and RStudio. Don’t feel bad if your head is swimming. It’s a lot to take-in. However, you should feel proud of the fact that you can already do some legitimately useful things with R. Namely, simulate and analyze data. In the next part of this book, we are going to discuss some tools and best practices that will make it easier and more efficient for you to write and share your R code. After that, we will move on to tackling more advanced programming and data analysis challenges."
   },
   {
+    "objectID": "chapters/tables.html#test-table",
+    "href": "chapters/tables.html#test-table",
+    "title": "9  Tables",
+    "section": "9.1 Test table",
+    "text": "9.1 Test table\nJust quickly testing to see if it will download. Need to better document this in the future.\n\nkey &lt;- tribble(\n ~var, ~description,\n \"ml_age\", \"Participant's age at baseline.\",\n \"ml_gender_f\", \"Participant's self-reported sex at baseline.\",\n \"ml_race_f\", \"Participant's self-reported race at baseline.\",\n \"ml_race_eth_4cat_f\", \"Participant's self-reported race at baseline. Collapsed into four categories.\",\n \"ml_hispanic_f\", \"Participant's self-report of Hispanic ethnicity at baseline.\"\n)\n\nInitially, the code chunk above created a datatable version of the table.\n```{r}\nDT::datatable(\n  key,\n  colnames = c(\"Variable Name\", \"Variable Description\")\n)\n```\nWhen I tried to render the book, I got the following error:\nError: Functions that produce HTML output found in document targeting pdf output.\nPlease change the output type of this document to HTML. Alternatively, you can allow\nHTML output in non-HTML formats by adding this option to the YAML front-matter of\nyour quarto file:\n\n  prefer-html: true\n\nNote however that the HTML output will not be visible in non-HTML formats.\n\nExecution halted\n\nknitr::kable(key)\n\n\n\n\n\n\n\n\nvar\ndescription\n\n\n\n\nml_age\nParticipant’s age at baseline.\n\n\nml_gender_f\nParticipant’s self-reported sex at baseline.\n\n\nml_race_f\nParticipant’s self-reported race at baseline.\n\n\nml_race_eth_4cat_f\nParticipant’s self-reported race at baseline. Collapsed into four categories.\n\n\nml_hispanic_f\nParticipant’s self-report of Hispanic ethnicity at baseline."
+  },
+  {
+    "objectID": "chapters/tables.html#issues",
+    "href": "chapters/tables.html#issues",
+    "title": "9  Tables",
+    "section": "9.2 Issues",
+    "text": "9.2 Issues\n\nWhy do I get ?@tbl-demographics-overall and how do I fix it?\n\nThere may be other reasons why this error can occur, but I was getting it because Quarto doesn’t currently support table captions for datatables. You can, however, use figure captions for datatables."
+  },
+  {
     "objectID": "chapters/code_chunks.html#code-run-time",
     "href": "chapters/code_chunks.html#code-run-time",
-    "title": "9  Code chunks",
-    "section": "9.1 Code Run Time",
-    "text": "9.1 Code Run Time\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense."
+    "title": "10  Code chunks",
+    "section": "10.1 Code Run Time",
+    "text": "10.1 Code Run Time\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense."
   },
   {
     "objectID": "chapters/code_chunks.html#naming-code-chunks",
     "href": "chapters/code_chunks.html#naming-code-chunks",
-    "title": "9  Code chunks",
-    "section": "9.2 Naming code chunks",
-    "text": "9.2 Naming code chunks\nUse the label code chunk option. For example, #| label: slow-code-cached"
+    "title": "10  Code chunks",
+    "section": "10.2 Naming code chunks",
+    "text": "10.2 Naming code chunks\nUse the label code chunk option. For example, #| label: slow-code-cached"
   },
   {
     "objectID": "chapters/code_chunks.html#showing-entire-code-chunks",
     "href": "chapters/code_chunks.html#showing-entire-code-chunks",
-    "title": "9  Code chunks",
-    "section": "9.3 Showing entire code chunks",
-    "text": "9.3 Showing entire code chunks\nWhen you want to display and entire code chunk in the rendered output, as opposed to executing the code chunk, surround it with four backticks.\nAlso, make sure to use double curly braces {{}} around the language name identifier. If you don’t, funky looking code will be output.\n````\n```{r}\n#| A code chunk for display\n#| eval:false\n1 + 1\n```\n````"
+    "title": "10  Code chunks",
+    "section": "10.3 Showing entire code chunks",
+    "text": "10.3 Showing entire code chunks\nWhen you want to display and entire code chunk in the rendered output, as opposed to executing the code chunk, surround it with four backticks.\nAlso, make sure to use double curly braces {{}} around the language name identifier. If you don’t, funky looking code will be output.\n````\n```{r}\n#| A code chunk for display\n#| eval:false\n1 + 1\n```\n````"
+  },
+  {
+    "objectID": "chapters/parameterizing.html",
+    "href": "chapters/parameterizing.html",
+    "title": "11  Parameterizing",
+    "section": "",
+    "text": "Notes on parameterizing Quarto documents.\nUseful websites:\n\nRender parameterized reports with Quarto\n\nWe add parameters to the yaml header of the Quarto file. For example, this file has the following yaml header:\n---\nparams:\n  test_param: \"Hello World!\"\n---\nWe can then use that parameter in our markdown like this.\nMy test parameter says, \"`r params$test_param`\"\nAnd here is what is rendered: My test parameter says, “r params$test_param”.\nCurrently, this doesn’ appear to work. However, it did work for the L2C mater table. I’m not sure why. Right now, all I can come up with is that it is some difference between a Quarto book and a Quarto website. Try to figure this out later."
   },
   {
     "objectID": "chapters/source_qmd_files.html",
     "href": "chapters/source_qmd_files.html",
-    "title": "10  Sourcing qmd files",
+    "title": "12  Sourcing qmd files",
     "section": "",
     "text": "We can “source” or programmatically render (as opposed to interactively rendering with the Render button) qmd files – including inside of code chunks in other qmd files. Here is an example code chunk.\n\nquarto::quarto_render(\"slow_code_cached.qmd\", quiet = TRUE)"
   },
   {
     "objectID": "chapters/pdf.html",
     "href": "chapters/pdf.html",
-    "title": "11  PDF",
+    "title": "13  PDF",
     "section": "",
     "text": "Notes on exporting the book to pdf.\nNot only how to render it to pdf, but is there an option\nAccording to this, it looks like we can make a pdf downloadable by adding downloads: [pdf, epub] to _quarto.yml. In the config file for this test book, we added downloads: pdf to the book options section.\nImportant: It looks like the option above only creates the link on the HTML page to download the pdf version of the book. However, a new pdf version of the book isn’t automatically rendered when we click the render button. You have to specifically render a pdf version separately from an html version.\nWe may want to think about creating an internal file with notes and a chunk that renders html and pdf when executed.\n```{bash}\n#| eval: false\nquarto render\n```\nEven easier, you can do this with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```"
   },
   {
+    "objectID": "chapters/slide_presentations.html#revealjs-presentations",
+    "href": "chapters/slide_presentations.html#revealjs-presentations",
+    "title": "14  Slide presentations",
+    "section": "14.1 Revealjs presentations",
+    "text": "14.1 Revealjs presentations\n\n14.1.1 Useful links\n\nOfficial publishing Revealjs documentation\nOfficial publishing HTML basics documentation\n\n\n\n14.1.2 Create the project\n\nStart by creating a GitHub repo.\nCreate a gh-pages branch in GitHub.\nSet the repositories source branch to gh-pages. https://quarto.org/docs/publishing/github-pages.html#source-branch\n\nSettings &gt; Pages &gt; Deploy from branch & select gh-pages as the branch.\n\nClone the repo to your computer.\n\nOpen a new RStudio session.\nCreate a new project in an existing directory. Use the cloned directory.\nIn the project, create a new file titled _quarto.yml with the following content.\n\n#| eval: false\nproject:\n  title: \"Project Name\"\n\nCreate a new Quarto file named index.qmd. Update the yml header to look something like the following.\n\n#| eval: false\n---\ntitle: \"Name on Title Slide\"\nsubtitle: \"Optional Subtitle\"\ndate: \"July 26, 2023\"\nformat: \n  revealjs:\n    css: style.css\n    preview-links: false\nlogo: uthealth_sph_logo.png\n---\n\nNotice that you can optionally add a CSS file as well.\n\n\n\n14.1.3 Authoring Revealjs presentations\n\nHow do I add interactive quizzes? Use Poll Everywhere?\n\n\n\n14.1.4 What I did to publish the DSHS presentation\n\n2023-07-26: I created these notes while trying to publish the presentation I did for Texas DSHS.\nWhen I began this process, I had already created the presentation in an R project.\nCreate a new GitHub repo (with nothing but a README file): https://github.com/brad-cannell/dshs-2023-07-26.\nCreate a gh-pages branch in GitHub.\nSet the repositories source branch to gh-pages. https://quarto.org/docs/publishing/github-pages.html#source-branch\nSettings &gt; Pages &gt; Deploy from branch & select gh-pages as the branch.\nClone the repo to your computer.\nCopy and paste all of files I had already created into the newly cloned directory.\nRename the qmd file that creates the presentation to index.qmd. The gh-pages branch will look for an html file named index.\nRender index.qmd. quarto render in terminal.\nCommit and push all of the file changes.\nIn the terminal, type quarto publish gh-pages.\nThe presentation should appear at https://brad-cannell.github.io/dshs-2023-07-26."
+  },
+  {
     "objectID": "chapters/publishing.html#github-repository",
     "href": "chapters/publishing.html#github-repository",
-    "title": "12  Publishing",
-    "section": "12.1 GitHub repository",
-    "text": "12.1 GitHub repository\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process.\n\nI created the repo on GitHub (with nothing but a README file) first.\nI cloned the repo to my computer.\nI clicked new project &gt; existing directory.\nThe downside is that RStudio didn’t give me the option to make it a Quarto book project.\nIn the terminal, following this guidance, I typed quarto create-project test_quarto_book --type book.\n\nMake sure the terminal is set to the project’s directory.\n\nThat added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them."
+    "title": "15  Publishing",
+    "section": "15.1 GitHub repository",
+    "text": "15.1 GitHub repository\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process.\n\nI created the repo on GitHub (with nothing but a README file) first.\nI cloned the repo to my computer.\nI clicked new project &gt; existing directory.\nThe downside is that RStudio didn’t give me the option to make it a Quarto book project.\nIn the terminal, following this guidance, I typed quarto create-project test_quarto_book --type book.\n\nMake sure the terminal is set to the project’s directory.\n\nThat added all the built-in book stuff, but in a folder inside the current folder. You can move all of the files you’re interested in over if you want. Since I already had the files I had been previously working with (but wasn’t able to push to GitHub), I moved them over and worked with them."
   },
   {
     "objectID": "chapters/publishing.html#github-pages",
     "href": "chapters/publishing.html#github-pages",
-    "title": "12  Publishing",
-    "section": "12.2 GitHub Pages",
-    "text": "12.2 GitHub Pages\nUseful websites:\n\nhttps://quarto.org/docs/publishing/github-pages.html\n\nThat website discusses three methods for publishing the book with GitHub Pages.\n\nRender to Docs. The easiest and most straightforward. However, checking in the _book directory makes for messy diffs.\nThe publish command. Requires a little set up on the front end, but gives more control.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.\n\nI’m going with option 2 for now."
+    "title": "15  Publishing",
+    "section": "15.2 GitHub Pages",
+    "text": "15.2 GitHub Pages\nUseful websites:\n\nhttps://quarto.org/docs/publishing/github-pages.html\n\nThat website discusses three methods for publishing the book with GitHub Pages.\n\nRender to Docs. The easiest and most straightforward. However, checking in the _book directory makes for messy diffs.\nThe publish command. Requires a little set up on the front end, but gives more control.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option.\n\nI’m going with option 2 for now."
   },
   {
     "objectID": "chapters/publishing.html#netlify",
     "href": "chapters/publishing.html#netlify",
-    "title": "12  Publishing",
-    "section": "12.3 Netlify",
-    "text": "12.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html\n\nThat website discusses three methods for publishing the book with Netlify.\n\nPublish without GitHub. This might be the easiest? I guess I should try it out and see how it goes.\n\nHere is the Netlify site that was created. This seems to work. Maybe just use it until I have a reason not to?\nThe potential downside here seems to be that you have to remember to go into the terminal and type quarto publish netlify. The published version isn’t automatically updated when you push the repo to GitHub.\n\nPublish from GitHub. At first glance, this seems to be the closest to the process I was using with Bookdown.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option."
-  },
-  {
-    "objectID": "chapters/publishing.html#publishing-revealjs-presentations",
-    "href": "chapters/publishing.html#publishing-revealjs-presentations",
-    "title": "12  Publishing",
-    "section": "12.4 Publishing Revealjs presentations",
-    "text": "12.4 Publishing Revealjs presentations\n2023-07-26: I created these notes while trying to publish the presenation I did for Texas DSHS.\n\n12.4.1 Useful links\n\nOfficial publishing Revealjs documentation\nOfficial publishing HTML basics documentation\n\n\n\n12.4.2 What I did to publish\n\nWhen I began this process, I had already created the presentation in an R project.\nCreate a new GitHub repo (with nothing but a README file): https://github.com/brad-cannell/dshs-2023-07-26.\nCreate a gh-pages branch in GitHub.\nSet the repositories source branch to gh-pages. https://quarto.org/docs/publishing/github-pages.html#source-branch\nSettings &gt; Pages &gt; Deploy from branch & select gh-pages as the branch.\nClone the repo to your computer.\nCopy and paste all of files I had already created into the newly cloned directory.\nRename the qmd file that creates the presentation to index.qmd. The gh-pages branch will look for an html file named index.\nRender index.qmd. quarto render in terminal.\nCommit and push all of the file changes.\nIn the terminal, type quarto publish gh-pages.\nThe presentation should appear at https://brad-cannell.github.io/dshs-2023-07-26."
+    "title": "15  Publishing",
+    "section": "15.3 Netlify",
+    "text": "15.3 Netlify\nUseful websites:\n\nhttps://quarto.org/docs/publishing/netlify.html\n\nThat website discusses three methods for publishing the book with Netlify.\n\nPublish without GitHub. This might be the easiest? I guess I should try it out and see how it goes.\n\nHere is the Netlify site that was created. This seems to work. Maybe just use it until I have a reason not to?\nThe potential downside here seems to be that you have to remember to go into the terminal and type quarto publish netlify. The published version isn’t automatically updated when you push the repo to GitHub.\n\nPublish from GitHub. At first glance, this seems to be the closest to the process I was using with Bookdown.\nGitHub Action. You might prefer this if you want execution and/or rendering to be automatically triggered from commits. However, it seems like the most complicated option."
   },
   {
     "objectID": "chapters/references.html",
