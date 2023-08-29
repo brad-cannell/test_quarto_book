@@ -1,0 +1,63 @@
+# Slide presentations {#sec-slide-presentations}
+
+## Revealjs presentations
+
+### Useful links
+
+- [Official publishing Revealjs documentation](https://quarto.org/docs/presentations/revealjs/presenting.html#publishing)
+- [Official publishing HTML basics documentation](https://quarto.org/docs/publishing/)
+
+### Create the project
+
+- Start by creating a GitHub repo.
+- Create a `gh-pages` branch in GitHub.
+- Set the repositories source branch to `gh-pages`. https://quarto.org/docs/publishing/github-pages.html#source-branch
+  - Settings > Pages > Deploy from branch & select gh-pages as the branch.
+- Clone the repo to your computer.  
+- Open a new RStudio session.
+- Create a new project in an existing directory. Use the cloned directory.
+- In the project, create a new file titled `_quarto.yml` with the following content.
+
+```{yml}
+#| eval: false
+project:
+  title: "Project Name"
+```
+
+- Create a new Quarto file named `index.qmd`. Update the yml header to look something like the following.
+
+```{yml}
+#| eval: false
+---
+title: "Name on Title Slide"
+subtitle: "Optional Subtitle"
+date: "July 26, 2023"
+format: 
+  revealjs:
+    css: style.css
+    preview-links: false
+logo: uthealth_sph_logo.png
+---
+```
+
+- Notice that you can optionally add a CSS file as well. 
+
+### Authoring Revealjs presentations
+
+- How do I add interactive quizzes? Use Poll Everywhere?
+
+### What I did to publish the DSHS presentation
+
+-   2023-07-26: I created these notes while trying to publish the presentation I did for Texas DSHS.
+-   When I began this process, I had already created the presentation in an R project.
+-   Create a new GitHub repo (with nothing but a README file): https://github.com/brad-cannell/dshs-2023-07-26. 
+-   Create a `gh-pages` branch in GitHub.
+-   Set the repositories source branch to `gh-pages`. https://quarto.org/docs/publishing/github-pages.html#source-branch
+  -  Settings > Pages > Deploy from branch & select gh-pages as the branch.
+-   Clone the repo to your computer.
+-   Copy and paste all of files I had already created into the newly cloned directory.
+-   Rename the qmd file that creates the presentation to `index.qmd`. The `gh-pages` branch will look for an html file named `index`.
+-   Render `index.qmd`. `quarto render` in terminal.
+-   Commit and push all of the file changes.
+-   In the terminal, type `quarto publish gh-pages`.
+-   The presentation should appear at `https://brad-cannell.github.io/dshs-2023-07-26`.
