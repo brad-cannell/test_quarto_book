@@ -18,16 +18,14 @@
 - Create a new project in an existing directory. Use the cloned directory.
 - In the project, create a new file titled `_quarto.yml` with the following content.
 
-```{yml}
-#| eval: false
+```` yml
 project:
   title: "Project Name"
-```
+````
 
 - Create a new Quarto file named `index.qmd`. Update the yml header to look something like the following.
 
-```{yml}
-#| eval: false
+```` yml
 ---
 title: "Name on Title Slide"
 subtitle: "Optional Subtitle"
@@ -38,7 +36,7 @@ format:
     preview-links: false
 logo: uthealth_sph_logo.png
 ---
-```
+````
 
 - Notice that you can optionally add a CSS file as well. 
 
