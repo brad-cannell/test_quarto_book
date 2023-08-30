@@ -42,9 +42,12 @@ logo: uthealth_sph_logo.png
 
 - Notice that you can optionally add a CSS file as well. 
 
-### Authoring Revealjs presentations
+### Adding interactive quizzes/polls
 
-- How do I add interactive quizzes? Use Poll Everywhere?
+So far, embedding [Poll Everywhere activities](https://www.polleverywhere.com/activities) seems to be the best choice.
+
+- [Here is a link to a blog post about embedding activities](https://support.polleverywhere.com/hc/en-us/articles/1260801821849-Embed-an-activity).
+- [Here is a link to a test presentation with embedded activities](https://github.com/brad-cannell/test_quarto_revealjs)
 
 ### What I did to publish the DSHS presentation
 
