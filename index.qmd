@@ -26,4 +26,8 @@ quarto::quarto_render(output_format = "all")
 
 ## Publishing to GitHub pages
 
-[This article is great](https://quarto.org/docs/publishing/github-pages.html). After committing, and making sure you are on the main branch, type `quarto publish gh-pages` in the terminal.
+[This article is great](https://quarto.org/docs/publishing/github-pages.html).
+
+- Make sure you are on the main branch.
+- After rendering (see above), make sure to save and **commit** your changes to GitHub. 
+- Type `quarto publish gh-pages` in the terminal.

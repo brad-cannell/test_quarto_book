@@ -249,3 +249,65 @@ For testing, I'm going to add a note, a warning, and a construction box.
 ````
 
 Note that Font Awesome is not currently working and none of these call out boxes work in PDF format. Quarto's built-in call out boxes do work in PDF format, though.
+
+## Font Awesome
+
+[Font Awesome](https://fontawesome.com/) seems like a great tool for adding an additional visual dimension to our Quarto projects. Here are some links with useful information about adding Font Awesome graphics to Quarto documents:
+
+- How to include fontawesome icons in Quarto documents: basic styling AND special effects ([YouTube](https://www.youtube.com/watch?v=u8EOVOjX13Y))
+
+Here are the basics:
+
+1. Install the Font Awesome Quarto Extension by typing `quarto install extension quarto-ext/fontawesome` in the terminal.
+2. We will be asked, "Do you trust the authors of this extension?" Type "Yes."
+3. We will be asked, "Would you like to continue?" Type "Yes."
+4. There should be a new folder called `_extensions`. Inside that folder, there should be a folder named `fontawesome`.
+5. We will have to repeat this process any time we create a new Quarto project.
+
+Now that the extension is installed, we can use the following syntax to insert Font Awesome icons: `\{\{< fa name-of-icon >}}` (don't include the backslashes. They are just there to prevent GitHub from attempting to render the code). We can find a list of icons on the [Font Awesome website](https://fontawesome.com/search). 
+
+For example, this code creates a Font Awesome envelope:  {{< fa envelope >}}
+
+````markdown
+\{\{< fa envelope >}} (don't include the backslashes. They are just there to prevent GitHub from attempting to render the code)
+````
+
+However, the example above doesn't work when we render the file to GitHub flavored markdown (`format: gfm`) instead of html (`format: html`).
+
+Here are some links with notes on using Font Awesome with GitHub flavored markdown:
+
+- Add to markdown: https://stackoverflow.com/questions/63913973/how-can-i-put-fontawesome-icons-in-markdown-readme
+- GitHub repository: https://github.com/FortAwesome/Font-Awesome
+- R font awesome package: https://github.com/rstudio/fontawesome
+
+For example: 
+
+``` markdown
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg" width="50" height="50">
+```
+
+Produces: <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg" width="50" height="50">
+
+The YouTube video, [How to include fontawesome icons in Quarto documents: basic styling AND special effects](https://www.youtube.com/watch?v=u8EOVOjX13Y) has more information on styling Font Awesome icons. For example, the following code:
+
+````markdown
+<div class="fa-3x">
+  <i class="fa-solid fa-circle-plus fa-beat"></i>
+  <i class="fa-solid fa-heart fa-beat"></i>
+  <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s;" ></i>
+  <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 2s;"></i>
+  <i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i>
+</div>
+````
+
+Produces this:
+
+<div class="fa-3x">
+  <i class="fa-solid fa-circle-plus fa-beat"></i>
+  <i class="fa-solid fa-heart fa-beat"></i>
+  <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s;" ></i>
+  <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 2s;"></i>
+  <i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i>
+</div>
+
+**Note on rendering to PDF:** The double curly brace syntax renders in the PDF document, but the HTML code does not.
