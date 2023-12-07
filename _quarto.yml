@@ -11,6 +11,10 @@ format:
     # mainfont: Roboto # For testing (https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts)
   pdf:
     documentclass: scrreprt
+    
+# Add this in order to use webR
+filters:
+  - webr
 
 # Bibliography and citation options
 bibliography: references.bib
@@ -77,6 +81,7 @@ book:
         - chapters/code_chunks.qmd
         - chapters/parameterizing.qmd
         - chapters/source_qmd_files.qmd
+        - chapters/webr/webr.qmd
         
     - part: "Publishing"
       chapters: 

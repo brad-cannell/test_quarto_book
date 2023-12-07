@@ -1,0 +1,16 @@
+{
+  "hash": "3ff472009e4e1518d33fe5d15d83c5d4",
+  "result": {
+    "markdown": "# WebR {sec-webr}\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(dplyr, warn.conflicts = FALSE)\n```\n:::\n\n\n## Links\n\n- [GitHub Issue](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&itemId=34978068)\n- [A brief introduction to using WebR and Quarto for client-side interactive lesson material](https://jabberwocky.weecology.org/2023/03/13/a-brief-introduction-to-using-webr-and-quarto-for-client-side-interactive-lesson-material/)\n- [webR Extension for Quarto](https://github.com/coatless/quarto-webr)\n\n## Testing\n\nFollowing the guidance on the README of [webR Extension for Quarto](https://github.com/coatless/quarto-webr).\n\nTo use this extension in a Quarto project, install it from within the project's working directory by typing into Terminal:\n\n````markdown\nquarto add coatless/quarto-webr\n````\n\nFor each document, place the webr filter in the document's header (I actually placed it in `_quarto.yml`:\n\n````markdown\nfilters:\n  - webr\n````\n\nThen, place the R code for webR in a code block marked with `{webr-r}`. For example.\n\n````markdown\n```{{webr-r}}\nfit = lm(mpg ~ am, data = mtcars)\n\nsummary(fit)\n```\n````\n\n```{webr-r}\nfit = lm(mpg ~ am, data = mtcars)\n\nsummary(fit)\n```\n\nNote: If you don't specify the `engine: knitr`, the default compute engine used will be jupyter. This could trigger prompts to install Python. However, if you specify `engine: knitr`, there's no need to install Python.\n\nThere are many more customization options that are available. Please see the [customization documentation](https://quarto-webr.thecoatlessprofessor.com/qwebr-meta-options.html) for more examples.\n\nFor specific deployment usage cases, please see [Templates](https://quarto-webr.thecoatlessprofessor.com/qwebr-deployment-templates.html).\n\n",
+    "supporting": [
+      "webr_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
