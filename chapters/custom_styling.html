@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,6 +76,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -92,8 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -113,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/call_out_boxes.html">Authoring</a></li><li class="breadcrumb-item"><a href="../chapters/custom_styling.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Custom Styling</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -127,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Test Quarto Book</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/brad-cannell/test_quarto_book" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/brad-cannell/test_quarto_book" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
       <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
@@ -281,6 +282,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Sourcing qmd files</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/webr/webr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">WebR</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -295,19 +302,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/pdf.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/slide_presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Slide presentations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Slide presentations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/publishing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Publishing</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Publishing</span></span></a>
   </div>
 </li>
       </ul>
@@ -358,7 +365,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#font-awesome" id="toc-font-awesome" class="nav-link active" data-scroll-target="#font-awesome"><span class="header-section-number">5.1</span> Font Awesome</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brad-cannell/test_quarto_book/edit/main/chapters/custom_styling.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -614,8 +627,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">class</span><span class="ot">=</span><span class="st">"under-construction"</span><span class="kw">&gt;</span> `r fontawesome::fa("hammer", fill = "#000000", height="1em")` Here is the under construction box.<span class="kw">&lt;/p&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Note that Font Awesome is not currently working and none of these call out boxes work in PDF format. Quarto’s built-in call out boxes do work in PDF format, though.</p>
+<section id="font-awesome" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="font-awesome"><span class="header-section-number">5.1</span> Font Awesome</h2>
+<p><a href="https://fontawesome.com/">Font Awesome</a> seems like a great tool for adding an additional visual dimension to our Quarto projects. Here are some links with useful information about adding Font Awesome graphics to Quarto documents:</p>
+<ul>
+<li>How to include fontawesome icons in Quarto documents: basic styling AND special effects (<a href="https://www.youtube.com/watch?v=u8EOVOjX13Y">YouTube</a>)</li>
+</ul>
+<p>Here are the basics:</p>
+<ol type="1">
+<li>Install the Font Awesome Quarto Extension by typing <code>quarto install extension quarto-ext/fontawesome</code> in the terminal.</li>
+<li>We will be asked, “Do you trust the authors of this extension?” Type “Yes.”</li>
+<li>We will be asked, “Would you like to continue?” Type “Yes.”</li>
+<li>There should be a new folder called <code>_extensions</code>. Inside that folder, there should be a folder named <code>fontawesome</code>.</li>
+<li>We will have to repeat this process any time we create a new Quarto project.</li>
+</ol>
+<p>Now that the extension is installed, we can use the following syntax to insert Font Awesome icons: <code>\{\{&lt; fa name-of-icon &gt;}}</code> (don’t include the backslashes. They are just there to prevent GitHub from attempting to render the code). We can find a list of icons on the <a href="https://fontawesome.com/search">Font Awesome website</a>.</p>
+<p>For example, this code creates a Font Awesome envelope: <i class="fa-solid fa-envelope" aria-label="envelope"></i></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="sc">\{\{</span>&lt; fa envelope &gt;}} (don't include the backslashes. They are just there to prevent GitHub from attempting to render the code)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, the example above doesn’t work when we render the file to GitHub flavored markdown (<code>format: gfm</code>) instead of html (<code>format: html</code>).</p>
+<p>Here are some links with notes on using Font Awesome with GitHub flavored markdown:</p>
+<ul>
+<li>Add to markdown: https://stackoverflow.com/questions/63913973/how-can-i-put-fontawesome-icons-in-markdown-readme</li>
+<li>GitHub repository: https://github.com/FortAwesome/Font-Awesome</li>
+<li>R font awesome package: https://github.com/rstudio/fontawesome</li>
+</ul>
+<p>For example:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg"</span> <span class="er">width</span><span class="ot">=</span><span class="st">"50"</span> <span class="er">height</span><span class="ot">=</span><span class="st">"50"</span><span class="kw">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Produces: <img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg" width="50" height="50"></p>
+<p>The YouTube video, <a href="https://www.youtube.com/watch?v=u8EOVOjX13Y">How to include fontawesome icons in Quarto documents: basic styling AND special effects</a> has more information on styling Font Awesome icons. For example, the following code:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-3x"</span><span class="kw">&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-solid fa-circle-plus fa-beat"</span><span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-solid fa-heart fa-beat"</span><span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-solid fa-heart fa-beat"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"--fa-animation-duration: 0.5s;"</span> <span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-solid fa-heart fa-beat"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"--fa-animation-duration: 2s;"</span><span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;i</span> <span class="er">class</span><span class="ot">=</span><span class="st">"fa-solid fa-heart fa-beat"</span> <span class="er">style</span><span class="ot">=</span><span class="st">"--fa-beat-scale: 2.0;"</span><span class="kw">&gt;&lt;/i&gt;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Produces this:</p>
+<div class="fa-3x">
+<p><i class="fa-solid fa-circle-plus fa-beat"></i> <i class="fa-solid fa-heart fa-beat"></i> <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s;"></i> <i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 2s;"></i> <i class="fa-solid fa-heart fa-beat" style="--fa-beat-scale: 2.0;"></i></p>
+</div>
+<p><strong>Note on rendering to PDF:</strong> The double curly brace syntax renders in the PDF document, but the HTML code does not.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -869,7 +923,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">R for Epidemiology</div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/brad-cannell/test_quarto_book/edit/main/chapters/custom_styling.qmd" class="toc-action">Edit this page</a></p></div></div></div>
+    </div>
     <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
   </div>
 </footer>
