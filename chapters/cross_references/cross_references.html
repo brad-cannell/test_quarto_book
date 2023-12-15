@@ -390,7 +390,10 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#reference-a-chapter" id="toc-reference-a-chapter" class="nav-link" data-scroll-target="#reference-a-chapter"><span class="header-section-number">4.1.1</span> Reference a chapter</a></li>
   </ul></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">4.2</span> Citations</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations"><span class="header-section-number">4.2</span> Citations</a>
+  <ul class="collapse">
+  <li><a href="#change-the-citation-style" id="toc-change-the-citation-style" class="nav-link" data-scroll-target="#change-the-citation-style"><span class="header-section-number">4.2.1</span> Change the citation style</a></li>
+  </ul></li>
   <li><a href="#footnotes" id="toc-footnotes" class="nav-link" data-scroll-target="#footnotes"><span class="header-section-number">4.3</span> Footnotes</a></li>
   <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary"><span class="header-section-number">4.4</span> Glossary</a></li>
   </ul>
@@ -474,13 +477,25 @@ Hyperlink file paths
 </section>
 <section id="citations" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="citations"><span class="header-section-number">4.2</span> Citations</h2>
-<p>Built-in example: See<span class="citation" data-cites="knuth84"><sup><a href="../references.html#ref-knuth84" role="doc-biblioref">1</a></sup></span> for additional discussion of literate programming.</p>
+<p>To add a citation to the text of a chapter:</p>
+<ol type="1">
+<li>Add an entry to <code>references.bib</code> in BibTeX format.
+<ul>
+<li>The easiest way to get the BibTeX citation is probably to generate it with a reference management software like PaperPile or Zotero.</li>
+</ul></li>
+<li>Use the <code>@referenceTitle</code> syntax to add the citation to your text.</li>
+</ol>
+<p>For example:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">Built-in example:</span><span class="co"> See @knuth84 for additional discussion of literate programming.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Renders as: Built-in example: See<span class="citation" data-cites="knuth84"><sup><a href="../references.html#ref-knuth84" role="doc-biblioref">1</a></sup></span> for additional discussion of literate programming.</p>
+<section id="change-the-citation-style" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="change-the-citation-style"><span class="header-section-number">4.2.1</span> Change the citation style</h3>
 <p>To <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">change the citation style</a></p>
 <ol type="1">
 <li><p>Add a CSL file to the repo. For example, this repo has a file named <code>ama.csl</code>. The <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Quarto Citations and Footnotes documentation</a> also includes links to download CSL files for a variety of citation formats.</p></li>
 <li><p>Update the <code>csl:</code> option in <code>_quarto.yml</code>. For example, <code>csl: ama.csl</code>.</p></li>
 </ol>
-<p>Here is what the default <code>@knuth84</code> citation above looks like after rendering this document.</p>
+<p>Here is what the default <code>@knuth84</code> <em>citation</em> above looks like after rendering this document.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-default-citation" class="quarto-figure quarto-figure-center anchored">
@@ -491,7 +506,7 @@ Hyperlink file paths
 </div>
 </div>
 </div>
-<p>Here is what the default <code>@knuth84</code> reference looks like after rendering this document.</p>
+<p>Here is what the default <code>@knuth84</code> <em>reference</em> looks like after rendering this document.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -502,7 +517,7 @@ Hyperlink file paths
 </div>
 </div>
 </div>
-<p>Here is what the <code>@knuth84</code> citation above looks like after changing the citation style to AMA and rendering this document.</p>
+<p>Here is what the <code>@knuth84</code> <em>citation</em> above looks like after changing the citation style to AMA and rendering this document.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ama-citation" class="quarto-figure quarto-figure-center anchored">
@@ -513,7 +528,7 @@ Hyperlink file paths
 </div>
 </div>
 </div>
-<p>Here is what the <code>@knuth84</code> reference looks like after changing the citation style to AMA and rendering this document.</p>
+<p>Here is what the <code>@knuth84</code> <em>reference</em> looks like after changing the citation style to AMA and rendering this document.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-ama-reference" class="quarto-figure quarto-figure-center anchored">
@@ -525,6 +540,7 @@ Hyperlink file paths
 </div>
 </div>
 </section>
+</section>
 <section id="footnotes" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="footnotes"><span class="header-section-number">4.3</span> Footnotes</h2>
 <p>I haven’t done a lot of footnotes in the past, but <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes">here is some documentation</a> in case I want to do them in the future.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
@@ -533,9 +549,9 @@ Hyperlink file paths
 <h2 data-number="4.4" class="anchored" data-anchor-id="glossary"><span class="header-section-number">4.4</span> Glossary</h2>
 <p>Following the emphasizing text guidance in the <a href="https://github.com/brad-cannell/r4epi/wiki/Emphasizing-Text">R4Epi Wiki</a>, we sometimes want to hyperlink words that we will define in the <a href="../../chapters/appendices/glossary.html">Glossary</a>. We can definitely link selected words in the narrative of the chapters to <em>headings</em>, but that approach creates a line in the table of contents for each word in the glossary, which isn’t ideal. I posted this issue on <a href="https://stackoverflow.com/questions/76691907/quarto-link-a-word-in-one-qmd-document-to-a-word-in-a-different-qmd-document/76719362#76719362">Stack Overflow</a>. Therefore, the best strategy so far seems to be using <a href="https://pandoc.org/MANUAL.html#definition-lists">definition lists</a>.</p>
 <p>For example, let’s say that we want to define the term <a href="../../chapters/appendices/glossary.html">data frame</a> in the glossary. The first thing we do is assign and CSS ID to the word “data frame” in the glossary qmd file. For now, I’m planning to prefix all glossary IDs with the word “glossary” in case I need to search for them later.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Data frame</span><span class="co">]</span>{#glossary-data-frame} </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Data frame</span><span class="co">]</span>{#glossary-data-frame} </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -550,14 +566,14 @@ Definition lists
 </div>
 </div>
 <p>Next, use a hyperlink to reference the glossary term in the narrative of the chapter. For example,</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>We want to define the term <span class="co">[</span><span class="ot">data frame</span><span class="co">](../appendices/glossary.qmd#glossary-data-frame)</span> in the glossary.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>We want to define the term <span class="co">[</span><span class="ot">data frame</span><span class="co">](../appendices/glossary.qmd#glossary-data-frame)</span> in the glossary.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which looks like this: We want to define the term <a href="../../chapters/appendices/glossary.html#glossary-data-frame">data frame</a> in the glossary.</p>
 <p>Additionally, terms linked in this way should also work in PDF downloads.</p>
 <p>If we want to adjust the style of the of the glossary term (e.g., increase the font size or make it bold), we can do so in the <code>.scss</code> file. For example,</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dl {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">pt</span><span class="op">;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dl {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-size</span>: <span class="dv">14</span><span class="dt">pt</span><span class="op">;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">font-weight</span>: <span class="dv">bold</span><span class="op">;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We use <code>dl</code> because Pandoc renders the HTML output to description list (<code>&lt;dl&gt;</code>) elements. This styling should also work in PDF downloads.</p>
 
 
