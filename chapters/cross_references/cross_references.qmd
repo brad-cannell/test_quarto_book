@@ -25,7 +25,13 @@ Which looks like this: See @sec-images to learn about images.
 ::: callout-important
 ## Label Prefix
 
-In order for a chapter to be cross-referenceable, its label must start with the `sec-` prefix.
+For a chapter to be cross-referenceable, its label must start with the `sec-` prefix.
+:::
+
+::: callout-important
+## Chapter in _quarto.yml
+
+For a chapter to be cross-referenceable, it must be listed in _quarto.yml.
 :::
 
 If I don't want `@sec-images` to automatically be replaced with `Chapter 7` -- for example, I want it to say `the images chapter` instead -- then I think I will need to use hyperlinks ( below). For example,
