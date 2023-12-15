@@ -1,5 +1,7 @@
 # Images {#sec-images}
 
+Here are some examples of adding figures.
+
 Links
 
 - [The Quarto documentation about images](https://quarto.org/docs/authoring/figures.html)
@@ -7,7 +9,13 @@ Links
 
 ## Native Quarto figures
 
-Here are some examples of adding figures.
+We can use the `![Caption text](file_path.png){#fig-label}` syntax to add images. For example:
+
+````markdown
+![Relative Path Directions](directions_relative.png){#fig-directions}
+````
+
+Renders as:
 
 ![Relative Path Directions](directions_relative.png){#fig-directions}
 
