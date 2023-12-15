@@ -393,6 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>Here are some examples of adding figures.</p>
 <p>Links</p>
 <ul>
 <li><a href="https://quarto.org/docs/authoring/figures.html">The Quarto documentation about images</a></li>
@@ -400,7 +401,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="native-quarto-figures" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="native-quarto-figures"><span class="header-section-number">7.1</span> Native Quarto figures</h2>
-<p>Here are some examples of adding figures.</p>
+<p>We can use the <code>![Caption text](file_path.png){#fig-label}</code> syntax to add images. For example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Relative Path Directions](directions_relative.png)</span>{#fig-directions}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Renders as:</p>
 <div id="fig-directions" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="directions_relative.png" class="img-fluid figure-img"></p>
@@ -425,22 +428,22 @@ Important
 <section id="adding-figures-with-knitr" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="adding-figures-with-knitr"><span class="header-section-number">7.2</span> Adding figures with Knitr</h2>
 <p>In R4DS (link above), Hadley et al.&nbsp;are still using <code>knitr::include_graphics("path")</code> to insert images even though the book has been converted to Quarto documents. When using Bookdown, <a href="https://bookdown.org/yihui/bookdown/figures.html">Yihui gives four arguments</a> for using <code>knitr::include_graphics("path")</code> instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from <a href="https://github.com/hadley/r4ds/blob/main/intro.qmd">R4DS</a>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-ds-diagram</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: |</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">#|   In our model of the data science process, you start with data import</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|   and tidying. Next, you understand your data with an iterative cycle of</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#|   transforming, visualizing, and modeling. You finish the process </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|   by communicating your results to other humans.</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt: |</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand </span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Communicate. Surrounding all of these is Communicate.</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| out.width: NULL</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"diagrams/data-science/base.png"</span>, <span class="at">dpi =</span> <span class="dv">270</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-ds-diagram</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: |</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#|   In our model of the data science process, you start with data import</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|   and tidying. Next, you understand your data with an iterative cycle of</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#|   transforming, visualizing, and modeling. You finish the process </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#|   by communicating your results to other humans.</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt: |</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#|   Communicate. Surrounding all of these is Communicate.</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#| out.width: NULL</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"diagrams/data-science/base.png"</span>, <span class="at">dpi =</span> <span class="dv">270</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Here, I’m adding my own image with <code>knitr::include_graphics("path")</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
