@@ -52,7 +52,22 @@ Chapter sections work the same way. You are able to cross-reference any heading 
 
 ## Citations
 
+To add a citation to the text of a chapter:
+
+1. Add an entry to `references.bib` in BibTeX format.
+    - The easiest way to get the BibTeX citation is probably to generate it with a reference management software like PaperPile or Zotero.
+
+2. Use the `@referenceTitle` syntax to add the citation to your text.
+
+For example:
+
+````markdown
 Built-in example: See @knuth84 for additional discussion of literate programming.
+````
+
+Renders as: Built-in example: See @knuth84 for additional discussion of literate programming.
+
+### Change the citation style
 
 To [change the citation style](https://quarto.org/docs/authoring/footnotes-and-citations.html)
 
@@ -60,7 +75,7 @@ To [change the citation style](https://quarto.org/docs/authoring/footnotes-and-c
 
 2. Update the `csl:` option in `_quarto.yml`. For example, `csl: ama.csl`.
 
-Here is what the default `@knuth84` citation above looks like after rendering this document.
+Here is what the default `@knuth84` _citation_ above looks like after rendering this document.
 
 ```{r}
 #| label: fig-default-citation
@@ -70,7 +85,7 @@ Here is what the default `@knuth84` citation above looks like after rendering th
 knitr::include_graphics("default_citation.png")
 ```
 
-Here is what the default `@knuth84` reference looks like after rendering this document.
+Here is what the default `@knuth84` _reference_ looks like after rendering this document.
 
 ```{r}
 #| label: default-reference
@@ -80,7 +95,7 @@ Here is what the default `@knuth84` reference looks like after rendering this do
 knitr::include_graphics("default_reference.png")
 ```
 
-Here is what the `@knuth84` citation above looks like after changing the citation style to AMA and rendering this document.
+Here is what the `@knuth84` _citation_ above looks like after changing the citation style to AMA and rendering this document.
 
 ```{r}
 #| label: fig-ama-citation
@@ -90,7 +105,7 @@ Here is what the `@knuth84` citation above looks like after changing the citatio
 knitr::include_graphics("ama_citation.png")
 ```
 
-Here is what the `@knuth84` reference looks like after changing the citation style to AMA and rendering this document.
+Here is what the `@knuth84` _reference_ looks like after changing the citation style to AMA and rendering this document.
 
 ```{r}
 #| label: fig-ama-reference
