@@ -311,3 +311,9 @@ Produces this:
 </div>
 
 **Note on rendering to PDF:** The double curly brace syntax renders in the PDF document, but the HTML code does not.
+
+**Another weird thing:** When I was trying to include fontawesome icons in the "About the Authors" page of the Quarto version of R4Epi, I found that I had to include at least one code chunk in the file to get the fontawesome icons to render. Here is an example of the code I used that included fontawesome icons:
+
+``` markdown
+<a href="https://www.bradcannell.com" target="_blank">`r fontawesome::fa("globe", fill = "#003087", height="2em")`</a>
+```
