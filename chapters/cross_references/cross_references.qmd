@@ -115,6 +115,10 @@ Here is what the `@knuth84` _reference_ looks like after changing the citation s
 knitr::include_graphics("ama_reference.png")
 ```
 
+🔴 Try integrating Zotero.
+- [GitHub issue](https://github.com/orgs/brad-cannell/projects/3/views/4?pane=issue&itemId=75494998)
+- [Quarto documentation](https://quarto.org/docs/visual-editor/options.html#citation-options)
+
 ## Footnotes
 
 I haven't done a lot of footnotes in the past, but [here is some documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html#footnotes) in case I want to do them in the future.^[And here is an example footnote.]
