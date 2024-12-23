@@ -32,6 +32,12 @@ That website discusses three methods for publishing the book with GitHub Pages.
 
 I'm going with option 2 for now.
 
+### GitHub Actions
+
+This video by Melissa Van Bussel gives a nice, brief overview on how to use GitHub Actions to make publishing with GitHub pages even easier by removing the need to render files locally before pushing to GitHub.
+
+{{< video https://youtu.be/arzBRW5XIkg?si=RgHVRxIh_KGxEdJZ >}}
+
 ## Netlify
 
 Useful websites:
