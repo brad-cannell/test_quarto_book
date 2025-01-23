@@ -1,0 +1,15 @@
+{
+  "hash": "dfff91131bccdaf909b5c81afeffd28e",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Word Documents {sec-word-documents}\n\nThere are times when we want to convert a Word document to markdown. Melissa Van Bussel has a [video](https://www.youtube.com/@ggnot2) from Posit::conf(2023) with some tips for doing this, including using `rmarkdown::pandoc_convert()`. Here is an example:\n\n\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\nrmarkdown::pandoc_convert(\n  '/Users/bradcannell/Desktop/My Personal SOP.docx', \n  to = 'markdown',\n  output = here::here(\"sops\", \"my_personal_sop.qmd\")\n)\n```\n:::\n\n\n\n\n\n\nWe still need to do a little bit of manual cleaning afterward, but it's a pretty good start.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

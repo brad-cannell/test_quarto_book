@@ -16,9 +16,32 @@ I'm following instructions from [this post](https://support.google.com/docs/thre
 
 ### Embed the entire document
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSoP15lsHKNlHUg5K4v_6eJLUyKnYvmjLhGy_g8SXWPIgcIxb25qOnQXUNLd53vQmaTkELBFq03ZUfF/pubhtml?widget=true&amp;headers=false"></iframe>
+::: {.content-visible when-format="html"}
+
+::: {.iframe-container}
+
+<iframe class="responsive-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSoP15lsHKNlHUg5K4v_6eJLUyKnYvmjLhGy_g8SXWPIgcIxb25qOnQXUNLd53vQmaTkELBFq03ZUfF/pubhtml?widget=true&amp;headers=false"></iframe>
+
+:::
+
+:::
+
+::: callout-note
+The Google sheet will not appear in the PDF version of this SOP.
+:::
 
 ### Embed a single sheet
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSoP15lsHKNlHUg5K4v_6eJLUyKnYvmjLhGy_g8SXWPIgcIxb25qOnQXUNLd53vQmaTkELBFq03ZUfF/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+::: {.content-visible when-format="html"}
 
+::: {.iframe-container}
+
+<iframe class="responsive-iframe" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSoP15lsHKNlHUg5K4v_6eJLUyKnYvmjLhGy_g8SXWPIgcIxb25qOnQXUNLd53vQmaTkELBFq03ZUfF/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+:::
+
+:::
+
+::: callout-note
+The Google sheet will not appear in the PDF version of this SOP.
+:::
