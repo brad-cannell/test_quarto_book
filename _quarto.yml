@@ -72,10 +72,11 @@ book:
         - chapters/cross_references/cross_references.qmd
         - chapters/custom_styling.qmd
         - chapters/gifs/gifs.qmd
+        - chapters/google_sheets.qmd
         - chapters/images/images.qmd
         - chapters/rmd_documents.rmd
-        - chapters/word_documents.qmd
         - chapters/tables.qmd
+        - chapters/word_documents.qmd
         
     - part: "Working with Code"
       chapters: 

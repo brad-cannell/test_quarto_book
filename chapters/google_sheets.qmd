@@ -1,0 +1,24 @@
+# Google Sheets {sec-google-sheets}
+
+These are notes on authoring Quarto documents with Google Sheets.
+
+## Embedding Google Sheets
+
+I'm following instructions from [this post](https://support.google.com/docs/thread/212358523/embedding-a-table-from-sheets-to-a-website?hl=en).
+
+1. We created an [example Google Sheet](https://docs.google.com/spreadsheets/d/1RVgT28QJ6dV5kCSzS9BEOVMooiy06DEhv2d-eqxIjZY/edit?gid=0#gid=0) to embed.
+
+2. Click `Help` > `Search the menus` > `Publish to the web`.
+
+3. Click `Embed` and choose `Entire Document` or a specific sheet. We will test both bellow.
+
+4. Click `Publish` and copy the embed code.
+
+### Embed the entire document
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSoP15lsHKNlHUg5K4v_6eJLUyKnYvmjLhGy_g8SXWPIgcIxb25qOnQXUNLd53vQmaTkELBFq03ZUfF/pubhtml?widget=true&amp;headers=false"></iframe>
+
+### Embed a single sheet
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSoP15lsHKNlHUg5K4v_6eJLUyKnYvmjLhGy_g8SXWPIgcIxb25qOnQXUNLd53vQmaTkELBFq03ZUfF/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
