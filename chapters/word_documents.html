@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Test Quarto Book – 13&nbsp; Parameterizing</title>
+<title>Test Quarto Book – 11&nbsp; Word Documents</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/source_qmd_files.html" rel="next">
-<link href="../chapters/code_chunks.html" rel="prev">
+<link href="../chapters/code_chunks.html" rel="next">
+<link href="../chapters/tables.html" rel="prev">
 <link href="../r4epi_favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -116,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/code_chunks.html">Working with Code</a></li><li class="breadcrumb-item"><a href="../chapters/parameterizing.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Parameterizing</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/call_out_boxes.html">Authoring</a></li><li class="breadcrumb-item"><a href="../chapters/word_documents.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Word Documents</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -249,7 +249,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/word_documents.html" class="sidebar-item-text sidebar-link">
+  <a href="../chapters/word_documents.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Word Documents</span></span></a>
   </div>
 </li>
@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/parameterizing.html" class="sidebar-item-text sidebar-link active">
+  <a href="../chapters/parameterizing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Parameterizing</span></span></a>
   </div>
 </li>
@@ -370,9 +370,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/code_chunks.html">Working with Code</a></li><li class="breadcrumb-item"><a href="../chapters/parameterizing.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Parameterizing</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/call_out_boxes.html">Authoring</a></li><li class="breadcrumb-item"><a href="../chapters/word_documents.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Word Documents</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-parameterizing" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Parameterizing</span></span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Word Documents</span></h1>
 </div>
 
 
@@ -389,20 +389,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Notes on parameterizing Quarto documents.</p>
-<p>Useful websites:</p>
-<ul>
-<li><a href="https://www.jhelvy.com/posts/2023-02-28-parameterized-pdfs-with-quarto/">Render parameterized reports with Quarto</a></li>
-</ul>
-<p>We add parameters to the yaml header of the Quarto file. For example, this file has the following yaml header:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">params</span><span class="kw">:</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">test_param</span><span class="kw">:</span><span class="at"> </span><span class="st">"Hello World!"</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We can then use that parameter in our markdown like this.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>My test parameter says, "<span class="in">`r params$test_param`</span>"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>And here is what is rendered: My test parameter says, “<code>r params$test_param</code>”.</p>
-<p>Currently, this doesn’ appear to work. However, it did work for the <a href="https://brad-cannell.github.io/l2c_master_table/">L2C mater table</a>. I’m not sure why. Right now, all I can come up with is that it is some difference between a Quarto book and a Quarto website. Try to figure this out later.</p>
+<p>There are times when we want to convert a Word document to markdown. Melissa Van Bussel has a <a href="https://www.youtube.com/@ggnot2">video</a> from Posit::conf(2023) with some tips for doing this, including using <code>rmarkdown::pandoc_convert()</code>. Here is an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rmarkdown<span class="sc">::</span><span class="fu">pandoc_convert</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">'/Users/bradcannell/Desktop/My Personal SOP.docx'</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">to =</span> <span class="st">'markdown'</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"sops"</span>, <span class="st">"my_personal_sop.qmd"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We still need to do a little bit of manual cleaning afterward, but it’s a pretty good start.</p>
 
 
 
@@ -829,13 +824,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/code_chunks.html" class="pagination-link" aria-label="Code chunks">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Code chunks</span></span>
+      <a href="../chapters/tables.html" class="pagination-link" aria-label="Tables">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Tables</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/source_qmd_files.html" class="pagination-link" aria-label="Sourcing qmd files">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Sourcing qmd files</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/code_chunks.html" class="pagination-link" aria-label="Code chunks">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Code chunks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -847,7 +842,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/brad-cannell/test_quarto_book/edit/main/chapters/parameterizing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/brad-cannell/test_quarto_book/edit/main/chapters/word_documents.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
