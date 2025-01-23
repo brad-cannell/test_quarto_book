@@ -1,0 +1,15 @@
+# Word Documents {sec-word-documents}
+
+There are times when we want to convert a Word document to markdown. Melissa Van Bussel has a [video](https://www.youtube.com/@ggnot2) from Posit::conf(2023) with some tips for doing this, including using `rmarkdown::pandoc_convert()`. Here is an example:
+
+```{r}
+#| eval: false
+
+rmarkdown::pandoc_convert(
+  '/Users/bradcannell/Desktop/My Personal SOP.docx', 
+  to = 'markdown',
+  output = here::here("sops", "my_personal_sop.qmd")
+)
+```
+
+We still need to do a little bit of manual cleaning afterward, but it's a pretty good start.

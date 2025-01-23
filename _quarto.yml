@@ -74,6 +74,7 @@ book:
         - chapters/gifs/gifs.qmd
         - chapters/images/images.qmd
         - chapters/rmd_documents.rmd
+        - chapters/word_documents.qmd
         - chapters/tables.qmd
         
     - part: "Working with Code"
