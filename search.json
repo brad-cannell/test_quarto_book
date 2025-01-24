@@ -1,10 +1,258 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Test Quarto Book",
+    "section": "",
+    "text": "Preface\nThis is my first Quarto book. For now, I’m just using it for some experimentation. Eventually, I will probably want to add all of this to a GitHub repository. Right now, Olivia is in class and I’m content with just experimenting a little bit.\nThis is not my new R Notes book; although, I may move R Notes over to Quarto at some point. This is purely just a sandbox for playing with Quarto books.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#useful-websites",
+    "href": "index.html#useful-websites",
+    "title": "Test Quarto Book",
+    "section": "Useful websites:",
+    "text": "Useful websites:\n\nQuarto book documentation",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#rendering",
+    "href": "index.html#rendering",
+    "title": "Test Quarto Book",
+    "section": "Rendering",
+    "text": "Rendering\nYou can render the files by clicking the Render button in RStudio. To render the HTML and PDF files at the same time, type quarto render into the terminal. You can also render Quarto files with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#publishing-to-github-pages",
+    "href": "index.html#publishing-to-github-pages",
+    "title": "Test Quarto Book",
+    "section": "Publishing to GitHub pages",
+    "text": "Publishing to GitHub pages\nThis article is great.\n\nMake sure you are on the main branch.\nAfter rendering (see above), make sure to save and commit your changes to GitHub.\nType quarto publish gh-pages in the terminal.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/part_book_options.html",
+    "href": "chapters/part_book_options.html",
+    "title": "Book Options",
+    "section": "",
+    "text": "This part of the book contains qmd files pertaining to book options. I’m mostly creating this file to demonstrate how the (optional) book part qmd files work.",
+    "crumbs": [
+      "Book Options"
+    ]
+  },
+  {
+    "objectID": "chapters/book_options.html",
+    "href": "chapters/book_options.html",
+    "title": "1  Book Options",
+    "section": "",
+    "text": "A collection of notes on Quarto book options.\n\nLink to list of book options\nHow do you add a cover image? Look at r4ds.\n\ncover-image: cover.jpg\n\nHow do you add last date rendered to the _quarto.yml file? “r Sys.Date()” doesn’t seem to work.\n\nUse the keyword today\n\nCan I add links to GitHub and/or social media?\n\nStill need an answer here.\n\nCan I add links to the GitHub repo containing the books files?\n\nYes. See https://quarto.org/docs/books/book-output.html#sidebar-tools\n\nHow do I add a favicon?\n\nfavicon: cover.jpg\n\nHow do I add Google analytics?\n\nStill need an answer here.\n\nCan I add a Google analytics badge to my GitHub README?\n\nStill need an answer here.\n\nHow do I preview the book in my web browser instead of RStudio’s Viewer pane?\n\nJust click the little gear icon next to the Render button in RStudio. Select Preview in Window.",
+    "crumbs": [
+      "Book Options",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Book Options</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/other.html",
+    "href": "chapters/other.html",
+    "title": "2  Other little things",
+    "section": "",
+    "text": "2.1 Pros and cons\nSome of the things I like about working with Quarto (as opposed to bookdown) so far",
+    "crumbs": [
+      "Book Options",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Other little things</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/other.html#pros-and-cons",
+    "href": "chapters/other.html#pros-and-cons",
+    "title": "2  Other little things",
+    "section": "",
+    "text": "A preview of the book renders automatically.\nI can easily render only one chapter by opening that chapter’s qmd file and clicking the Render button.",
+    "crumbs": [
+      "Book Options",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Other little things</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/call_out_boxes.html",
+    "href": "chapters/call_out_boxes.html",
+    "title": "3  Adding call out boxes",
+    "section": "",
+    "text": "In R4Epi, we sometimes add special boxes for side notes and warnings. How do we add those into qmd books?\nWhat do those boxes look like when we render the book to pdf format?\nDoes Quarto have some built-in boxes? It looks like it might?\n\nHow do you add the call out boxes (i.e., important, etc.)?\n\nSee Quarto documentation on callout blocks\n\n\n::: callout-note\nNote that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.\n:::\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n::: callout-warning\nCallouts provide a simple way to attract attention, for example, to this warning.\n:::\n\n\n\n\n\n\nWarning\n\n\n\nCallouts provide a simple way to attract attention, for example, to this warning.\n\n\n::: callout-important\n## This is Important\n\nDanger, callouts will really improve your writing.\n:::\n\n\n\n\n\n\nThis is Important\n\n\n\nDanger, callouts will really improve your writing.\n\n\n::: callout-tip\n## Tip With Title\n\nThis is an example of a callout with a title.\n:::\n\n\n\n\n\n\nTip With Title\n\n\n\nThis is an example of a callout with a title.\n\n\n::: {.callout-caution collapse=\"true\"}\n## Expand To Learn About Collapse\n\nThis is an example of a 'collapsed' caution callout that can be expanded by the user. You can use `collapse=\"true\"` to collapse it by default or `collapse=\"false\"` to make a collapsible callout that is expanded by default.\n:::\n\n\n\n\n\n\nExpand To Learn About Collapse\n\n\n\n\n\nThis is an example of a ‘collapsed’ caution callout that can be expanded by the user. You can use collapse=\"true\" to collapse it by default or collapse=\"false\" to make a collapsible callout that is expanded by default.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Adding call out boxes</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/cross_references/cross_references.html",
+    "href": "chapters/cross_references/cross_references.html",
+    "title": "4  Cross References",
+    "section": "",
+    "text": "4.1 Book parts\nWhen authoring the book, it is common to need to cross reference book parts (i.e., chapters, sections), figures, tables, and I’m going to go ahead and include citations here too.\nLink to the official documentation. Briefly, there are two methods that I’m likely to use.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/cross_references/cross_references.html#book-parts",
+    "href": "chapters/cross_references/cross_references.html#book-parts",
+    "title": "4  Cross References",
+    "section": "",
+    "text": "4.1.1 Reference a chapter\nFirst, you need to make a chapter/section heading available to be referenced by adding {#sec-} behind the header. For example:\n# Images {#sec-images}\nThen to reference it you type @sec-. For example:\nSee @sec-images to learn about images.\nWhich looks like this: See Chapter 8 to learn about images.\n\n\n\n\n\n\nLabel Prefix\n\n\n\nFor a chapter to be cross-referenceable, its label must start with the sec- prefix.\n\n\n\n\n\n\n\n\nChapter in _quarto.yml\n\n\n\nFor a chapter to be cross-referenceable, it must be listed in _quarto.yml.\n\n\nIf I don’t want @sec-images to automatically be replaced with Chapter 7 – for example, I want it to say the images chapter instead – then I think I will need to use hyperlinks ( below). For example,\nSee [the images chapter](../images/images.qmd)\nWhich looks like this: See the images chapter\n\n\n\n\n\n\nHyperlink file paths\n\n\n\nWhen using hyperlinks to connect chatpers/sections, make sure to use the full file path (originating from the current qmd file). For example, use ../images/images.qmd instead of just images.qmd. If you change the file structure, you may break the links. This is one reason why you may want to use that @sec- syntax whenever possible.\n\n\nChapter sections work the same way. You are able to cross-reference any heading at any level. For example,",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/cross_references/cross_references.html#citations",
+    "href": "chapters/cross_references/cross_references.html#citations",
+    "title": "4  Cross References",
+    "section": "4.2 Citations",
+    "text": "4.2 Citations\nTo add a citation to the text of a chapter:\n\nAdd an entry to references.bib in BibTeX format.\n\nThe easiest way to get the BibTeX citation is probably to generate it with a reference management software like PaperPile or Zotero.\n\nUse the @referenceTitle syntax to add the citation to your text.\n\nFor example:\nBuilt-in example: See @knuth84 for additional discussion of literate programming.\nRenders as: Built-in example: See1 for additional discussion of literate programming.\n\n4.2.1 Change the citation style\nTo change the citation style\n\nAdd a CSL file to the repo. For example, this repo has a file named ama.csl. The Quarto Citations and Footnotes documentation also includes links to download CSL files for a variety of citation formats.\nUpdate the csl: option in _quarto.yml. For example, csl: ama.csl.\n\nHere is what the default @knuth84 citation above looks like after rendering this document.\n\n\n\n\n\n\n\n\nFigure 4.1: An example of Quarto’s default citation style.\n\n\n\n\n\nHere is what the default @knuth84 reference looks like after rendering this document.\n\n\n\n\n\nAn example of Quarto’s default reference style.\n\n\n\n\nHere is what the @knuth84 citation above looks like after changing the citation style to AMA and rendering this document.\n\n\n\n\n\n\n\n\nFigure 4.2: An example of an AMA citation.\n\n\n\n\n\nHere is what the @knuth84 reference looks like after changing the citation style to AMA and rendering this document.\n\n\n\n\n\n\n\n\nFigure 4.3: An example of an AMA reference.\n\n\n\n\n\n🔴 Try integrating Zotero. - GitHub issue - Quarto documentation",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/cross_references/cross_references.html#footnotes",
+    "href": "chapters/cross_references/cross_references.html#footnotes",
+    "title": "4  Cross References",
+    "section": "",
+    "text": "And here is an example footnote.↩︎",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/cross_references/cross_references.html#glossary",
+    "href": "chapters/cross_references/cross_references.html#glossary",
+    "title": "4  Cross References",
+    "section": "4.4 Glossary",
+    "text": "4.4 Glossary\nFollowing the emphasizing text guidance in the R4Epi Wiki, we sometimes want to hyperlink words that we will define in the Glossary. We can definitely link selected words in the narrative of the chapters to headings, but that approach creates a line in the table of contents for each word in the glossary, which isn’t ideal. I posted this issue on Stack Overflow. Therefore, the best strategy so far seems to be using definition lists.\nFor example, let’s say that we want to define the term data frame in the glossary. The first thing we do is assign and CSS ID to the word “data frame” in the glossary qmd file. For now, I’m planning to prefix all glossary IDs with the word “glossary” in case I need to search for them later.\n[Data frame]{#glossary-data-frame} \n\n:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.\n\n\n\n\n\n\nDefinition lists\n\n\n\nThe colon followed by two spaces before the term’s definition is not optional.\n\n\nNext, use a hyperlink to reference the glossary term in the narrative of the chapter. For example,\nWe want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.\nWhich looks like this: We want to define the term data frame in the glossary.\nAdditionally, terms linked in this way should also work in PDF downloads.\nIf we want to adjust the style of the of the glossary term (e.g., increase the font size or make it bold), we can do so in the .scss file. For example,\ndl {\n  font-size: 14pt;\n  font-weight: bold;\n}\nWe use dl because Pandoc renders the HTML output to description list (&lt;dl&gt;) elements. This styling should also work in PDF downloads.\n\n\n\n\n1. Knuth DE. Literate programming. Comput J. 1984;27(2):97-111. doi:10.1093/comjnl/27.2.97",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/custom_styling.html",
+    "href": "chapters/custom_styling.html",
+    "title": "5  Custom Styling",
+    "section": "",
+    "text": "5.1 Font Awesome\nUseful websites:\nIn the Bookdown version of R4Epi, I had a custom CSS stylesheet (i.e., style.css) that I used create some custom call-out boxes and a few other things. Here is the contents of that stylesheet.\nFollowing the guidance on Customizing Quarto Websites, I’m going use that stylesheet for this book too.\nFor testing, I’m going to add a note, a warning, and a construction box.\n🗒Side Note: Here is a note.\n⚠️Warning: Here is a warning.\nr fontawesome::fa(\"hammer\", fill = \"#000000\", height=\"1em\") Here is the under construction box.\nNote that Font Awesome is not currently working and none of these call out boxes work in PDF format. Quarto’s built-in call out boxes do work in PDF format, though.\nFont Awesome seems like a great tool for adding an additional visual dimension to our Quarto projects. Here are some links with useful information about adding Font Awesome graphics to Quarto documents:\nHere are the basics:\nNow that the extension is installed, we can use the following syntax to insert Font Awesome icons: \\{\\{&lt; fa name-of-icon &gt;}} (don’t include the backslashes. They are just there to prevent GitHub from attempting to render the code). We can find a list of icons on the Font Awesome website.\nFor example, this code creates a Font Awesome envelope:\nHowever, the example above doesn’t work when we render the file to GitHub flavored markdown (format: gfm) instead of html (format: html).\nHere are some links with notes on using Font Awesome with GitHub flavored markdown:\nFor example:\nProduces:\nThe YouTube video, How to include fontawesome icons in Quarto documents: basic styling AND special effects has more information on styling Font Awesome icons. For example, the following code:\nProduces this:\nNote on rendering to PDF: The double curly brace syntax renders in the PDF document, but the HTML code does not.\nAnother weird thing: When I was trying to include fontawesome icons in the “About the Authors” page of the Quarto version of R4Epi, I found that I had to include at least one code chunk in the file to get the fontawesome icons to render. Here is an example of the code I used that included fontawesome icons:",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Custom Styling</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/custom_styling.html#font-awesome",
+    "href": "chapters/custom_styling.html#font-awesome",
+    "title": "5  Custom Styling",
+    "section": "",
+    "text": "How to include fontawesome icons in Quarto documents: basic styling AND special effects (YouTube)\n\n\n\nInstall the Font Awesome Quarto Extension by typing quarto install extension quarto-ext/fontawesome in the terminal.\nWe will be asked, “Do you trust the authors of this extension?” Type “Yes.”\nWe will be asked, “Would you like to continue?” Type “Yes.”\nThere should be a new folder called _extensions. Inside that folder, there should be a folder named fontawesome.\nWe will have to repeat this process any time we create a new Quarto project.\n\n\n\n\\{\\{&lt; fa envelope &gt;}} (don't include the backslashes. They are just there to prevent GitHub from attempting to render the code)\n\n\n\nAdd to markdown: https://stackoverflow.com/questions/63913973/how-can-i-put-fontawesome-icons-in-markdown-readme\nGitHub repository: https://github.com/FortAwesome/Font-Awesome\nR font awesome package: https://github.com/rstudio/fontawesome\n\n\n&lt;img src=\"https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg\" width=\"50\" height=\"50\"&gt;\n\n\n&lt;div class=\"fa-3x\"&gt;\n  &lt;i class=\"fa-solid fa-circle-plus fa-beat\"&gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\"&gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 0.5s;\" &gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 2s;\"&gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-beat-scale: 2.0;\"&gt;&lt;/i&gt;\n&lt;/div&gt;\n\n\n    \n\n\n\n&lt;a href=\"https://www.bradcannell.com\" target=\"_blank\"&gt;`r fontawesome::fa(\"globe\", fill = \"#003087\", height=\"2em\")`&lt;/a&gt;",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Custom Styling</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/gifs/gifs.html",
+    "href": "chapters/gifs/gifs.html",
+    "title": "6  Gifs",
+    "section": "",
+    "text": "In R4Epi, we use quite a few gifs. That makes rendering the book to pdf format challenging. What happens when we add a gif to a qmd document and render it to pdf?\nThe following code works great for HTML format, but it messes up pdf format.\n![A gif about file paths](img/file_path_gif.gif){#fig-file-paths}\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the gif by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\nWhat if I use knitr::include_graphics(\"path\")?\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"file_path_gif.gif\")\n```\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\nNo, this doesn’t work either. Here is a pretty good discussion on the topic. It looks like the easiest route may be to use conditional content. Given the limited number of gifs in R4Epi, this shouldn’t be too big of a problem.\nSo, start by conditionally displaying the gif if the output format is html.\n\n::: {.content-visible when-format=\"html\"}\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"file_path_gif.gif\")\n```\n\n:::\nWhich renders as…\n\n\n\n\n\n\n\n\nFigure 6.1: A gif about file paths.\n\n\n\n\n\nThen, conditionally add a thumbnail image of the gif when the output format is pdf.\n\nCreate a duplicate of the gif in Finder.\nAdd “_thumb” to the end of the file name (before the file extension).\nOpen the duplicate file in preview.\nUse Preview’s sidebar to keep only one of the thumbnail images from the gif (select and delete the rest).\nClick File &gt; Export and export to png.\nDelete the duplicate gif.\n\n\n::: {.content-visible when-format=\"pdf\"}\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A thumbnail of gif about file paths.\n#| fig-alt: |\n#|   A thumbnail gif about file paths.\n\nknitr::include_graphics(\"file_path_gif.gif\")\n```\n\n:::\nWhich renders as…",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gifs</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/google_sheets.html",
+    "href": "chapters/google_sheets.html",
+    "title": "7  Google Sheets",
+    "section": "",
+    "text": "7.1 Embedding Google Sheets\nThese are notes on authoring Quarto documents with Google Sheets.\nI’m following instructions from this post.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Google Sheets</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/google_sheets.html#embedding-google-sheets",
+    "href": "chapters/google_sheets.html#embedding-google-sheets",
+    "title": "7  Google Sheets",
+    "section": "",
+    "text": "We created an example Google Sheet to embed.\nClick Help &gt; Search the menus &gt; Publish to the web.\nClick Embed and choose Entire Document or a specific sheet. We will test both bellow.\nClick Publish and copy the embed code.\n\n\n7.1.1 Embed the entire document\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe Google sheet will not appear in the PDF version of this SOP.\n\n\n\n\n7.1.2 Embed a single sheet\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe Google sheet will not appear in the PDF version of this SOP.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Google Sheets</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/images/images.html",
+    "href": "chapters/images/images.html",
+    "title": "8  Images",
+    "section": "",
+    "text": "8.1 Native Quarto figures\nHere are some examples of adding figures.\nLinks\nWe can use the ![Caption text](file_path.png){#fig-label} syntax to add images. For example:\nRenders as:\nAnd I can cross reference the figure by typing @fig-directions. See Figure 8.2",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/images/images.html#native-quarto-figures",
+    "href": "chapters/images/images.html#native-quarto-figures",
+    "title": "8  Images",
+    "section": "",
+    "text": "![Relative Path Directions](directions_relative.png){#fig-directions}\n\n\n\n\n\n\n\nFigure 8.1: Relative Path Directions\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/images/images.html#adding-figures-with-knitr",
+    "href": "chapters/images/images.html#adding-figures-with-knitr",
+    "title": "8  Images",
+    "section": "8.2 Adding figures with Knitr",
+    "text": "8.2 Adding figures with Knitr\nIn R4DS (link above), Hadley et al. are still using knitr::include_graphics(\"path\") to insert images even though the book has been converted to Quarto documents. When using Bookdown, Yihui gives four arguments for using knitr::include_graphics(\"path\") instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from R4DS:\n```{r}\n#| label: fig-ds-diagram\n#| echo: false\n#| fig-cap: |\n#|   In our model of the data science process, you start with data import\n#|   and tidying. Next, you understand your data with an iterative cycle of\n#|   transforming, visualizing, and modeling. You finish the process \n#|   by communicating your results to other humans.\n#| fig-alt: |\n#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand \n#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; \n#|   Communicate. Surrounding all of these is Communicate.\n#| out.width: NULL\n\nknitr::include_graphics(\"diagrams/data-science/base.png\", dpi = 270)\n```\nHere, I’m adding my own image with knitr::include_graphics(\"path\").\n\n\n\n\n\n\n\n\nFigure 8.2: Relative Path Directions.\n\n\n\n\n\nAnd I can cross reference the figure by typing @fig-directions. See Figure 8.2\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label.\n\n\n\n\n\n\n\n\nCreating figures without captions\n\n\n\nFigure captions will look like Figure X: ?(caption) if the chunk label is prefixed with fig (e.g., #| label: fig-directions), but there isn’t a valid #| fig-cap:. There are more details given here. There are two ways to resolve this issue:\n\nRemove the fig- part of the label.\nAdd a valid figure caption.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/images/images.html#images",
+    "href": "chapters/images/images.html#images",
+    "title": "8  Images",
+    "section": "8.3 Images",
+    "text": "8.3 Images\nSometimes I want to add image borders to make the image stand out a little bit from the background around them. For example, it’s kind of hard to distinguish Figure 4.1 from the text/background around it.\nAfter a quick Google search, there appears to be a LaTeX package that will add a boarder, but I’m assuming that will only work for PDF renderings.\nAdditionally, I imagine that I can probably make some adjustments to the .scss file that will add boarders to images. However, that should only work for HTML renderings.\nTherefore, the most straightforward and robust option might just be to add the boarder directly to the image using PowerPoint, Preview, Photoshop, etc. That’s what I did for Figure 4.2.",
+    "crumbs": [
+      "Authoring",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
+    ]
+  },
+  {
     "objectID": "chapters/rmd_documents.html",
     "href": "chapters/rmd_documents.html",
     "title": "9  Rmd Documents",
     "section": "",
-    "text": "9.1 Let’s Get Programming\nIn this chapter, we are going to tie together many of the concepts we’ve learned so far, and you are going to create your first basic R program. Specifically, you are going to write a program that simulates some data and analyzes it.",
+    "text": "9.1 Let’s Get Programming\nI copied this Rmd document over from the Bookdown version of R4Epi (05_lets_get_programming.Rmd). Just trying to figure out what happens when we mix and mingle Rmd and qmd documents.\nIt seems to work well!\nIn this chapter, we are going to tie together many of the concepts we’ve learned so far, and you are going to create your first basic R program. Specifically, you are going to write a program that simulates some data and analyzes it.",
     "crumbs": [
       "Authoring",
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>Rmd Documents</span>"
@@ -99,249 +347,11 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Test Quarto Book",
-    "section": "",
-    "text": "Preface\nThis is my first Quarto book. For now, I’m just using it for some experimentation. Eventually, I will probably want to add all of this to a GitHub repository. Right now, Olivia is in class and I’m content with just experimenting a little bit.\nThis is not my new R Notes book; although, I may move R Notes over to Quarto at some point. This is purely just a sandbox for playing with Quarto books.",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "index.html#useful-websites",
-    "href": "index.html#useful-websites",
-    "title": "Test Quarto Book",
-    "section": "Useful websites:",
-    "text": "Useful websites:\n\nQuarto book documentation",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "index.html#rendering",
-    "href": "index.html#rendering",
-    "title": "Test Quarto Book",
-    "section": "Rendering",
-    "text": "Rendering\nYou can render the files by clicking the Render button in RStudio. To render the HTML and PDF files at the same time, type quarto render into the terminal. You can also render Quarto files with a native R code chunk.\n\nThe input argument: The input file or project directory to be rendered (defaults to rendering the project in the current working directory).\nThe output_format argument: Target output format (defaults to “html”). The option “all” will render all formats defined within the file or project.\n\n```{r}\n#| Render with R\n#| eval: false\nquarto::quarto_render(output_format = \"all\")\n```",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "index.html#publishing-to-github-pages",
-    "href": "index.html#publishing-to-github-pages",
-    "title": "Test Quarto Book",
-    "section": "Publishing to GitHub pages",
-    "text": "Publishing to GitHub pages\nThis article is great.\n\nMake sure you are on the main branch.\nAfter rendering (see above), make sure to save and commit your changes to GitHub.\nType quarto publish gh-pages in the terminal.",
-    "crumbs": [
-      "Preface"
-    ]
-  },
-  {
-    "objectID": "chapters/book_options.html",
-    "href": "chapters/book_options.html",
-    "title": "1  Book Options",
-    "section": "",
-    "text": "A collection of notes on Quarto book options.\n\nLink to list of book options\nHow do you add a cover image? Look at r4ds.\n\ncover-image: cover.jpg\n\nHow do you add last date rendered to the _quarto.yml file? “r Sys.Date()” doesn’t seem to work.\n\nUse the keyword today\n\nCan I add links to GitHub and/or social media?\n\nStill need an answer here.\n\nCan I add links to the GitHub repo containing the books files?\n\nYes. See https://quarto.org/docs/books/book-output.html#sidebar-tools\n\nHow do I add a favicon?\n\nfavicon: cover.jpg\n\nHow do I add Google analytics?\n\nStill need an answer here.\n\nCan I add a Google analytics badge to my GitHub README?\n\nStill need an answer here.\n\nHow do I preview the book in my web browser instead of RStudio’s Viewer pane?\n\nJust click the little gear icon next to the Render button in RStudio. Select Preview in Window.",
-    "crumbs": [
-      "Book Options",
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Book Options</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/other.html",
-    "href": "chapters/other.html",
-    "title": "2  Other little things",
-    "section": "",
-    "text": "2.1 Pros and cons\nSome of the things I like about working with Quarto (as opposed to bookdown) so far",
-    "crumbs": [
-      "Book Options",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Other little things</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/other.html#pros-and-cons",
-    "href": "chapters/other.html#pros-and-cons",
-    "title": "2  Other little things",
-    "section": "",
-    "text": "A preview of the book renders automatically.\nI can easily render only one chapter by opening that chapter’s qmd file and clicking the Render button.",
-    "crumbs": [
-      "Book Options",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Other little things</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/call_out_boxes.html",
-    "href": "chapters/call_out_boxes.html",
-    "title": "3  Adding call out boxes",
-    "section": "",
-    "text": "In R4Epi, we sometimes add special boxes for side notes and warnings. How do we add those into qmd books?\nWhat do those boxes look like when we render the book to pdf format?\nDoes Quarto have some built-in boxes? It looks like it might?\n\nHow do you add the call out boxes (i.e., important, etc.)?\n\nSee Quarto documentation on callout blocks\n\n\n::: callout-note\nNote that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.\n:::\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important.\n\n\n::: callout-warning\nCallouts provide a simple way to attract attention, for example, to this warning.\n:::\n\n\n\n\n\n\nWarning\n\n\n\nCallouts provide a simple way to attract attention, for example, to this warning.\n\n\n::: callout-important\n## This is Important\n\nDanger, callouts will really improve your writing.\n:::\n\n\n\n\n\n\nThis is Important\n\n\n\nDanger, callouts will really improve your writing.\n\n\n::: callout-tip\n## Tip With Title\n\nThis is an example of a callout with a title.\n:::\n\n\n\n\n\n\nTip With Title\n\n\n\nThis is an example of a callout with a title.\n\n\n::: {.callout-caution collapse=\"true\"}\n## Expand To Learn About Collapse\n\nThis is an example of a 'collapsed' caution callout that can be expanded by the user. You can use `collapse=\"true\"` to collapse it by default or `collapse=\"false\"` to make a collapsible callout that is expanded by default.\n:::\n\n\n\n\n\n\nExpand To Learn About Collapse\n\n\n\n\n\nThis is an example of a ‘collapsed’ caution callout that can be expanded by the user. You can use collapse=\"true\" to collapse it by default or collapse=\"false\" to make a collapsible callout that is expanded by default.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Adding call out boxes</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/cross_references/cross_references.html",
-    "href": "chapters/cross_references/cross_references.html",
-    "title": "4  Cross References",
-    "section": "",
-    "text": "4.1 Book parts\nLink to the official documentation. Briefly, there are two methods that I’m likely to use.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/cross_references/cross_references.html#book-parts",
-    "href": "chapters/cross_references/cross_references.html#book-parts",
-    "title": "4  Cross References",
-    "section": "",
-    "text": "4.1.1 Reference a chapter\nFirst, you need to make a chapter/section heading available to be referenced by adding {#sec-} behind the header. For example:\n# Images {#sec-images}\nThen to reference it you type @sec-. For example:\nSee @sec-images to learn about images.\nWhich looks like this: See Chapter 8 to learn about images.\n\n\n\n\n\n\nLabel Prefix\n\n\n\nFor a chapter to be cross-referenceable, its label must start with the sec- prefix.\n\n\n\n\n\n\n\n\nChapter in _quarto.yml\n\n\n\nFor a chapter to be cross-referenceable, it must be listed in _quarto.yml.\n\n\nIf I don’t want @sec-images to automatically be replaced with Chapter 7 – for example, I want it to say the images chapter instead – then I think I will need to use hyperlinks ( below). For example,\nSee [the images chapter](../images/images.qmd)\nWhich looks like this: See the images chapter\n\n\n\n\n\n\nHyperlink file paths\n\n\n\nWhen using hyperlinks to connect chatpers/sections, make sure to use the full file path (originating from the current qmd file). For example, use ../images/images.qmd instead of just images.qmd. If you change the file structure, you may break the links. This is one reason why you may want to use that @sec- syntax whenever possible.\n\n\nChapter sections work the same way. You are able to cross-reference any heading at any level. For example,",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/cross_references/cross_references.html#citations",
-    "href": "chapters/cross_references/cross_references.html#citations",
-    "title": "4  Cross References",
-    "section": "4.2 Citations",
-    "text": "4.2 Citations\nTo add a citation to the text of a chapter:\n\nAdd an entry to references.bib in BibTeX format.\n\nThe easiest way to get the BibTeX citation is probably to generate it with a reference management software like PaperPile or Zotero.\n\nUse the @referenceTitle syntax to add the citation to your text.\n\nFor example:\nBuilt-in example: See @knuth84 for additional discussion of literate programming.\nRenders as: Built-in example: See1 for additional discussion of literate programming.\n\n4.2.1 Change the citation style\nTo change the citation style\n\nAdd a CSL file to the repo. For example, this repo has a file named ama.csl. The Quarto Citations and Footnotes documentation also includes links to download CSL files for a variety of citation formats.\nUpdate the csl: option in _quarto.yml. For example, csl: ama.csl.\n\nHere is what the default @knuth84 citation above looks like after rendering this document.\n\n\n\n\n\n\n\n\nFigure 4.1: An example of Quarto’s default citation style.\n\n\n\n\n\nHere is what the default @knuth84 reference looks like after rendering this document.\n\n\n\n\n\nAn example of Quarto’s default reference style.\n\n\n\n\nHere is what the @knuth84 citation above looks like after changing the citation style to AMA and rendering this document.\n\n\n\n\n\n\n\n\nFigure 4.2: An example of an AMA citation.\n\n\n\n\n\nHere is what the @knuth84 reference looks like after changing the citation style to AMA and rendering this document.\n\n\n\n\n\n\n\n\nFigure 4.3: An example of an AMA reference.\n\n\n\n\n\n🔴 Try integrating Zotero. - GitHub issue - Quarto documentation",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/cross_references/cross_references.html#footnotes",
-    "href": "chapters/cross_references/cross_references.html#footnotes",
-    "title": "4  Cross References",
-    "section": "",
-    "text": "And here is an example footnote.↩︎",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/cross_references/cross_references.html#glossary",
-    "href": "chapters/cross_references/cross_references.html#glossary",
-    "title": "4  Cross References",
-    "section": "4.4 Glossary",
-    "text": "4.4 Glossary\nFollowing the emphasizing text guidance in the R4Epi Wiki, we sometimes want to hyperlink words that we will define in the Glossary. We can definitely link selected words in the narrative of the chapters to headings, but that approach creates a line in the table of contents for each word in the glossary, which isn’t ideal. I posted this issue on Stack Overflow. Therefore, the best strategy so far seems to be using definition lists.\nFor example, let’s say that we want to define the term data frame in the glossary. The first thing we do is assign and CSS ID to the word “data frame” in the glossary qmd file. For now, I’m planning to prefix all glossary IDs with the word “glossary” in case I need to search for them later.\n[Data frame]{#glossary-data-frame} \n\n:  For our purposes, data frames are just R's term for data set or data table. Data frames are made up of columns (variables) and rows (observations). In R, all columns of a data frame must have the same length.\n\n\n\n\n\n\nDefinition lists\n\n\n\nThe colon followed by two spaces before the term’s definition is not optional.\n\n\nNext, use a hyperlink to reference the glossary term in the narrative of the chapter. For example,\nWe want to define the term [data frame](../appendices/glossary.qmd#glossary-data-frame) in the glossary.\nWhich looks like this: We want to define the term data frame in the glossary.\nAdditionally, terms linked in this way should also work in PDF downloads.\nIf we want to adjust the style of the of the glossary term (e.g., increase the font size or make it bold), we can do so in the .scss file. For example,\ndl {\n  font-size: 14pt;\n  font-weight: bold;\n}\nWe use dl because Pandoc renders the HTML output to description list (&lt;dl&gt;) elements. This styling should also work in PDF downloads.\n\n\n\n\n1. Knuth DE. Literate programming. Comput J. 1984;27(2):97-111. doi:10.1093/comjnl/27.2.97",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Cross References</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/custom_styling.html",
-    "href": "chapters/custom_styling.html",
-    "title": "5  Custom Styling",
-    "section": "",
-    "text": "5.1 Font Awesome\nFont Awesome seems like a great tool for adding an additional visual dimension to our Quarto projects. Here are some links with useful information about adding Font Awesome graphics to Quarto documents:\nHere are the basics:\nNow that the extension is installed, we can use the following syntax to insert Font Awesome icons: \\{\\{&lt; fa name-of-icon &gt;}} (don’t include the backslashes. They are just there to prevent GitHub from attempting to render the code). We can find a list of icons on the Font Awesome website.\nFor example, this code creates a Font Awesome envelope:\nHowever, the example above doesn’t work when we render the file to GitHub flavored markdown (format: gfm) instead of html (format: html).\nHere are some links with notes on using Font Awesome with GitHub flavored markdown:\nFor example:\nProduces:\nThe YouTube video, How to include fontawesome icons in Quarto documents: basic styling AND special effects has more information on styling Font Awesome icons. For example, the following code:\nProduces this:\nNote on rendering to PDF: The double curly brace syntax renders in the PDF document, but the HTML code does not.\nAnother weird thing: When I was trying to include fontawesome icons in the “About the Authors” page of the Quarto version of R4Epi, I found that I had to include at least one code chunk in the file to get the fontawesome icons to render. Here is an example of the code I used that included fontawesome icons:",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Custom Styling</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/custom_styling.html#font-awesome",
-    "href": "chapters/custom_styling.html#font-awesome",
-    "title": "5  Custom Styling",
-    "section": "",
-    "text": "How to include fontawesome icons in Quarto documents: basic styling AND special effects (YouTube)\n\n\n\nInstall the Font Awesome Quarto Extension by typing quarto install extension quarto-ext/fontawesome in the terminal.\nWe will be asked, “Do you trust the authors of this extension?” Type “Yes.”\nWe will be asked, “Would you like to continue?” Type “Yes.”\nThere should be a new folder called _extensions. Inside that folder, there should be a folder named fontawesome.\nWe will have to repeat this process any time we create a new Quarto project.\n\n\n\n\\{\\{&lt; fa envelope &gt;}} (don't include the backslashes. They are just there to prevent GitHub from attempting to render the code)\n\n\n\nAdd to markdown: https://stackoverflow.com/questions/63913973/how-can-i-put-fontawesome-icons-in-markdown-readme\nGitHub repository: https://github.com/FortAwesome/Font-Awesome\nR font awesome package: https://github.com/rstudio/fontawesome\n\n\n&lt;img src=\"https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/solid/crown.svg\" width=\"50\" height=\"50\"&gt;\n\n\n&lt;div class=\"fa-3x\"&gt;\n  &lt;i class=\"fa-solid fa-circle-plus fa-beat\"&gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\"&gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 0.5s;\" &gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 2s;\"&gt;&lt;/i&gt;\n  &lt;i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-beat-scale: 2.0;\"&gt;&lt;/i&gt;\n&lt;/div&gt;\n\n\n    \n\n\n\n&lt;a href=\"https://www.bradcannell.com\" target=\"_blank\"&gt;`r fontawesome::fa(\"globe\", fill = \"#003087\", height=\"2em\")`&lt;/a&gt;",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Custom Styling</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/gifs/gifs.html",
-    "href": "chapters/gifs/gifs.html",
-    "title": "6  Gifs",
-    "section": "",
-    "text": "In R4Epi, we use quite a few gifs. That makes rendering the book to pdf format challenging. What happens when we add a gif to a qmd document and render it to pdf?\nThe following code works great for HTML format, but it messes up pdf format.\n![A gif about file paths](img/file_path_gif.gif){#fig-file-paths}\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the gif by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\nWhat if I use knitr::include_graphics(\"path\")?\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"file_path_gif.gif\")\n```\n\nAnd I can [cross reference](https://quarto.org/docs/authoring/cross-references.html) the figure by typing `@fig-file-paths`. See @fig-file-paths\n\n::: {.callout-important}\nFor cross-references to work, the image must have a caption _and_ a label.\n:::\nNo, this doesn’t work either. Here is a pretty good discussion on the topic. It looks like the easiest route may be to use conditional content. Given the limited number of gifs in R4Epi, this shouldn’t be too big of a problem.\nSo, start by conditionally displaying the gif if the output format is html.\n\n::: {.content-visible when-format=\"html\"}\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A gif about file paths.\n#| fig-alt: |\n#|   A gif about file paths.\n\nknitr::include_graphics(\"file_path_gif.gif\")\n```\n\n:::\nWhich renders as…\n\n\n\n\n\n\n\n\nFigure 6.1: A gif about file paths.\n\n\n\n\n\nThen, conditionally add a thumbnail image of the gif when the output format is pdf.\n\nCreate a duplicate of the gif in Finder.\nAdd “_thumb” to the end of the file name (before the file extension).\nOpen the duplicate file in preview.\nUse Preview’s sidebar to keep only one of the thumbnail images from the gif (select and delete the rest).\nClick File &gt; Export and export to png.\nDelete the duplicate gif.\n\n\n::: {.content-visible when-format=\"pdf\"}\n\n```{r}\n#| label: fig-file-paths\n#| echo: false\n#| fig-cap: |\n#|   A thumbnail of gif about file paths.\n#| fig-alt: |\n#|   A thumbnail gif about file paths.\n\nknitr::include_graphics(\"file_path_gif.gif\")\n```\n\n:::\nWhich renders as…",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Gifs</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/google_sheets.html",
-    "href": "chapters/google_sheets.html",
-    "title": "7  Google Sheets",
-    "section": "",
-    "text": "7.1 Embedding Google Sheets\nI’m following instructions from this post.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Google Sheets</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/google_sheets.html#embedding-google-sheets",
-    "href": "chapters/google_sheets.html#embedding-google-sheets",
-    "title": "7  Google Sheets",
-    "section": "",
-    "text": "We created an example Google Sheet to embed.\nClick Help &gt; Search the menus &gt; Publish to the web.\nClick Embed and choose Entire Document or a specific sheet. We will test both bellow.\nClick Publish and copy the embed code.\n\n\n7.1.1 Embed the entire document\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe Google sheet will not appear in the PDF version of this SOP.\n\n\n\n\n7.1.2 Embed a single sheet\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe Google sheet will not appear in the PDF version of this SOP.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Google Sheets</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/images/images.html",
-    "href": "chapters/images/images.html",
-    "title": "8  Images",
-    "section": "",
-    "text": "8.1 Native Quarto figures\nWe can use the ![Caption text](file_path.png){#fig-label} syntax to add images. For example:\nRenders as:\nAnd I can cross reference the figure by typing @fig-directions. See Figure 8.2",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/images/images.html#native-quarto-figures",
-    "href": "chapters/images/images.html#native-quarto-figures",
-    "title": "8  Images",
-    "section": "",
-    "text": "![Relative Path Directions](directions_relative.png){#fig-directions}\n\n\n\n\n\n\n\nFigure 8.1: Relative Path Directions\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/images/images.html#adding-figures-with-knitr",
-    "href": "chapters/images/images.html#adding-figures-with-knitr",
-    "title": "8  Images",
-    "section": "8.2 Adding figures with Knitr",
-    "text": "8.2 Adding figures with Knitr\nIn R4DS (link above), Hadley et al. are still using knitr::include_graphics(\"path\") to insert images even though the book has been converted to Quarto documents. When using Bookdown, Yihui gives four arguments for using knitr::include_graphics(\"path\") instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from R4DS:\n```{r}\n#| label: fig-ds-diagram\n#| echo: false\n#| fig-cap: |\n#|   In our model of the data science process, you start with data import\n#|   and tidying. Next, you understand your data with an iterative cycle of\n#|   transforming, visualizing, and modeling. You finish the process \n#|   by communicating your results to other humans.\n#| fig-alt: |\n#|   A diagram displaying the data science cycle: Import -&gt; Tidy -&gt; Understand \n#|   (which has the phases Transform -&gt; Visualize -&gt; Model in a cycle) -&gt; \n#|   Communicate. Surrounding all of these is Communicate.\n#| out.width: NULL\n\nknitr::include_graphics(\"diagrams/data-science/base.png\", dpi = 270)\n```\nHere, I’m adding my own image with knitr::include_graphics(\"path\").\n\n\n\n\n\n\n\n\nFigure 8.2: Relative Path Directions.\n\n\n\n\n\nAnd I can cross reference the figure by typing @fig-directions. See Figure 8.2\n\n\n\n\n\n\nImportant\n\n\n\nFor cross-references to work, the image must have a caption and a label.\n\n\n\n\n\n\n\n\nCreating figures without captions\n\n\n\nFigure captions will look like Figure X: ?(caption) if the chunk label is prefixed with fig (e.g., #| label: fig-directions), but there isn’t a valid #| fig-cap:. There are more details given here. There are two ways to resolve this issue:\n\nRemove the fig- part of the label.\nAdd a valid figure caption.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/images/images.html#images",
-    "href": "chapters/images/images.html#images",
-    "title": "8  Images",
-    "section": "8.3 Images",
-    "text": "8.3 Images\nSometimes I want to add image borders to make the image stand out a little bit from the background around them. For example, it’s kind of hard to distinguish Figure 4.1 from the text/background around it.\nAfter a quick Google search, there appears to be a LaTeX package that will add a boarder, but I’m assuming that will only work for PDF renderings.\nAdditionally, I imagine that I can probably make some adjustments to the .scss file that will add boarders to images. However, that should only work for HTML renderings.\nTherefore, the most straightforward and robust option might just be to add the boarder directly to the image using PowerPoint, Preview, Photoshop, etc. That’s what I did for Figure 4.2.",
-    "crumbs": [
-      "Authoring",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Images</span>"
-    ]
-  },
-  {
     "objectID": "chapters/tables.html",
     "href": "chapters/tables.html",
     "title": "10  Tables",
     "section": "",
-    "text": "10.1 Test table\nJust quickly testing to see if it will download. Need to better document this in the future.\nkey &lt;- tribble(\n ~var, ~description,\n \"ml_age\", \"Participant's age at baseline.\",\n \"ml_gender_f\", \"Participant's self-reported sex at baseline.\",\n \"ml_race_f\", \"Participant's self-reported race at baseline.\",\n \"ml_race_eth_4cat_f\", \"Participant's self-reported race at baseline. Collapsed into four categories.\",\n \"ml_hispanic_f\", \"Participant's self-report of Hispanic ethnicity at baseline.\"\n)\nInitially, the code chunk above created a datatable version of the table.\nWhen I tried to render the book, I got the following error:\nknitr::kable(key)\n\n\n\n\n\n\n\n\nvar\ndescription\n\n\n\n\nml_age\nParticipant’s age at baseline.\n\n\nml_gender_f\nParticipant’s self-reported sex at baseline.\n\n\nml_race_f\nParticipant’s self-reported race at baseline.\n\n\nml_race_eth_4cat_f\nParticipant’s self-reported race at baseline. Collapsed into four categories.\n\n\nml_hispanic_f\nParticipant’s self-report of Hispanic ethnicity at baseline.",
+    "text": "10.1 Test table\nI did a lot of experimenting with tables when creating the L2C Master Descriptive Table website. I need to add notes on creating and working with tables in this chapter. I may also want to add it to the [appendix in R4Epi](https://www.r4epi.com/appendix-alternative-table-formats.\nUseful websites:\nJust quickly testing to see if it will download. Need to better document this in the future.\nkey &lt;- tribble(\n ~var, ~description,\n \"ml_age\", \"Participant's age at baseline.\",\n \"ml_gender_f\", \"Participant's self-reported sex at baseline.\",\n \"ml_race_f\", \"Participant's self-reported race at baseline.\",\n \"ml_race_eth_4cat_f\", \"Participant's self-reported race at baseline. Collapsed into four categories.\",\n \"ml_hispanic_f\", \"Participant's self-report of Hispanic ethnicity at baseline.\"\n)\nInitially, the code chunk above created a datatable version of the table.\nWhen I tried to render the book, I got the following error:\nknitr::kable(key)\n\n\n\n\n\n\n\n\nvar\ndescription\n\n\n\n\nml_age\nParticipant’s age at baseline.\n\n\nml_gender_f\nParticipant’s self-reported sex at baseline.\n\n\nml_race_f\nParticipant’s self-reported race at baseline.\n\n\nml_race_eth_4cat_f\nParticipant’s self-reported race at baseline. Collapsed into four categories.\n\n\nml_hispanic_f\nParticipant’s self-report of Hispanic ethnicity at baseline.",
     "crumbs": [
       "Authoring",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Tables</span>"
@@ -385,7 +395,7 @@
     "href": "chapters/code_chunks.html",
     "title": "12  Code chunks",
     "section": "",
-    "text": "12.1 Code Run Time\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense.",
+    "text": "12.1 Code Run Time\nThese are my notes on working with code chunks.\nHere are some other helpful resources:\nWe were interested in understanding how much caching code chunks could potentially speed up the rendering process for books. Initially, the code to test out caching code chunks was part of the test_quarto_book project. However, it seemed like the quarto_render() function works differently in the context of a book project and was making testing difficult. Specifically, quarto::quarto_render(\"slow_code_default.qmd\") seemed to render the entire book instead of just the slow_code_default.qmd document. Therefore, we created a separate Quarto project to run these tests – test_quarto_cached_chunks.\nThe bottom line is that caching actually causes the render to take longer to process on the first run. However, it appears to speed up subsequent renders. This makes sense.",
     "crumbs": [
       "Working with Code",
       "<span class='chapter-number'>12</span>  <span class='chapter-title'>Code chunks</span>"
@@ -506,7 +516,7 @@
     "href": "chapters/publishing.html",
     "title": "18  Publishing",
     "section": "",
-    "text": "18.1 GitHub repository\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process.",
+    "text": "18.1 GitHub repository\nThis chapter is about getting the book files on GitHub and creating an HTML version of the book for public consumption. I’m starting with GitHub Pages because it seems like it should be the lowest hanging fruit.\nThe first step to publishing a book online is to put it into a GitHub repository. Originally, I started my book project by creating a new project, clicking new directory, then Quarto book. After creating the book project, I created a repository for it in GitHub and then tried to use GitHub’s on-screen instructions to push the book files to the repo. However, I kept getting errors and wasn’t ever able to make it work. I feel like this shouldn’t be the case and was probably just some weird one-off. So, don’t give up on that process just yet.\nWhat I eventually got to work was this process.",
     "crumbs": [
       "Publishing",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Publishing</span>"
@@ -576,16 +586,6 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>B</span>  <span class='chapter-title'>Glossary</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/part_book_options.html",
-    "href": "chapters/part_book_options.html",
-    "title": "Book Options",
-    "section": "",
-    "text": "This part of the book contains qmd files pertaining to book options. I’m mostly creating this file to demonstrate how the (optional) book part qmd files work.",
-    "crumbs": [
-      "Book Options"
     ]
   }
 ]
