@@ -1,11 +1,5 @@
 # Preface {.unnumbered}
 
-::: callout-warning
-On 2025-01-23 I was unable to render a PDF version of this book.
-I had to comment out lines 12, 13, and 49 of _quarto.yml to get the book to render (in HTML only).
-Figure out a solution when you have time.
-:::
-
 This is my first Quarto book. For now, I'm just using it for some experimentation. Eventually, I will probably want to add all of this to a GitHub repository. Right now, Olivia is in class and I'm content with just experimenting a little bit.
 
 This is **not** my new R Notes book; although, I may move R Notes over to Quarto at some point. This is purely just a sandbox for playing with Quarto books.

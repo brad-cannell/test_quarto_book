@@ -9,8 +9,8 @@ format:
       - cosmo
       - test_quarto_book_styles.scss
     # mainfont: Roboto # For testing (https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts)
-  # pdf:
-    # documentclass: scrreprt
+  pdf:
+    documentclass: scrreprt
     
 # Add this in order to use webR
 filters:
@@ -46,7 +46,7 @@ book:
   
   # Book options
   search: true
-  # downloads: [pdf, docx] # https://quarto.org/docs/books/book-output.html#sidebar-tools
+  downloads: [pdf, docx] # https://quarto.org/docs/books/book-output.html#sidebar-tools
   sharing: [twitter, facebook]
   page-navigation: true # Haven't played with this much yet. https://quarto.org/docs/books/book-structure.html#page-navigation
 
