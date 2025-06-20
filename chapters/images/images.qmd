@@ -25,7 +25,7 @@ And I can [cross reference](https://quarto.org/docs/authoring/cross-references.h
 For cross-references to work, the image must have a caption _and_ a label.
 :::
 
-## Adding figures with Knitr
+## Adding figures with Knitr {#sec-adding-figures-with-knitr}
 
 In R4DS (link above), Hadley et al. are still using `knitr::include_graphics("path")` to insert images even though the book has been converted to Quarto documents. When using Bookdown, [Yihui gives four arguments](https://bookdown.org/yihui/bookdown/figures.html) for using `knitr::include_graphics("path")` instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from [R4DS](https://github.com/hadley/r4ds/blob/main/intro.qmd):
 
