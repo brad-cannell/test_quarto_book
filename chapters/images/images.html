@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#native-quarto-figures" id="toc-native-quarto-figures" class="nav-link active" data-scroll-target="#native-quarto-figures"><span class="header-section-number">8.1</span> Native Quarto figures</a></li>
-  <li><a href="#adding-figures-with-knitr" id="toc-adding-figures-with-knitr" class="nav-link" data-scroll-target="#adding-figures-with-knitr"><span class="header-section-number">8.2</span> Adding figures with Knitr</a></li>
+  <li><a href="#sec-adding-figures-with-knitr" id="toc-sec-adding-figures-with-knitr" class="nav-link" data-scroll-target="#sec-adding-figures-with-knitr"><span class="header-section-number">8.2</span> Adding figures with Knitr</a></li>
   <li><a href="#images" id="toc-images" class="nav-link" data-scroll-target="#images"><span class="header-section-number">8.3</span> Images</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/brad-cannell/test_quarto_book/edit/main/chapters/images/images.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
@@ -450,8 +450,8 @@ Important
 </div>
 </div>
 </section>
-<section id="adding-figures-with-knitr" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="adding-figures-with-knitr"><span class="header-section-number">8.2</span> Adding figures with Knitr</h2>
+<section id="sec-adding-figures-with-knitr" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="sec-adding-figures-with-knitr"><span class="header-section-number">8.2</span> Adding figures with Knitr</h2>
 <p>In R4DS (link above), Hadley et al.&nbsp;are still using <code>knitr::include_graphics("path")</code> to insert images even though the book has been converted to Quarto documents. When using Bookdown, <a href="https://bookdown.org/yihui/bookdown/figures.html">Yihui gives four arguments</a> for using <code>knitr::include_graphics("path")</code> instead of native markdown image formatting. So, we will likely continue to use them too. Here is an example image code chunk from <a href="https://github.com/hadley/r4ds/blob/main/intro.qmd">R4DS</a>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-ds-diagram</span></span>
@@ -475,7 +475,7 @@ Important
 <div id="fig-directions" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An image of a store with directions">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-directions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="directions_relative.png" class="img-fluid figure-img" alt="An image of a store with directions" width="900">
+<img src="directions_relative.png" class="img-fluid figure-img" alt="An image of a store with directions">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-directions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.2: Relative Path Directions.
